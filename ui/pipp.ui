@@ -1,0 +1,1192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1011</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QWidget" name="dummyWidget1" native="true">
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <widget class="QTabWidget" name="outerTabWidget">
+         <property name="currentIndex">
+          <number>1</number>
+         </property>
+         <widget class="QWidget" name="sourcesTab">
+          <attribute name="title">
+           <string>Source Files</string>
+          </attribute>
+          <layout class="QVBoxLayout" name="verticalLayout_5">
+           <item>
+            <widget class="QTabWidget" name="tabWidget">
+             <property name="currentIndex">
+              <number>0</number>
+             </property>
+             <widget class="QWidget" name="imagesTab">
+              <attribute name="title">
+               <string>Image Files (%1 frames)</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="imagesTabLayout">
+               <item>
+                <widget class="QTableWidget" name="imageFileList"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="imageFilesButtonsLayout">
+                 <item>
+                  <layout class="QVBoxLayout" name="filesButtonsLayout">
+                   <item>
+                    <widget class="QPushButton" name="addImagesButton">
+                     <property name="text">
+                      <string>Add Image Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeImagesButton">
+                     <property name="text">
+                      <string>Remove Selected Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeAllImagesButton">
+                     <property name="text">
+                      <string>Remove All Image Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout">
+                   <item>
+                    <widget class="QPushButton" name="imagesUpButton">
+                     <property name="text">
+                      <string>^</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="imagesDownButton">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="text">
+                      <string>v</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="modeBox">
+                   <property name="title">
+                    <string>Multiple Source Files</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>20</x>
+                      <y>30</y>
+                      <width>106</width>
+                      <height>48</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="modeBoxLayout">
+                     <item>
+                      <widget class="QRadioButton" name="batchMode">
+                       <property name="text">
+                        <string>Batch Mode</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QRadioButton" name="joinMode">
+                       <property name="text">
+                        <string>Join Mode</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="optimiseBox">
+                   <property name="title">
+                    <string>Optimise Options For</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>20</y>
+                      <width>449</width>
+                      <height>74</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="optimiseBoxLayout">
+                     <item row="0" column="1">
+                      <widget class="QRadioButton" name="closeUpButton">
+                       <property name="text">
+                        <string>Solar/Lunar Close-up</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="2">
+                      <widget class="QRadioButton" name="aviButton">
+                       <property name="text">
+                        <string>Planetary Animation (AVI)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QRadioButton" name="fullDiscButton">
+                       <property name="text">
+                        <string>Solar/Lunar Full Disc</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="2">
+                      <widget class="QRadioButton" name="gifButton">
+                       <property name="text">
+                        <string>Planetary Animation (GIF)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="planetaryButton">
+                       <property name="text">
+                        <string>Planetary</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="issButton">
+                       <property name="text">
+                        <string>ISS</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QRadioButton" name="archiveButton">
+                       <property name="text">
+                        <string>AVI Archive</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="darksTab">
+              <attribute name="title">
+               <string>Dark Files (%1 frames)</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="darksTabLayout">
+               <item>
+                <widget class="QTableWidget" name="darksFileList"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="darkFilesButtonsLayout">
+                 <item>
+                  <layout class="QVBoxLayout" name="filesButtonsLayout2">
+                   <item>
+                    <widget class="QPushButton" name="addDarksButton">
+                     <property name="text">
+                      <string>Add Dark Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeDarksButton">
+                     <property name="text">
+                      <string>Remove Selected Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeAllDarksButton">
+                     <property name="text">
+                      <string>Remove All Dark Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="darksOptionsBox">
+                   <property name="title">
+                    <string>Dark Frame Options</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>20</x>
+                      <y>20</y>
+                      <width>219</width>
+                      <height>48</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="darksOptionsLayout">
+                     <item>
+                      <widget class="QCheckBox" name="enableDarkFrameSubtraction">
+                       <property name="text">
+                        <string>Enable Dark Frame Subtraction</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="saveMasterDark">
+                       <property name="text">
+                        <string>Save Master Dark Frame</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="hotPixelOptionsBox">
+                   <property name="title">
+                    <string>Hot Pixel Options</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>20</y>
+                      <width>536</width>
+                      <height>74</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="hotPixelBoxLayout">
+                     <item row="0" column="1">
+                      <widget class="QCheckBox" name="darksMonoWithBayer">
+                       <property name="text">
+                        <string>Data Is Monochrome With Bayer Pattern</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <layout class="QHBoxLayout" name="thresholdLayout">
+                       <item>
+                        <widget class="QLabel" name="thresholdLabel">
+                         <property name="text">
+                          <string>Hot PIxel Threshold %</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QSpinBox" name="thresholdVal"/>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QCheckBox" name="enableHotPixel">
+                       <property name="text">
+                        <string>Enable Hot Pixel Replacement</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="flatsTab">
+              <attribute name="title">
+               <string>Flat Files (%1 frames)</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="flatsTabLayout">
+               <item>
+                <widget class="QTableWidget" name="flatsFileList"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="flatFilesButtonsLayout">
+                 <item>
+                  <layout class="QVBoxLayout" name="filesButtonsLayout3">
+                   <item>
+                    <widget class="QPushButton" name="addFlatsButton">
+                     <property name="text">
+                      <string>Add Flat Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeFlatsButton">
+                     <property name="text">
+                      <string>Remove Selected Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeAllFlatsButton">
+                     <property name="text">
+                      <string>Remove All Flat Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="flatsOptionsBox">
+                   <property name="title">
+                    <string>Flat Frame Options</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>30</y>
+                      <width>481</width>
+                      <height>48</height>
+                     </rect>
+                    </property>
+                    <layout class="QGridLayout" name="gridLayout">
+                     <item row="0" column="0">
+                      <widget class="QCheckBox" name="enableFlatFrameCorrection">
+                       <property name="text">
+                        <string>Enable Flat Frame Correction</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QCheckBox" name="flatsMonoWithBayer">
+                       <property name="text">
+                        <string>Data Is Monochrome With Bayer Pattern</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QCheckBox" name="saveMasterFlat">
+                       <property name="text">
+                        <string>Save Master Flat Frame</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="flatDarksTab">
+              <attribute name="title">
+               <string>Flat Dark Files (%1 frames)</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="flatDarksTabLayout">
+               <item>
+                <widget class="QTableWidget" name="flatDarksFileList"/>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="flatDarkFilesButtonsLayout">
+                 <item>
+                  <layout class="QVBoxLayout" name="filesButtonsLayout4">
+                   <item>
+                    <widget class="QPushButton" name="addFlatDarksButton">
+                     <property name="text">
+                      <string>Add Flat Dark Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeFlatDarksButton">
+                     <property name="text">
+                      <string>Remove Selected Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="removeAllFlatDarksButton">
+                     <property name="text">
+                      <string>Remove All Flat Dark Files</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="flatDarksOptionsBox">
+                   <property name="title">
+                    <string>Flat Dark Frame Options</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>30</y>
+                      <width>481</width>
+                      <height>48</height>
+                     </rect>
+                    </property>
+                    <layout class="QVBoxLayout" name="flatDarksOptionsLayout">
+                     <item>
+                      <widget class="QCheckBox" name="enableFlatDarkFrameSubtraction">
+                       <property name="text">
+                        <string>Enable Flat Dark Frame Subtraction</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="saveMasterFlatDark">
+                       <property name="text">
+                        <string>Save Master Flat Dark Frame</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="inputOptionsTab">
+          <attribute name="title">
+           <string>Input Options</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <layout class="QVBoxLayout" name="inputLHS">
+             <item>
+              <widget class="QGroupBox" name="inputBinningLayout">
+               <property name="title">
+                <string>Binning</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>30</y>
+                  <width>252</width>
+                  <height>54</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="binningLabel">
+                   <property name="text">
+                    <string>Binning</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="binningSelector">
+                   <item>
+                    <property name="text">
+                     <string>Binning Disabled</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>2x2 Binning</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>3x3 Binning</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>4x4 Binning</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>5x5 Binning</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="calcLabel">
+                   <property name="text">
+                    <string>Binning Calculation</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QComboBox" name="binningCalcSelector">
+                   <item>
+                    <property name="text">
+                     <string>Average of Pixels</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sum of PIxels</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputRawImageLayout">
+               <property name="title">
+                <string>Raw Image File Options (DCRAW)</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>30</y>
+                  <width>530</width>
+                  <height>135</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="rawHotPixelFilterBox">
+                   <property name="text">
+                    <string>Enable raw image hot pixel filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="debayerRawBox">
+                   <property name="text">
+                    <string>Debayer raw image files</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QComboBox" name="comboBox">
+                   <item>
+                    <property name="text">
+                     <string>Bilinear (fastest)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>VNG (Variable Number of Gradients)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>PPG (Patterned Pixel Grouping)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>AHD (Adaptive Homogeneity-Directed)</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="algorithmLabel">
+                   <property name="text">
+                    <string>Debayer Algoriithm</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QComboBox" name="comboBox_2">
+                   <item>
+                    <property name="text">
+                     <string>Raw Camera Sensor Colour (Fastest)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>sRGB D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Adobe RGB (1998) D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Wide Gamut RGB D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Kodak Pro Photo RGB D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>XYZ</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>ACES</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="colourSpaceLabel">
+                   <property name="text">
+                    <string>Output Colour Space</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QComboBox" name="comboBox_3">
+                   <item>
+                    <property name="text">
+                     <string>Clip all highlights to solid white</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Leave highloights unclipped (fastest)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Blend clipped and unclipped values together</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=3)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=4)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=5)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=6)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=7)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=8)</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="highlightLabel">
+                   <property name="text">
+                    <string>Highlight Recovery Type</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputDateTimeLayout">
+               <property name="title">
+                <string>Date/Time Extraction</string>
+               </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>20</y>
+                  <width>377</width>
+                  <height>132</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <item>
+                  <widget class="QCheckBox" name="dateFromFilenameBox">
+                   <property name="text">
+                    <string>Extract FileStart Date/Time from Filename</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="utcBox">
+                   <property name="text">
+                    <string>Convert from Local Time to Universal TIme</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="timeFormatLayout">
+                   <property name="title">
+                    <string>Input Filename Date/Time Format</string>
+                   </property>
+                   <widget class="QWidget" name="">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>0</y>
+                      <width>223</width>
+                      <height>29</height>
+                     </rect>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <item>
+                      <widget class="QComboBox" name="formatBox">
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 1</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 1 (with count)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 2</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 2 (with count)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>IC Capture</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Sharpcap</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>WinJUPOS</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>WinJUPOS (old style)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>wxAstroCapture</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Custom 1</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Custom 2</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Custom 3</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit"/>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="rememberBox">
+                       <property name="text">
+                        <string>Remember</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QSpinBox" name="frameRateBox"/>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="frameRateLabel">
+                     <property name="text">
+                      <string>Frames Per Second (for SER files without timestamps)</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="inputRHS">
+             <item>
+              <widget class="QGroupBox" name="inputAVIOptionsLayout">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+               <widget class="QCheckBox" name="Y800Box">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>251</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Decode Y800 codec frames strictly</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputSEROptionsLayout">
+               <property name="title">
+                <string>SER File Options</string>
+               </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>153</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="serOptionsLabel">
+                   <property name="text">
+                    <string>Pixel Depth</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="serOptions">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>As SER File Header</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>16 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>15 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>14 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>13 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>12 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>11 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>10 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>9 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>8 bits per pixel</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputFrameRangeLayout">
+               <property name="title">
+                <string>Input Frame Range</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputFrameDroppingLayout">
+               <property name="title">
+                <string>Input Frame Dropping</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputFrameColourLayout">
+               <property name="title">
+                <string>Input Frame Colour/Monochrome</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputDebayerLayout">
+               <property name="title">
+                <string>Colour Debayer</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputDebayerOptionsLayout">
+               <property name="title">
+                <string>Colour Debayer Options</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+         <widget class="QWidget" name="processingOptionsTab">
+          <attribute name="title">
+           <string>Processing Options</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="qualityOptionsTab">
+          <attribute name="title">
+           <string>Quality Options</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="animationOptionsTab">
+          <attribute name="title">
+           <string>Animation Options</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="outputOptionsTab">
+          <attribute name="title">
+           <string>Output Options</string>
+          </attribute>
+         </widget>
+         <widget class="QWidget" name="doProcessingTab">
+          <attribute name="title">
+           <string>Do Processing</string>
+          </attribute>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout"/>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>100</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2"/>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1011</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionAddSourceFiles"/>
+    <addaction name="actionRemoveSourceFiles"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>Options</string>
+    </property>
+    <addaction name="actionResetOptions"/>
+    <addaction name="actionUndoResetOptions"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveOptions"/>
+    <addaction name="actionLoadOptions"/>
+    <addaction name="separator"/>
+    <addaction name="actionSaveRejectedFrames"/>
+    <addaction name="actionUseRAMBuffers"/>
+   </widget>
+   <widget class="QMenu" name="menuProcessing">
+    <property name="title">
+     <string>Processing</string>
+    </property>
+    <addaction name="actionTestOptions"/>
+    <addaction name="actionStartProcessing"/>
+    <addaction name="actionCancelProcessing"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAbout"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuOptions"/>
+   <addaction name="menuProcessing"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionAddSourceFiles">
+   <property name="text">
+    <string>Add Source Files</string>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::WindowShortcut</enum>
+   </property>
+  </action>
+  <action name="actionRemoveSourceFiles">
+   <property name="text">
+    <string>Remove Source Files</string>
+   </property>
+  </action>
+  <action name="actionQuit">
+   <property name="text">
+    <string>Quit</string>
+   </property>
+  </action>
+  <action name="actionResetOptions">
+   <property name="text">
+    <string>Reset Options</string>
+   </property>
+  </action>
+  <action name="actionUndoResetOptions">
+   <property name="text">
+    <string>Undo Reset Options</string>
+   </property>
+  </action>
+  <action name="actionSaveOptions">
+   <property name="text">
+    <string>Save Options</string>
+   </property>
+  </action>
+  <action name="actionLoadOptions">
+   <property name="text">
+    <string>Load Options</string>
+   </property>
+  </action>
+  <action name="actionSaveRejectedFrames">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Save Rejected Frames</string>
+   </property>
+  </action>
+  <action name="actionUseRAMBuffers">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Use RAM Buffers For Quality Sorting</string>
+   </property>
+  </action>
+  <action name="actionTestOptions">
+   <property name="text">
+    <string>Test Options</string>
+   </property>
+  </action>
+  <action name="actionStartProcessing">
+   <property name="text">
+    <string>Start Processing</string>
+   </property>
+  </action>
+  <action name="actionCancelProcessing">
+   <property name="text">
+    <string>Cancel Processing</string>
+   </property>
+  </action>
+  <action name="actionAbout">
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
