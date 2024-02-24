@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1011</width>
-    <height>644</height>
+    <height>857</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1038,9 +1038,90 @@
              </item>
              <item>
               <widget class="QGroupBox" name="inputFrameRangeLayout">
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This control limits the set of frames that are processed from the input frames.  The frames processed can be specified as a range or as the number of frames processed from the centre of the set of input frames&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
                <property name="title">
                 <string>Input Frame Range</string>
                </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>10</y>
+                  <width>346</width>
+                  <height>129</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_4">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="limitFrameRange">
+                   <property name="text">
+                    <string>Limit Frame Range</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="whichFrames">
+                   <item>
+                    <property name="text">
+                     <string>Start frame to end frame</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Frames from centre of video</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QSpinBox" name="noOfFramesBox"/>
+                 </item>
+                 <item row="1" column="0">
+                  <layout class="QHBoxLayout" name="frameLimitLayout1">
+                   <item>
+                    <widget class="QLabel" name="frameFromLabel">
+                     <property name="text">
+                      <string>First frame</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="frameStart"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="1" column="1">
+                  <layout class="QHBoxLayout" name="frameLimitLayout2">
+                   <item>
+                    <widget class="QLabel" name="frameEndLabel">
+                     <property name="text">
+                      <string>Last frame</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="frameEnd"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="noOfFramesLabel">
+                   <property name="text">
+                    <string>Number of frames</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
@@ -1048,6 +1129,28 @@
                <property name="title">
                 <string>Input Frame Dropping</string>
                </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>50</y>
+                  <width>294</width>
+                  <height>27</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QSpinBox" name="droppedFramesBox"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="droppedFramesLabel">
+                   <property name="text">
+                    <string>Frames to drop after each frame is input</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
@@ -1055,6 +1158,31 @@
                <property name="title">
                 <string>Input Frame Colour/Monochrome</string>
                </property>
+               <widget class="QComboBox" name="comboBox_4">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>76</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Autodetect</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Monochrome</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Colour</string>
+                 </property>
+                </item>
+               </widget>
               </widget>
              </item>
              <item>
@@ -1062,6 +1190,35 @@
                <property name="title">
                 <string>Colour Debayer</string>
                </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>20</y>
+                  <width>418</width>
+                  <height>48</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QCheckBox" name="debayerMono">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable colour debayering for any file format. File formats that are known to contain raw image data with a bayer pattern have their own debayer controls  below&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Debyer monochrome frames</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="protectBayer">
+                   <property name="text">
+                    <string>Protect bayer pattern when centering/cropping (do not debayer)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
@@ -1069,6 +1226,65 @@
                <property name="title">
                 <string>Colour Debayer Options</string>
                </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QLabel" name="algorithmLabel_2">
+                  <property name="text">
+                   <string>Debayer Algorithm</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="debayAlgorithm">
+                  <item>
+                   <property name="text">
+                    <string>Bilinear</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>HQ Linear</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Hue</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="patternLabel">
+                  <property name="text">
+                   <string>Bayer pattern</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="bayerPattern">
+                  <item>
+                   <property name="text">
+                    <string>GBRG</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>BGGR</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>RGGB</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>GRBG</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
             </layout>
