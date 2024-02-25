@@ -21,7 +21,7 @@
        <item>
         <widget class="QTabWidget" name="outerTabWidget">
          <property name="currentIndex">
-          <number>2</number>
+          <number>3</number>
          </property>
          <widget class="QWidget" name="sourcesTab">
           <attribute name="title">
@@ -2042,28 +2042,28 @@
              <item>
               <widget class="QGroupBox" name="zzz3">
                <property name="title">
-                <string>Binning</string>
+                <string>Quality Estimation</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="zzz4">
                <property name="title">
-                <string>Raw Image File Options (DCRAW)</string>
+                <string>Quality Limiting</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="groupBox">
                <property name="title">
-                <string>GroupBox</string>
+                <string>Quality Algorithm</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="zzz5">
                <property name="title">
-                <string>Date/Time Extraction</string>
+                <string>Quality Algorithm Options</string>
                </property>
               </widget>
              </item>
@@ -2074,7 +2074,7 @@
              <item>
               <widget class="QGroupBox" name="zzz7">
                <property name="title">
-                <string>AVI File Options</string>
+                <string>Quality Weighting</string>
                </property>
               </widget>
              </item>
@@ -2092,21 +2092,21 @@
              <item>
               <widget class="QGroupBox" name="yy3">
                <property name="title">
-                <string>Binning</string>
+                <string>Forward Play</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="yy4">
                <property name="title">
-                <string>Raw Image File Options (DCRAW)</string>
+                <string>Reverse Play</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="yy5">
                <property name="title">
-                <string>Date/Time Extraction</string>
+                <string>Complete Sequence Repeat</string>
                </property>
               </widget>
              </item>
@@ -2117,7 +2117,7 @@
              <item>
               <widget class="QGroupBox" name="yy7">
                <property name="title">
-                <string>AVI File Options</string>
+                <string>Output Settings Selected</string>
                </property>
               </widget>
              </item>
@@ -2135,21 +2135,21 @@
              <item>
               <widget class="QGroupBox" name="yyy3">
                <property name="title">
-                <string>Binning</string>
+                <string>Output Format</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="yyy4">
                <property name="title">
-                <string>Raw Image File Options (DCRAW)</string>
+                <string>Output Directory</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="yyy5">
                <property name="title">
-                <string>Date/Time Extraction</string>
+                <string>Output Filename Prefix</string>
                </property>
               </widget>
              </item>
@@ -2167,7 +2167,7 @@
              <item>
               <widget class="QGroupBox" name="yyy8">
                <property name="title">
-                <string>SER File Options</string>
+                <string>WinJUPOS Compatible Filenames</string>
                </property>
               </widget>
              </item>
@@ -2185,21 +2185,21 @@
              <item>
               <widget class="QGroupBox" name="ww3">
                <property name="title">
-                <string>Binning</string>
+                <string>Control</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="ww4">
                <property name="title">
-                <string>Raw Image File Options (DCRAW)</string>
+                <string>Status</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QGroupBox" name="ww5">
                <property name="title">
-                <string>Date/Time Extraction</string>
+                <string>Processing</string>
                </property>
               </widget>
              </item>
@@ -2210,7 +2210,7 @@
              <item>
               <widget class="QGroupBox" name="ww7">
                <property name="title">
-                <string>AVI File Options</string>
+                <string>Output</string>
                </property>
               </widget>
              </item>
