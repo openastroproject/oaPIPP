@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1011</width>
-    <height>857</height>
+    <height>794</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
        <item>
         <widget class="QTabWidget" name="outerTabWidget">
          <property name="currentIndex">
-          <number>1</number>
+          <number>6</number>
          </property>
          <widget class="QWidget" name="sourcesTab">
           <attribute name="title">
@@ -1129,7 +1129,7 @@
                <property name="title">
                 <string>Input Frame Dropping</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -1190,7 +1190,7 @@
                <property name="title">
                 <string>Colour Debayer</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <property name="geometry">
                  <rect>
                   <x>10</x>
@@ -1295,26 +1295,589 @@
           <attribute name="title">
            <string>Processing Options</string>
           </attribute>
+          <layout class="QHBoxLayout" name="zz1">
+           <item>
+            <layout class="QVBoxLayout" name="processingLayoutLHS">
+             <item>
+              <widget class="QGroupBox" name="gainGammaLayout">
+               <property name="title">
+                <string>Input Gain and Gamma Correction</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>30</y>
+                  <width>141</width>
+                  <height>54</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_6">
+                 <item row="0" column="0">
+                  <widget class="QComboBox" name="comboBox_7"/>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="label_4">
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QComboBox" name="comboBox_8"/>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="noiseLayout">
+               <property name="title">
+                <string>Noise Filter</string>
+               </property>
+               <widget class="QCheckBox" name="checkBox">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>50</y>
+                  <width>89</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>CheckBox</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="monoConversionLayout">
+               <property name="title">
+                <string>Monochrome Covnversion</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>60</y>
+                  <width>173</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_10">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_2">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_5"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="histogramLayout">
+               <property name="title">
+                <string>Histogram  Equalisation</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>203</width>
+                  <height>79</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_5">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="checkBox_3">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="spinBox"/>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="label_2">
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="checkBox_4">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QCheckBox" name="checkBox_5">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="overexposureLayout">
+               <property name="title">
+                <string>Overexposure Detection</string>
+               </property>
+               <widget class="QCheckBox" name="checkBox_6">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>89</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>CheckBox</string>
+                </property>
+               </widget>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>60</y>
+                  <width>108</width>
+                  <height>27</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>TextLabel</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="spinBox_2"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="flipRotateLayout">
+               <property name="title">
+                <string>Flip and Rotatae</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>188</width>
+                  <height>53</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_12">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_7">
+                     <property name="text">
+                      <string>CheckBox</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_8">
+                     <property name="text">
+                      <string>CheckBox</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="comboBox_6"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="processingLayoutRHS">
+             <item>
+              <widget class="QGroupBox" name="stabilisationLayout">
+               <property name="title">
+                <string>Frame Stabilisation Mode</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>50</y>
+                  <width>323</width>
+                  <height>22</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QRadioButton" name="radioButton">
+                   <property name="text">
+                    <string>RadioButton</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_2">
+                   <property name="text">
+                    <string>RadioButton</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="radioButton_3">
+                   <property name="text">
+                    <string>RadioButton</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="croppingLayout">
+               <property name="title">
+                <string>Cropping</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>285</width>
+                  <height>86</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_8">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_9">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QGridLayout" name="gridLayout_7">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_6">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QSpinBox" name="spinBox_4"/>
+                   </item>
+                   <item row="1" column="4">
+                    <widget class="QSpinBox" name="spinBox_6"/>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_7">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="3">
+                    <widget class="QLabel" name="label_9">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="4">
+                    <widget class="QSpinBox" name="spinBox_5"/>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QSpinBox" name="spinBox_3"/>
+                   </item>
+                   <item row="0" column="3">
+                    <widget class="QLabel" name="label_8">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="resizeLayout">
+               <property name="title">
+                <string>Frame Resize (Reduce)</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>222</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_9">
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_10">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="checkBox_11">
+                   <property name="text">
+                    <string>CheckBox</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <item>
+                    <widget class="QLabel" name="label_10">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_7"/>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="label_11">
+                     <property name="text">
+                      <string>TextLabel</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox_8"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="qualityOptionsTab">
           <attribute name="title">
            <string>Quality Options</string>
           </attribute>
+          <layout class="QHBoxLayout" name="zzz1">
+           <item>
+            <layout class="QVBoxLayout" name="zzz2">
+             <item>
+              <widget class="QGroupBox" name="zzz3">
+               <property name="title">
+                <string>Binning</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="zzz4">
+               <property name="title">
+                <string>Raw Image File Options (DCRAW)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="groupBox">
+               <property name="title">
+                <string>GroupBox</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="zzz5">
+               <property name="title">
+                <string>Date/Time Extraction</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="zzz6">
+             <item>
+              <widget class="QGroupBox" name="zzz7">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="animationOptionsTab">
           <attribute name="title">
            <string>Animation Options</string>
           </attribute>
+          <layout class="QHBoxLayout" name="yy1">
+           <item>
+            <layout class="QVBoxLayout" name="yy2">
+             <item>
+              <widget class="QGroupBox" name="yy3">
+               <property name="title">
+                <string>Binning</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yy4">
+               <property name="title">
+                <string>Raw Image File Options (DCRAW)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yy5">
+               <property name="title">
+                <string>Date/Time Extraction</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="yy6">
+             <item>
+              <widget class="QGroupBox" name="yy7">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="outputOptionsTab">
           <attribute name="title">
            <string>Output Options</string>
           </attribute>
+          <layout class="QHBoxLayout" name="yyy1">
+           <item>
+            <layout class="QVBoxLayout" name="yyy2">
+             <item>
+              <widget class="QGroupBox" name="yyy3">
+               <property name="title">
+                <string>Binning</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yyy4">
+               <property name="title">
+                <string>Raw Image File Options (DCRAW)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yyy5">
+               <property name="title">
+                <string>Date/Time Extraction</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="yyy6">
+             <item>
+              <widget class="QGroupBox" name="yyy7">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yyy8">
+               <property name="title">
+                <string>SER File Options</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
          <widget class="QWidget" name="doProcessingTab">
           <attribute name="title">
            <string>Do Processing</string>
           </attribute>
+          <layout class="QHBoxLayout" name="ww1">
+           <item>
+            <layout class="QVBoxLayout" name="ww2">
+             <item>
+              <widget class="QGroupBox" name="ww3">
+               <property name="title">
+                <string>Binning</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="ww4">
+               <property name="title">
+                <string>Raw Image File Options (DCRAW)</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="ww5">
+               <property name="title">
+                <string>Date/Time Extraction</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="ww6">
+             <item>
+              <widget class="QGroupBox" name="ww7">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
          </widget>
         </widget>
        </item>
