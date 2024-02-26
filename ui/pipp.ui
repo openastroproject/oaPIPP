@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1020</width>
-    <height>825</height>
+    <height>777</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -2044,7 +2044,7 @@
                <property name="title">
                 <string>Quality Estimation</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -2110,7 +2110,7 @@
                <property name="title">
                 <string>Quality Algorithm</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <property name="geometry">
                  <rect>
                   <x>10</x>
@@ -2153,11 +2153,11 @@
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="zzz5">
+              <widget class="QGroupBox" name="qualityAlgorithmOptionsBox">
                <property name="title">
                 <string>Quality Algorithm Options</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -2215,7 +2215,7 @@
                  <rect>
                   <x>30</x>
                   <y>30</y>
-                  <width>89</width>
+                  <width>411</width>
                   <height>20</height>
                  </rect>
                 </property>
@@ -2235,12 +2235,52 @@
           </attribute>
           <layout class="QHBoxLayout" name="yy1">
            <item>
-            <layout class="QVBoxLayout" name="yy2">
+            <layout class="QVBoxLayout" name="animationOptionsLHS">
              <item>
               <widget class="QGroupBox" name="yy3">
                <property name="title">
                 <string>Forward Play</string>
                </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>263</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <widget class="QCheckBox" name="playForward">
+                   <property name="text">
+                    <string>Play all frames in forward order</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="pauseFInalForward">
+                   <property name="text">
+                    <string>Pause final frame of each forward play</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_16">
+                   <item>
+                    <widget class="QLabel" name="forwardPauseLabel">
+                     <property name="text">
+                      <string>Number of frame times to pause</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="forwardPauseFrames"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
@@ -2248,6 +2288,46 @@
                <property name="title">
                 <string>Reverse Play</string>
                </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>262</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_14">
+                 <item>
+                  <widget class="QCheckBox" name="playReverse">
+                   <property name="text">
+                    <string>Play all frames in reverse order</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="pauseFinalReverse">
+                   <property name="text">
+                    <string>Pause final frame of each reverse play</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <item>
+                    <widget class="QLabel" name="reversePauseLabel">
+                     <property name="text">
+                      <string>Number of frame times to pause</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="reversePauseFrames"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
@@ -2255,17 +2335,125 @@
                <property name="title">
                 <string>Complete Sequence Repeat</string>
                </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>40</y>
+                  <width>302</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_15">
+                 <item>
+                  <widget class="QCheckBox" name="repeatFrames">
+                   <property name="text">
+                    <string>Repeat all frames in sequence</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <item>
+                    <widget class="QLabel" name="repeatsLabel">
+                     <property name="text">
+                      <string>Number of complete sequence repeats</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="repeatCount"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="dontReverseFinal">
+                   <property name="text">
+                    <string>Do not reverse play in final repeat (AVI only)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="yy6">
+            <layout class="QVBoxLayout" name="animationOptionsRHS">
              <item>
               <widget class="QGroupBox" name="yy7">
                <property name="title">
                 <string>Output Settings Selected</string>
                </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>70</x>
+                  <y>40</y>
+                  <width>331</width>
+                  <height>171</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_11">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="outputFileTypeLabel">
+                   <property name="text">
+                    <string>Output file type</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="outputFileType">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="codecLabel">
+                   <property name="text">
+                    <string>Codec</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="codec">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="qualityLabel">
+                   <property name="text">
+                    <string>Quality</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="quality">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="fpsLabel">
+                   <property name="text">
+                    <string>Frames per second</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLabel" name="fps">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
@@ -2278,44 +2466,409 @@
           </attribute>
           <layout class="QHBoxLayout" name="yyy1">
            <item>
-            <layout class="QVBoxLayout" name="yyy2">
+            <layout class="QVBoxLayout" name="outputOptionsLHS">
              <item>
-              <widget class="QGroupBox" name="yyy3">
+              <widget class="QGroupBox" name="outputFormatBox">
                <property name="title">
                 <string>Output Format</string>
                </property>
+               <widget class="QWidget" name="layoutWidget">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>383</width>
+                  <height>88</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_12">
+                 <item row="0" column="0">
+                  <widget class="QRadioButton" name="outputAVI">
+                   <property name="text">
+                    <string>AVI</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QRadioButton" name="outputSER">
+                   <property name="text">
+                    <string>SER</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QRadioButton" name="outputBMP">
+                   <property name="text">
+                    <string>BMP</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QRadioButton" name="outputTIFF">
+                   <property name="text">
+                    <string>TIFF</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QRadioButton" name="outputFITS">
+                   <property name="text">
+                    <string>FITS</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QRadioButton" name="outputPNG">
+                   <property name="text">
+                    <string>PNG</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0" colspan="3">
+                  <widget class="QRadioButton" name="outputAnimGIF">
+                   <property name="text">
+                    <string>Animated GIF (8-bit mono/colour only)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="yyy4">
+              <widget class="QGroupBox" name="outputDirBox">
                <property name="title">
                 <string>Output Directory</string>
                </property>
+               <layout class="QVBoxLayout" name="yyyz6">
+                <item>
+                 <widget class="QLineEdit" name="lineEdit_2">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <layout class="QHBoxLayout" name="horizontalLayout_19">
+                  <item>
+                   <widget class="QPushButton" name="useDefaultOutputDir">
+                    <property name="text">
+                     <string>Use default</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item>
+                   <widget class="QPushButton" name="selectOutputDir">
+                    <property name="text">
+                     <string>Select directory</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="outputSubdirBox">
+                  <property name="title">
+                   <string>Output Subdirectory</string>
+                  </property>
+                  <layout class="QVBoxLayout" name="yyyx6">
+                   <item>
+                    <widget class="QCheckBox" name="createOutputSubdir">
+                     <property name="text">
+                      <string>Create subdirectory</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QHBoxLayout" name="horizontalLayout_20">
+                     <item>
+                      <widget class="QLabel" name="subdirNameLabel">
+                       <property name="text">
+                        <string>Subdirectory name</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="outputSubdirName">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="appendDateTime">
+                     <property name="text">
+                      <string>Append date &amp; time</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="yyy5">
+              <widget class="QGroupBox" name="prefixSuffixBox">
                <property name="title">
-                <string>Output Filename Prefix</string>
+                <string>Output Filename Prefix/Suffix</string>
                </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>20</y>
+                  <width>200</width>
+                  <height>62</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_13">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="outputFilePrefixLabel">
+                   <property name="text">
+                    <string>Prefix</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="outputFilePrefix"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="outputFileSuffixLabel">
+                   <property name="text">
+                    <string>Suffix</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="outputFileSuffix"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="channelSplittingBox">
+               <property name="title">
+                <string>Colour (RGB) Channel Splitting</string>
+               </property>
+               <widget class="QCheckBox" name="splitRGB">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>50</y>
+                  <width>171</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Split RGB channels</string>
+                </property>
+               </widget>
               </widget>
              </item>
             </layout>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="yyy6">
+            <layout class="QVBoxLayout" name="outputOptionsRHS">
              <item>
-              <widget class="QGroupBox" name="yyy7">
+              <widget class="QGroupBox" name="outputFrameDroppingBox">
                <property name="title">
-                <string>AVI File Options</string>
+                <string>Output Frame Dropping</string>
                </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>341</width>
+                  <height>27</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_21">
+                 <item>
+                  <widget class="QSpinBox" name="framesToDrop"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="droppedLabel">
+                   <property name="text">
+                    <string>Frames to drop after each frame is output</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
              <item>
-              <widget class="QGroupBox" name="yyy8">
+              <widget class="QGroupBox" name="aviFileOptionsBox">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>21</y>
+                  <width>441</width>
+                  <height>181</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_16">
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_24">
+                   <item>
+                    <widget class="QComboBox" name="outputCodec"/>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="codecLabel_2">
+                     <property name="text">
+                      <string>AVI codec</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="showCodec">
+                     <property name="text">
+                      <string>n/a</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_22">
+                   <item>
+                    <widget class="QLabel" name="outputQualityLabel">
+                     <property name="text">
+                      <string>Quality (1: lowest, 10: best)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="spinBox"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_23">
+                   <item>
+                    <widget class="QCheckBox" name="oldFormatAVI">
+                     <property name="text">
+                      <string>Generate old format AVI file</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="maxAVISize">
+                     <item>
+                      <property name="text">
+                       <string>4GB maximum size</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>2GB maximum size</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="safeSize">
+                   <property name="text">
+                    <string>Modify AVI frame width to safe size (DIB codec only)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="matchInputFrameRate">
+                   <property name="text">
+                    <string>Match input frame rate where possible</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_25">
+                   <item>
+                    <widget class="QSpinBox" name="defaultFrameRate"/>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="defaultFrameRateLabel_2">
+                     <property name="text">
+                      <string>Frame rate to use otherwise</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="winJuposBox">
                <property name="title">
                 <string>WinJUPOS Compatible Filenames</string>
                </property>
+               <widget class="QWidget" name="">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>264</width>
+                  <height>53</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_17">
+                 <item>
+                  <widget class="QCheckBox" name="winjuposNames">
+                   <property name="text">
+                    <string>Generate winJUPOS-compatible names</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_26">
+                   <item>
+                    <widget class="QLabel" name="filenameTimeLabel">
+                     <property name="text">
+                      <string>Time to use for filename</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QComboBox" name="filenameTime">
+                     <item>
+                      <property name="text">
+                       <string>Output frames mid-point time</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>Earlliest output frame time</string>
+                      </property>
+                     </item>
+                     <item>
+                      <property name="text">
+                       <string>First output frame time</string>
+                      </property>
+                     </item>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
               </widget>
              </item>
             </layout>
