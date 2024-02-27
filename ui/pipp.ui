@@ -21,7 +21,7 @@
        <item>
         <widget class="QTabWidget" name="outerTabWidget">
          <property name="currentIndex">
-          <number>6</number>
+          <number>0</number>
          </property>
          <widget class="QWidget" name="sourcesTab">
           <attribute name="title">
@@ -29,9 +29,9 @@
           </attribute>
           <layout class="QVBoxLayout" name="verticalLayout_5">
            <item>
-            <widget class="QTabWidget" name="tabWidget">
+            <widget class="QTabWidget" name="sourceFilesTabWidget">
              <property name="currentIndex">
-              <number>3</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="imagesTab">
               <attribute name="title">
@@ -112,7 +112,7 @@
                    <property name="title">
                     <string>Multiple Source Files</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_01">
                     <property name="geometry">
                      <rect>
                       <x>20</x>
@@ -151,7 +151,7 @@
                    <property name="title">
                     <string>Optimise Options For</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_02">
                     <property name="geometry">
                      <rect>
                       <x>10</x>
@@ -267,7 +267,7 @@
                    <property name="title">
                     <string>Dark Frame Options</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_03">
                     <property name="geometry">
                      <rect>
                       <x>20</x>
@@ -303,7 +303,7 @@
                    <property name="title">
                     <string>Hot Pixel Options</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_04">
                     <property name="geometry">
                      <rect>
                       <x>10</x>
@@ -404,7 +404,7 @@
                    <property name="title">
                     <string>Flat Frame Options</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_05">
                     <property name="geometry">
                      <rect>
                       <x>10</x>
@@ -495,7 +495,7 @@
                    <property name="title">
                     <string>Flat Dark Frame Options</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_06">
                     <property name="geometry">
                      <rect>
                       <x>10</x>
@@ -546,7 +546,7 @@
                <property name="title">
                 <string>Binning</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_07">
                 <property name="geometry">
                  <rect>
                   <x>50</x>
@@ -622,7 +622,7 @@
                <property name="title">
                 <string>Raw Image File Options (DCRAW)</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_08">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -788,7 +788,7 @@
                <property name="title">
                 <string>Date/Time Extraction</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_09">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -817,7 +817,7 @@
                    <property name="title">
                     <string>Input Filename Date/Time Format</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_10">
                     <property name="geometry">
                      <rect>
                       <x>10</x>
@@ -958,7 +958,7 @@
                <property name="title">
                 <string>SER File Options</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_11">
                 <property name="geometry">
                  <rect>
                   <x>10</x>
@@ -1047,7 +1047,7 @@
                <property name="title">
                 <string>Input Frame Range</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_12">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1125,7 +1125,7 @@
                <property name="title">
                 <string>Input Frame Dropping</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_13">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -1186,7 +1186,7 @@
                <property name="title">
                 <string>Colour Debayer</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_14">
                 <property name="geometry">
                  <rect>
                   <x>10</x>
@@ -1299,7 +1299,7 @@
                <property name="title">
                 <string>Input Gain and Gamma Correction</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_15">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -1361,7 +1361,7 @@
                <property name="title">
                 <string>Monochrome Conversion</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_16">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1426,7 +1426,7 @@
                <property name="title">
                 <string>Histogram  Equalisation</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_17">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1479,7 +1479,7 @@
                <property name="title">
                 <string>Overexposure Detection</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_18">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1524,7 +1524,7 @@
                <property name="title">
                 <string>Flip and Rotatae</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_19">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1595,7 +1595,7 @@
                <property name="title">
                 <string>Frame Stabilisation Mode</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_20">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1660,7 +1660,7 @@
                   <property name="title">
                    <string>Object Detection Parameters</string>
                   </property>
-                  <widget class="QWidget" name="layoutWidget">
+                  <widget class="QWidget" name="layoutWidget_21">
                    <property name="geometry">
                     <rect>
                      <x>10</x>
@@ -1685,7 +1685,7 @@
                      </layout>
                     </item>
                     <item>
-                     <widget class="QGroupBox" name="objDetLayout3">
+                     <widget class="QGroupBox" name="objDetLayout6">
                       <property name="title">
                        <string>Object Detection Threshold</string>
                       </property>
@@ -1737,7 +1737,7 @@
                <property name="title">
                 <string>Surface Stabilisation</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_22">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1766,7 +1766,7 @@
                    <property name="title">
                     <string>Anchor Feature Box (AFB)</string>
                    </property>
-                   <widget class="QWidget" name="layoutWidget">
+                   <widget class="QWidget" name="layoutWidget_23">
                     <property name="geometry">
                      <rect>
                       <x>10</x>
@@ -1775,7 +1775,7 @@
                       <height>84</height>
                      </rect>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_8">
+                    <layout class="QGridLayout" name="gridLayout_25">
                      <item row="0" column="0">
                       <widget class="QLabel" name="anchorXLabel">
                        <property name="text">
@@ -1906,7 +1906,7 @@
                <property name="title">
                 <string>Cropping</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_24">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -1976,7 +1976,7 @@
                <property name="title">
                 <string>Frame Resize (Reduce)</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_25">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2044,7 +2044,7 @@
                <property name="title">
                 <string>Quality Estimation</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_26">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -2110,7 +2110,7 @@
                <property name="title">
                 <string>Quality Algorithm</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_27">
                 <property name="geometry">
                  <rect>
                   <x>10</x>
@@ -2157,7 +2157,7 @@
                <property name="title">
                 <string>Quality Algorithm Options</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_28">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -2241,7 +2241,7 @@
                <property name="title">
                 <string>Forward Play</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_29">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2288,7 +2288,7 @@
                <property name="title">
                 <string>Reverse Play</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_30">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2335,7 +2335,7 @@
                <property name="title">
                 <string>Complete Sequence Repeat</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_31">
                 <property name="geometry">
                  <rect>
                   <x>30</x>
@@ -2386,7 +2386,7 @@
                <property name="title">
                 <string>Output Settings Selected</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_32">
                 <property name="geometry">
                  <rect>
                   <x>70</x>
@@ -2472,7 +2472,7 @@
                <property name="title">
                 <string>Output Format</string>
                </property>
-               <widget class="QWidget" name="layoutWidget">
+               <widget class="QWidget" name="layoutWidget_33">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2621,7 +2621,7 @@
                <property name="title">
                 <string>Output Filename Prefix/Suffix</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget_34">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2684,7 +2684,7 @@
                <property name="title">
                 <string>Output Frame Dropping</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget_35">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2713,7 +2713,7 @@
                <property name="title">
                 <string>AVI File Options</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget_36">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -2820,12 +2820,12 @@
                <property name="title">
                 <string>WinJUPOS Compatible Filenames</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget_37">
                 <property name="geometry">
                  <rect>
                   <x>10</x>
                   <y>30</y>
-                  <width>264</width>
+                  <width>365</width>
                   <height>53</height>
                  </rect>
                 </property>
@@ -2887,7 +2887,7 @@
                <property name="title">
                 <string>Control</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget">
                 <property name="geometry">
                  <rect>
                   <x>50</x>
@@ -2953,7 +2953,7 @@
                <property name="title">
                 <string>Processing</string>
                </property>
-               <widget class="QWidget" name="">
+               <widget class="QWidget" name="layoutWidget_40">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -3038,7 +3038,7 @@
      </widget>
     </item>
    </layout>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget_38">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -3049,7 +3049,7 @@
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout"/>
    </widget>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QWidget" name="layoutWidget_39">
     <property name="geometry">
      <rect>
       <x>0</x>
