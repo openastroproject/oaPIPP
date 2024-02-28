@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AnimationOptions</class>
+         <widget class="QWidget" name="animationOptionsTab">
+          <attribute name="title">
+           <string>Animation Options</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="yy1">
+           <item>
+            <layout class="QVBoxLayout" name="animationOptionsLHS">
+             <item>
+              <widget class="QGroupBox" name="yy3">
+               <property name="title">
+                <string>Forward Play</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_29">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>263</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_13">
+                 <item>
+                  <widget class="QCheckBox" name="playForward">
+                   <property name="text">
+                    <string>Play all frames in forward order</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="pauseFInalForward">
+                   <property name="text">
+                    <string>Pause final frame of each forward play</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_16">
+                   <item>
+                    <widget class="QLabel" name="forwardPauseLabel">
+                     <property name="text">
+                      <string>Number of frame times to pause</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="forwardPauseFrames"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yy4">
+               <property name="title">
+                <string>Reverse Play</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_30">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>262</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_14">
+                 <item>
+                  <widget class="QCheckBox" name="playReverse">
+                   <property name="text">
+                    <string>Play all frames in reverse order</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="pauseFinalReverse">
+                   <property name="text">
+                    <string>Pause final frame of each reverse play</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_17">
+                   <item>
+                    <widget class="QLabel" name="reversePauseLabel">
+                     <property name="text">
+                      <string>Number of frame times to pause</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="reversePauseFrames"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="yy5">
+               <property name="title">
+                <string>Complete Sequence Repeat</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_31">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>40</y>
+                  <width>302</width>
+                  <height>81</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_15">
+                 <item>
+                  <widget class="QCheckBox" name="repeatFrames">
+                   <property name="text">
+                    <string>Repeat all frames in sequence</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_18">
+                   <item>
+                    <widget class="QLabel" name="repeatsLabel">
+                     <property name="text">
+                      <string>Number of complete sequence repeats</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="repeatCount"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="dontReverseFinal">
+                   <property name="text">
+                    <string>Do not reverse play in final repeat (AVI only)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="animationOptionsRHS">
+             <item>
+              <widget class="QGroupBox" name="yy7">
+               <property name="title">
+                <string>Output Settings Selected</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_32">
+                <property name="geometry">
+                 <rect>
+                  <x>70</x>
+                  <y>40</y>
+                  <width>331</width>
+                  <height>171</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_11">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="outputFileTypeLabel">
+                   <property name="text">
+                    <string>Output file type</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLabel" name="outputFileType">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="codecLabel">
+                   <property name="text">
+                    <string>Codec</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLabel" name="codec">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="qualityLabel">
+                   <property name="text">
+                    <string>Quality</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLabel" name="quality">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="fpsLabel">
+                   <property name="text">
+                    <string>Frames per second</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLabel" name="fps">
+                   <property name="text">
+                    <string>n/a</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>QualityOptions</class>
+         <widget class="QWidget" name="qualityOptionsTab">
+          <attribute name="title">
+           <string>Quality Options</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="zzz1">
+           <item>
+            <layout class="QVBoxLayout" name="qualityOptionsLHS">
+             <item>
+              <widget class="QGroupBox" name="qualityEstimationBox">
+               <property name="title">
+                <string>Quality Estimation</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_26">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>30</y>
+                  <width>219</width>
+                  <height>48</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <item>
+                  <widget class="QCheckBox" name="qualityEstimation">
+                   <property name="text">
+                    <string>Enable quality estimation</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="reorderByQuality">
+                   <property name="text">
+                    <string>Reorder frames in quality order</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="qualityLimitingBox">
+               <property name="title">
+                <string>Quality Limiting</string>
+               </property>
+               <layout class="QGridLayout" name="gridLayout_9">
+                <item row="0" column="0">
+                 <widget class="QCheckBox" name="enableQualityLimit">
+                  <property name="text">
+                   <string>Only keep the best quality frames</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QComboBox" name="keepTypeSelector">
+                  <item>
+                   <property name="text">
+                    <string>Number of frames to keep</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Percentage of frames to keep</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="numberToKeep"/>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="qualityAlgorithmBox">
+               <property name="title">
+                <string>Quality Algorithm</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_27">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>231</width>
+                  <height>100</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_12">
+                 <item>
+                  <widget class="QRadioButton" name="pippQuality">
+                   <property name="text">
+                    <string>Default PIPP quality algorithm</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="ninoxQuality">
+                   <property name="text">
+                    <string>Original Ninox quality algorithm</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="peakHistogramQuality">
+                   <property name="text">
+                    <string>Peak histogram quality algorithm</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QRadioButton" name="brightnessQuality">
+                   <property name="text">
+                    <string>Total brightness algorithm</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="qualityAlgorithmOptionsBox">
+               <property name="title">
+                <string>Quality Algorithm Options</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_28">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>20</y>
+                  <width>251</width>
+                  <height>89</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_10">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="minSubsampleLabel">
+                   <property name="text">
+                    <string>Minimum subsample value</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QSpinBox" name="minSubsample"/>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="maxSubsampleLabel">
+                   <property name="text">
+                    <string>Maximum subsample value</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QSpinBox" name="maxSubsample"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="subsampleIncrementLabel">
+                   <property name="text">
+                    <string>Subsample increment value</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QSpinBox" name="subsampleIncrement"/>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="qualityOptionsRHS">
+             <item>
+              <widget class="QGroupBox" name="qualityWeightingBox">
+               <property name="title">
+                <string>Quality Weighting</string>
+               </property>
+               <widget class="QCheckBox" name="qualityWeighting">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>30</y>
+                  <width>411</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="text">
+                 <string>Enable quality weighting</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+ <resources/>
+ <connections/>
+</ui>
