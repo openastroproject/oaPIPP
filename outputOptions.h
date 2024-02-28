@@ -25,16 +25,22 @@
  *
  *****************************************************************************/
 
-
 #pragma once
 
-#include "ui_pipp.h"
+#include <QWidget>
 
-class OutputOptions : public Ui_MainWindow
+namespace Ui {
+  class OutputOptions;
+}
+
+class OutputOptions : public QWidget
 {
-  public:
-    OutputOptions ( void );
-    ~OutputOptions();
+	Q_OBJECT
 
-		void		initialise ( void );
+  public:
+    explicit OutputOptions ( QWidget* parent = nullptr );
+    virtual ~OutputOptions();
+
+	private:
+		Ui::OutputOptions*		ui;
 };

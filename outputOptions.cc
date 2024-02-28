@@ -29,22 +29,22 @@
 #include <source_location>
 
 #include "outputOptions.h"
+#include "ui_outputOptions.h"
 
-OutputOptions::OutputOptions ( void )
+OutputOptions::OutputOptions ( QWidget* parent ) :
+	QWidget ( parent ),
+	ui ( new Ui::OutputOptions )
 {
+	ui->setupUi ( this );
+
+  QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
 }
 
 
 OutputOptions::~OutputOptions ( void )
 {
-}
-
-
-void
-OutputOptions::initialise ( void )
-{
-	QString err = std::source_location::current().function_name();
-  err += " not yet implemented";
-
-  qDebug() << err;
+	delete ui;
 }

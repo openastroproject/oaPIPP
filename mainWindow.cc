@@ -27,6 +27,8 @@
 
 #include "oapipp_common.h"
 
+#include <QtWidgets>
+
 #include "ui_pipp.h"
 #include "mainWindow.h"
 
@@ -92,7 +94,7 @@ MainWindow::initialise ( void )
 	ui->outerTabWidget->addTab ( animationOptions, tr ( "Animation Options" ));
 
 	outputOptions = new OutputOptions;
-	outputOptions->initialise();
+	ui->outerTabWidget->addTab ( outputOptions, tr ( "Output Options" ));
 
 	doProcessing = new DoProcessing;
 	doProcessing->initialise();
