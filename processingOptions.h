@@ -25,16 +25,22 @@
  *
  *****************************************************************************/
 
-
 #pragma once
 
-#include "ui_pipp.h"
+#include <QWidget>
 
-class ProcessingOptions : public Ui_MainWindow
+namespace Ui {
+	class ProcessingOptions;
+}
+
+class ProcessingOptions : public QWidget
 {
-  public:
-    ProcessingOptions ( void );
-    ~ProcessingOptions();
+	Q_OBJECT
 
-		void		initialise ( void );
+  public:
+    explicit ProcessingOptions ( QWidget* parent = nullptr );
+    virtual ~ProcessingOptions();
+
+	private:
+		Ui::ProcessingOptions*		ui;
 };

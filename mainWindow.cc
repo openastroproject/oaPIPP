@@ -83,7 +83,7 @@ MainWindow::initialise ( void )
 	ui->outerTabWidget->addTab ( inputOptions, tr ( "Input Options" ));
 
 	processingOptions = new ProcessingOptions;
-	processingOptions->initialise();
+	ui->outerTabWidget->addTab ( processingOptions, tr ( "Processing Options" ));
 
 	qualityOptions = new QualityOptions;
 	qualityOptions->initialise();
@@ -101,6 +101,7 @@ MainWindow::initialise ( void )
 
 MainWindow::~MainWindow ( void )
 {
+	delete doProcessing;
 	delete outputOptions;
 	delete animationOptions;
 	delete qualityOptions;

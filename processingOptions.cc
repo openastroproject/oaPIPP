@@ -29,22 +29,22 @@
 #include <source_location>
 
 #include "processingOptions.h"
+#include "ui_processingOptions.h"
 
-ProcessingOptions::ProcessingOptions ( void )
+ProcessingOptions::ProcessingOptions ( QWidget* parent ) :
+	QWidget ( parent ),
+	ui ( new Ui::ProcessingOptions )
 {
+	ui->setupUi ( this );
+
+	QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
 }
 
 
 ProcessingOptions::~ProcessingOptions ( void )
 {
-}
-
-
-void
-ProcessingOptions::initialise ( void )
-{
-	QString err = std::source_location::current().function_name();
-  err += " not yet implemented";
-
-  qDebug() << err;
+	delete ui;
 }
