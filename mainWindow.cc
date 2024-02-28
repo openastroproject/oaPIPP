@@ -89,7 +89,7 @@ MainWindow::initialise ( void )
 	ui->outerTabWidget->addTab ( qualityOptions, tr ( "Quality Options" ));
 
 	animationOptions = new AnimationOptions;
-	animationOptions->initialise();
+	ui->outerTabWidget->addTab ( animationOptions, tr ( "Animation Options" ));
 
 	outputOptions = new OutputOptions;
 	outputOptions->initialise();

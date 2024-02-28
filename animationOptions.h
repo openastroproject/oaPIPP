@@ -25,16 +25,22 @@
  *
  *****************************************************************************/
 
-
 #pragma once
 
-#include "ui_pipp.h"
+#include <QWidget>
 
-class AnimationOptions : public Ui_MainWindow
+namespace Ui {
+	class AnimationOptions;
+}
+
+class AnimationOptions : public QWidget
 {
-  public:
-    AnimationOptions ( void );
-    ~AnimationOptions();
+	Q_OBJECT
 
-		void		initialise ( void );
+  public:
+    explicit AnimationOptions ( QWidget* parent = nullptr );
+    virtual ~AnimationOptions();
+
+	private:
+		Ui::AnimationOptions*		ui;
 };

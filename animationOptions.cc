@@ -29,22 +29,22 @@
 #include <source_location>
 
 #include "animationOptions.h"
+#include "ui_animationOptions.h"
 
-AnimationOptions::AnimationOptions ( void )
+AnimationOptions::AnimationOptions ( QWidget* parent ) :
+	QWidget ( parent ),
+	ui ( new Ui::AnimationOptions )
 {
+	ui->setupUi ( this );
+
+	QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
 }
 
 
 AnimationOptions::~AnimationOptions ( void )
 {
-}
-
-
-void
-AnimationOptions::initialise ( void )
-{
-  QString err = std::source_location::current().function_name();
-	err += " not yet implemented";
-
-	qDebug() << err;
+	delete ui;
 }
