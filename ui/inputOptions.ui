@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InputOptions</class>
+         <widget class="QWidget" name="inputOptionsTab">
+          <attribute name="title">
+           <string>Input Options</string>
+          </attribute>
+          <layout class="QHBoxLayout" name="inputOptionsLayout">
+					<item>
+            <layout class="QVBoxLayout" name="inputLHS">
+             <item>
+              <widget class="QGroupBox" name="inputBinningLayout">
+               <property name="title">
+                <string>Binning</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_07">
+                <property name="geometry">
+                 <rect>
+                  <x>50</x>
+                  <y>30</y>
+                  <width>252</width>
+                  <height>54</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_2">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="binningLabel">
+                   <property name="text">
+                    <string>Binning</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="binningSelector">
+                   <item>
+                    <property name="text">
+                     <string>Binning Disabled</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>2x2 Binning</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>3x3 Binning</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>4x4 Binning</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>5x5 Binning</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="calcLabel">
+                   <property name="text">
+                    <string>Binning Calculation</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QComboBox" name="binningCalcSelector">
+                   <item>
+                    <property name="text">
+                     <string>Average of Pixels</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sum of PIxels</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputRawImageLayout">
+               <property name="title">
+                <string>Raw Image File Options (DCRAW)</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_08">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>30</y>
+                  <width>530</width>
+                  <height>135</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_3">
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="rawHotPixelFilterBox">
+                   <property name="text">
+                    <string>Enable raw image hot pixel filter</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QCheckBox" name="debayerRawBox">
+                   <property name="text">
+                    <string>Debayer raw image files</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QComboBox" name="comboBox">
+                   <item>
+                    <property name="text">
+                     <string>Bilinear (fastest)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>VNG (Variable Number of Gradients)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>PPG (Patterned Pixel Grouping)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>AHD (Adaptive Homogeneity-Directed)</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="algorithmLabel">
+                   <property name="text">
+                    <string>Debayer Algoriithm</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="1">
+                  <widget class="QComboBox" name="comboBox_2">
+                   <item>
+                    <property name="text">
+                     <string>Raw Camera Sensor Colour (Fastest)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>sRGB D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Adobe RGB (1998) D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Wide Gamut RGB D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Kodak Pro Photo RGB D65</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>XYZ</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>ACES</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="colourSpaceLabel">
+                   <property name="text">
+                    <string>Output Colour Space</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="1">
+                  <widget class="QComboBox" name="comboBox_3">
+                   <item>
+                    <property name="text">
+                     <string>Clip all highlights to solid white</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Leave highloights unclipped (fastest)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Blend clipped and unclipped values together</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=3)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=4)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=5)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=6)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=7)</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Reconstruct highlights (-H=8)</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="highlightLabel">
+                   <property name="text">
+                    <string>Highlight Recovery Type</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputDateTimeLayout">
+               <property name="title">
+                <string>Date/Time Extraction</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_09">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>20</y>
+                  <width>377</width>
+                  <height>132</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_2">
+                 <item>
+                  <widget class="QCheckBox" name="dateFromFilenameBox">
+                   <property name="text">
+                    <string>Extract FileStart Date/Time from Filename</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="utcBox">
+                   <property name="text">
+                    <string>Convert from Local Time to Universal TIme</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QGroupBox" name="timeFormatLayout">
+                   <property name="title">
+                    <string>Input Filename Date/Time Format</string>
+                   </property>
+                   <widget class="QWidget" name="layoutWidget_10">
+                    <property name="geometry">
+                     <rect>
+                      <x>10</x>
+                      <y>0</y>
+                      <width>332</width>
+                      <height>29</height>
+                     </rect>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout_5">
+                     <item>
+                      <widget class="QComboBox" name="formatBox">
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 1</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 1 (with count)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 2</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Firecapture 2 (with count)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>IC Capture</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Sharpcap</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>WinJUPOS</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>WinJUPOS (old style)</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>wxAstroCapture</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Custom 1</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Custom 2</string>
+                        </property>
+                       </item>
+                       <item>
+                        <property name="text">
+                         <string>Custom 3</string>
+                        </property>
+                       </item>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineEdit"/>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="rememberBox">
+                       <property name="text">
+                        <string>Remember</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="horizontalLayout_6">
+                   <item>
+                    <widget class="QSpinBox" name="frameRateBox"/>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="frameRateLabel">
+                     <property name="text">
+                      <string>Frames Per Second (for SER files without timestamps)</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="inputRHS">
+             <property name="sizeConstraint">
+              <enum>QLayout::SetDefaultConstraint</enum>
+             </property>
+             <item>
+              <widget class="QGroupBox" name="inputAVIOptionsLayout">
+               <property name="title">
+                <string>AVI File Options</string>
+               </property>
+               <widget class="QCheckBox" name="Y800Box">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>30</y>
+                  <width>251</width>
+                  <height>20</height>
+                 </rect>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Use strict Y800 decoding rather than Imaging Source compatible Y800 decoding.  If this is selected by accident then pixel values outside the range [16,235] will be clipped&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>Decode Y800 codec frames strictly</string>
+                </property>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputSEROptionsLayout">
+               <property name="title">
+                <string>SER File Options</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_11">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>30</y>
+                  <width>217</width>
+                  <height>25</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="serOptionsLabel">
+                   <property name="text">
+                    <string>Pixel Depth</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="serOptions">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <item>
+                    <property name="text">
+                     <string>As SER File Header</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>16 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>15 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>14 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>13 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>12 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>11 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>10 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>9 bits per pixel</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>8 bits per pixel</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputFrameRangeLayout">
+               <property name="toolTip">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This control limits the set of frames that are processed from the input frames.  The frames processed can be specified as a range or as the number of frames processed from the centre of the set of input frames&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="title">
+                <string>Input Frame Range</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_12">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>10</y>
+                  <width>346</width>
+                  <height>129</height>
+                 </rect>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_4">
+                 <item row="0" column="1">
+                  <widget class="QComboBox" name="whichFrames">
+                   <item>
+                    <property name="text">
+                     <string>Start frame to end frame</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Frames from centre of video</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <layout class="QHBoxLayout" name="frameLimitLayout2">
+                   <item>
+                    <widget class="QLabel" name="frameEndLabel">
+                     <property name="text">
+                      <string>Last frame</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="frameEnd"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QSpinBox" name="noOfFramesBox"/>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QCheckBox" name="limitFrameRange">
+                   <property name="text">
+                    <string>Limit Frame Range</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <layout class="QHBoxLayout" name="frameLimitLayout1">
+                   <item>
+                    <widget class="QLabel" name="frameFromLabel">
+                     <property name="text">
+                      <string>First frame</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="frameStart"/>
+                   </item>
+                  </layout>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="noOfFramesLabel">
+                   <property name="text">
+                    <string>Number of frames</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputFrameDroppingLayout">
+               <property name="title">
+                <string>Input Frame Dropping</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_13">
+                <property name="geometry">
+                 <rect>
+                  <x>30</x>
+                  <y>50</y>
+                  <width>294</width>
+                  <height>27</height>
+                 </rect>
+                </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QSpinBox" name="droppedFramesBox"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="droppedFramesLabel">
+                   <property name="text">
+                    <string>Frames to drop after each frame is input</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputFrameColourLayout">
+               <property name="title">
+                <string>Input Frame Colour/Monochrome</string>
+               </property>
+               <widget class="QComboBox" name="comboBox_4">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>40</y>
+                  <width>76</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Autodetect</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Monochrome</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Colour</string>
+                 </property>
+                </item>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputDebayerLayout">
+               <property name="title">
+                <string>Colour Debayer</string>
+               </property>
+               <widget class="QWidget" name="layoutWidget_14">
+                <property name="geometry">
+                 <rect>
+                  <x>10</x>
+                  <y>20</y>
+                  <width>418</width>
+                  <height>48</height>
+                 </rect>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6">
+                 <item>
+                  <widget class="QCheckBox" name="debayerMono">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable colour debayering for any file format. File formats that are known to contain raw image data with a bayer pattern have their own debayer controls  below&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="text">
+                    <string>Debyer monochrome frames</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QCheckBox" name="protectBayer">
+                   <property name="text">
+                    <string>Protect bayer pattern when centering/cropping (do not debayer)</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </widget>
+             </item>
+             <item>
+              <widget class="QGroupBox" name="inputDebayerOptionsLayout">
+               <property name="title">
+                <string>Colour Debayer Options</string>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <item>
+                 <widget class="QLabel" name="algorithmLabel_2">
+                  <property name="text">
+                   <string>Debayer Algorithm</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="debayAlgorithm">
+                  <item>
+                   <property name="text">
+                    <string>Bilinear</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>HQ Linear</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>Smooth Hue</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="patternLabel">
+                  <property name="text">
+                   <string>Bayer pattern</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QComboBox" name="bayerPattern">
+                  <item>
+                   <property name="text">
+                    <string>GBRG</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>BGGR</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>RGGB</string>
+                   </property>
+                  </item>
+                  <item>
+                   <property name="text">
+                    <string>GRBG</string>
+                   </property>
+                  </item>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+ <resources/>
+ <connections/>
+</ui>
