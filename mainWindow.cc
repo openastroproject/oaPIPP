@@ -86,7 +86,7 @@ MainWindow::initialise ( void )
 	ui->outerTabWidget->addTab ( processingOptions, tr ( "Processing Options" ));
 
 	qualityOptions = new QualityOptions;
-	qualityOptions->initialise();
+	ui->outerTabWidget->addTab ( qualityOptions, tr ( "Quality Options" ));
 
 	animationOptions = new AnimationOptions;
 	animationOptions->initialise();

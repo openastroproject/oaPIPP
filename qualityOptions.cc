@@ -29,22 +29,22 @@
 #include <source_location>
 
 #include "qualityOptions.h"
+#include "ui_qualityOptions.h"
 
-QualityOptions::QualityOptions ( void )
+QualityOptions::QualityOptions ( QWidget* parent ) :
+	QWidget ( parent ),
+	ui ( new Ui::QualityOptions )
 {
+	ui->setupUi ( this );
+
+	QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
 }
 
 
 QualityOptions::~QualityOptions ( void )
 {
-}
-
-
-void
-QualityOptions::initialise ( void )
-{
-	QString err = std::source_location::current().function_name();
-  err += " not yet implemented";
-
-  qDebug() << err;
+	delete ui;
 }

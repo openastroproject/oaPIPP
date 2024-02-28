@@ -25,16 +25,22 @@
  *
  *****************************************************************************/
 
-
 #pragma once
 
-#include "ui_pipp.h"
+#include <QWidget>
 
-class QualityOptions : public Ui_MainWindow
+namespace Ui {
+	class QualityOptions;
+}
+
+class QualityOptions : public QWidget
 {
-  public:
-    QualityOptions ( void );
-    ~QualityOptions();
+	Q_OBJECT
 
-		void		initialise ( void );
+  public:
+    explicit QualityOptions ( QWidget* parent = nullptr );
+    virtual ~QualityOptions();
+
+	private:
+		Ui::QualityOptions*		ui;
 };
