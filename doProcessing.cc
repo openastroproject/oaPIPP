@@ -29,22 +29,22 @@
 #include <source_location>
 
 #include "doProcessing.h"
+#include "ui_doProcessing.h"
 
-DoProcessing::DoProcessing ( void )
+DoProcessing::DoProcessing ( QWidget* parent  ) :
+	QWidget ( parent ),
+	ui ( new Ui::DoProcessing )
 {
+	ui->setupUi ( this );
+
+  QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
 }
 
 
 DoProcessing::~DoProcessing ( void )
 {
-}
-
-
-void
-DoProcessing::initialise ( void )
-{
-	  QString err = std::source_location::current().function_name();
-  err += " not yet implemented";
-
-  qDebug() << err;
+	delete ui;
 }

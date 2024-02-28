@@ -97,7 +97,7 @@ MainWindow::initialise ( void )
 	ui->outerTabWidget->addTab ( outputOptions, tr ( "Output Options" ));
 
 	doProcessing = new DoProcessing;
-	doProcessing->initialise();
+	ui->outerTabWidget->addTab ( doProcessing, tr ( "Do Processing" ));
 }
 
 

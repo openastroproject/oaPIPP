@@ -27,6 +27,8 @@
 
 #pragma once
 
+#include <QtWidgets>
+
 #include "sourceFiles.h"
 #include "inputOptions.h"
 #include "processingOptions.h"

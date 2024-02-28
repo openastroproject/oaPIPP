@@ -25,16 +25,22 @@
  *
  *****************************************************************************/
 
-
 #pragma once
 
-#include "ui_pipp.h"
+#include <QWidget>
 
-class DoProcessing : public Ui_MainWindow
+namespace Ui {
+  class DoProcessing;
+}
+
+class DoProcessing : public QWidget
 {
-  public:
-    DoProcessing ( void );
-    ~DoProcessing();
+	Q_OBJECT
 
-		void		initialise ( void );
+  public:
+    explicit DoProcessing ( QWidget* parent = nullptr );
+    virtual ~DoProcessing();
+
+	private:
+		Ui::DoProcessing*		ui;
 };
