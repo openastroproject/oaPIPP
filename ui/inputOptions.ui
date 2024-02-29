@@ -67,7 +67,7 @@
                   </widget>
                  </item>
                  <item row="1" column="1">
-                  <widget class="QComboBox" name="binningCalcSelector">
+                  <widget class="QComboBox" name="binningMethod">
                    <item>
                     <property name="text">
                      <string>Average of Pixels</string>
@@ -100,21 +100,21 @@
                 </property>
                 <layout class="QGridLayout" name="gridLayout_3">
                  <item row="0" column="0">
-                  <widget class="QCheckBox" name="rawHotPixelFilterBox">
+                  <widget class="QCheckBox" name="rawHotPixelFilter">
                    <property name="text">
                     <string>Enable raw image hot pixel filter</string>
                    </property>
                   </widget>
                  </item>
                  <item row="1" column="0">
-                  <widget class="QCheckBox" name="debayerRawBox">
+                  <widget class="QCheckBox" name="debayerRaw">
                    <property name="text">
                     <string>Debayer raw image files</string>
                    </property>
                   </widget>
                  </item>
                  <item row="3" column="1">
-                  <widget class="QComboBox" name="comboBox">
+                  <widget class="QComboBox" name="debayerRawMethod">
                    <item>
                     <property name="text">
                      <string>Bilinear (fastest)</string>
@@ -140,12 +140,12 @@
                  <item row="3" column="0">
                   <widget class="QLabel" name="algorithmLabel">
                    <property name="text">
-                    <string>Debayer Algoriithm</string>
+                    <string>Debayer Algorithm</string>
                    </property>
                   </widget>
                  </item>
                  <item row="4" column="1">
-                  <widget class="QComboBox" name="comboBox_2">
+                  <widget class="QComboBox" name="colourSpace">
                    <item>
                     <property name="text">
                      <string>Raw Camera Sensor Colour (Fastest)</string>
@@ -191,7 +191,7 @@
                   </widget>
                  </item>
                  <item row="5" column="1">
-                  <widget class="QComboBox" name="comboBox_3">
+                  <widget class="QComboBox" name="highlightRecoveryMethod">
                    <item>
                     <property name="text">
                      <string>Clip all highlights to solid white</string>
@@ -266,14 +266,14 @@
                 </property>
                 <layout class="QVBoxLayout" name="verticalLayout_2">
                  <item>
-                  <widget class="QCheckBox" name="dateFromFilenameBox">
+                  <widget class="QCheckBox" name="dateFromFilename">
                    <property name="text">
                     <string>Extract FileStart Date/Time from Filename</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QCheckBox" name="utcBox">
+                  <widget class="QCheckBox" name="convertToUTC">
                    <property name="text">
                     <string>Convert from Local Time to Universal TIme</string>
                    </property>
@@ -295,7 +295,7 @@
                     </property>
                     <layout class="QHBoxLayout" name="horizontalLayout_5">
                      <item>
-                      <widget class="QComboBox" name="formatBox">
+                      <widget class="QComboBox" name="filenameFormat">
                        <item>
                         <property name="text">
                          <string>Firecapture 1</string>
@@ -359,10 +359,10 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit"/>
+                      <widget class="QLineEdit" name="filenameTemplate"/>
                      </item>
                      <item>
-                      <widget class="QCheckBox" name="rememberBox">
+                      <widget class="QCheckBox" name="rememberFormat">
                        <property name="text">
                         <string>Remember</string>
                        </property>
@@ -375,7 +375,7 @@
                  <item>
                   <layout class="QHBoxLayout" name="horizontalLayout_6">
                    <item>
-                    <widget class="QSpinBox" name="frameRateBox"/>
+                    <widget class="QSpinBox" name="serFrameRate"/>
                    </item>
                    <item>
                     <widget class="QLabel" name="frameRateLabel">
@@ -402,7 +402,7 @@
                <property name="title">
                 <string>AVI File Options</string>
                </property>
-               <widget class="QCheckBox" name="Y800Box">
+               <widget class="QCheckBox" name="strictY800">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -603,7 +603,7 @@
                 </property>
                 <layout class="QHBoxLayout" name="horizontalLayout_4">
                  <item>
-                  <widget class="QSpinBox" name="droppedFramesBox"/>
+                  <widget class="QSpinBox" name="droppedFrames"/>
                  </item>
                  <item>
                   <widget class="QLabel" name="droppedFramesLabel">
@@ -621,7 +621,7 @@
                <property name="title">
                 <string>Input Frame Colour/Monochrome</string>
                </property>
-               <widget class="QComboBox" name="comboBox_4">
+               <widget class="QComboBox" name="inputColourType">
                 <property name="geometry">
                  <rect>
                   <x>20</x>
@@ -698,7 +698,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QComboBox" name="debayAlgorithm">
+                 <widget class="QComboBox" name="debayerAlgorithm">
                   <item>
                    <property name="text">
                     <string>Bilinear</string>

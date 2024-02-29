@@ -42,5 +42,12 @@ class InputOptions : public QWidget
     virtual ~InputOptions();
 
 	private:
+		void								setUpConnections ( void );
+
+	private:
 		Ui::InputOptions*		ui;
+
+  private slots:
+    void		            unimplemented1 ( void );
+    void								unimplemented2 ( const QString& text );
 };
