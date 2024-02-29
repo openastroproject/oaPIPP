@@ -26,6 +26,7 @@
  *****************************************************************************/
 
 #include <QtCore>
+#include <QtWidgets>
 #include <source_location>
 
 #include "qualityOptions.h"
@@ -37,6 +38,8 @@ QualityOptions::QualityOptions ( QWidget* parent ) :
 {
 	ui->setupUi ( this );
 
+	setUpConnections();
+
 	QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
@@ -47,4 +50,55 @@ QualityOptions::QualityOptions ( QWidget* parent ) :
 QualityOptions::~QualityOptions ( void )
 {
 	delete ui;
+}
+
+
+void
+QualityOptions::setUpConnections ( void )
+{
+  connect ( ui->qualityEstimation, &QCheckBox::clicked, this,
+			&QualityOptions::unimplemented1 );
+  connect ( ui->reorderByQuality, &QCheckBox::clicked, this,
+			&QualityOptions::unimplemented1 );
+  connect ( ui->enableQualityLimit, &QCheckBox::clicked, this,
+			&QualityOptions::unimplemented1 );
+  connect ( ui->keepTypeSelector, &QComboBox::currentTextChanged, this,
+			&QualityOptions::unimplemented2 );
+  connect ( ui->numberToKeep, &QSpinBox::textChanged, this,
+			&QualityOptions::unimplemented2 );
+
+  connect ( ui->pippQuality, &QRadioButton::clicked, this,
+			&QualityOptions::unimplemented1 );
+  connect ( ui->ninoxQuality, &QRadioButton::clicked, this,
+			&QualityOptions::unimplemented1 );
+  connect ( ui->peakHistogramQuality, &QRadioButton::clicked, this,
+			&QualityOptions::unimplemented1 );
+  connect ( ui->brightnessQuality, &QRadioButton::clicked, this,
+			&QualityOptions::unimplemented1 );
+
+  connect ( ui->minSubsample, &QSpinBox::textChanged, this,
+			&QualityOptions::unimplemented2 );
+  connect ( ui->maxSubsample, &QSpinBox::textChanged, this,
+			&QualityOptions::unimplemented2 );
+  connect ( ui->subsampleIncrement, &QSpinBox::textChanged, this,
+			&QualityOptions::unimplemented2 );
+
+  connect ( ui->qualityWeighting, &QCheckBox::clicked, this,
+			&QualityOptions::unimplemented1 );
+}
+
+
+void
+QualityOptions::unimplemented1 ( void )
+{
+	qDebug() << "slot not yet implemented";
+}
+
+
+void
+QualityOptions::unimplemented2 ( const QString& text )
+{
+	Q_UNUSED ( text )
+
+	qDebug() << "slot not yet implemented";
 }

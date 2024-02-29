@@ -42,5 +42,12 @@ class QualityOptions : public QWidget
     virtual ~QualityOptions();
 
 	private:
+		void									setUpConnections ( void );
+
+	private:
 		Ui::QualityOptions*		ui;
+
+  private slots:
+    void                unimplemented1 ( void );
+    void                unimplemented2 ( const QString& text );
 };
