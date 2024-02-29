@@ -42,5 +42,12 @@ class ProcessingOptions : public QWidget
     virtual ~ProcessingOptions();
 
 	private:
+		void											setUpConnections ( void );
+			
+	private:
 		Ui::ProcessingOptions*		ui;
+
+	private slots:
+		void											unimplemented1 ( void );
+		void											unimplemented2 ( const QString& text );
 };

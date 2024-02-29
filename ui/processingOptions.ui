@@ -1,751 +1,756 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>ProcessingOptions</class>
-         <widget class="QWidget" name="processingOptionsTab">
-          <attribute name="title">
-           <string>Processing Options</string>
-          </attribute>
-          <layout class="QHBoxLayout" name="zz1">
+ <widget class="QWidget" name="processingOptionsTab">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>957</width>
+    <height>594</height>
+   </rect>
+  </property>
+  <layout class="QHBoxLayout" name="zz1">
+   <item>
+    <layout class="QVBoxLayout" name="processingLayoutLHS">
+     <item>
+      <widget class="QGroupBox" name="gainGammaLayout">
+       <property name="title">
+        <string>Input Gain and Gamma Correction</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_15">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>349</width>
+          <height>58</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="0" column="1">
+          <widget class="QLabel" name="gainLabel">
+           <property name="text">
+            <string>Gain to apply to each frame before processing</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="gammaLabel">
+           <property name="text">
+            <string>Gamma correction value (1.0 has no effect)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QDoubleSpinBox" name="processingGain"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QDoubleSpinBox" name="processingGamma"/>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="noiseLayout">
+       <property name="title">
+        <string>Noise Filter</string>
+       </property>
+       <widget class="QCheckBox" name="noiseFilter">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>50</y>
+          <width>391</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Experimental noise reduction filter.  This filter supports both true monochrome frames and raw colour frames that are being debayered.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;It does not work with colour frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Enable Median noise filter (monochrome/raw colour only)</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="monoConversionLayout">
+       <property name="title">
+        <string>Monochrome Conversion</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_16">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>355</width>
+          <height>25</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_10">
+         <item>
+          <widget class="QCheckBox" name="colour2mono">
+           <property name="text">
+            <string>Convert colour to monochrome</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="monochromeSource">
            <item>
-            <layout class="QVBoxLayout" name="processingLayoutLHS">
-             <item>
-              <widget class="QGroupBox" name="gainGammaLayout">
-               <property name="title">
-                <string>Input Gain and Gamma Correction</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_15">
-                <property name="geometry">
-                 <rect>
-                  <x>30</x>
-                  <y>30</y>
-                  <width>349</width>
-                  <height>58</height>
-                 </rect>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_6">
-                 <item row="0" column="1">
-                  <widget class="QLabel" name="gainLabel">
-                   <property name="text">
-                    <string>Gain to apply to each frame before processing</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="1">
-                  <widget class="QLabel" name="gammaLabel">
-                   <property name="text">
-                    <string>Gamma correction value (1.0 has no effect)</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="0">
-                  <widget class="QDoubleSpinBox" name="processingGain"/>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QDoubleSpinBox" name="processingGamma"/>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="noiseLayout">
-               <property name="title">
-                <string>Noise Filter</string>
-               </property>
-               <widget class="QCheckBox" name="noiseFilter">
-                <property name="geometry">
-                 <rect>
-                  <x>30</x>
-                  <y>50</y>
-                  <width>391</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Experimental noise reduction filter.  This filter supports both true monochrome frames and raw colour frames that are being debayered.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;It does not work with colour frames.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="text">
-                 <string>Enable Median noise filter (monochrome/raw colour only)</string>
-                </property>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="monoConversionLayout">
-               <property name="title">
-                <string>Monochrome Conversion</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_16">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>60</y>
-                  <width>355</width>
-                  <height>25</height>
-                 </rect>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_10">
-                 <item>
-                  <widget class="QCheckBox" name="colour2mono">
-                   <property name="text">
-                    <string>Convert colour to monochrome</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="comboBox_5">
-                   <item>
-                    <property name="text">
-                     <string>R,G &amp; B channels</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>R channel only</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>G channel only</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>B channel only</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>R &amp; G channels</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>R &amp; B channels</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>G &amp; B chennels</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="histogramLayout">
-               <property name="title">
-                <string>Histogram  Equalisation</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_17">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>30</y>
-                  <width>346</width>
-                  <height>79</height>
-                 </rect>
-                </property>
-                <layout class="QGridLayout" name="gridLayout_5">
-                 <item row="0" column="0">
-                  <widget class="QCheckBox" name="whitePointBox">
-                   <property name="text">
-                    <string>Stretch historgram white point to</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <widget class="QSpinBox" name="whitePointVal"/>
-                 </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="percentLabel">
-                   <property name="text">
-                    <string>%</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="0">
-                  <widget class="QCheckBox" name="blackPointBox">
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the black point for each frame to 0.  This operation can be useful where frames have a bright background&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="text">
-                    <string>Set histogram black point to 0%</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QCheckBox" name="equaliseIndividually">
-                   <property name="text">
-                    <string>Equalise R, B and G channels individually</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="overexposureLayout">
-               <property name="title">
-                <string>Overexposure Detection</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_18">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>60</y>
-                  <width>340</width>
-                  <height>27</height>
-                 </rect>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_11">
-                 <item>
-                  <widget class="QLabel" name="rejectionPixels">
-                   <property name="text">
-                    <string>Number of over-exposed pixels before rejection</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QSpinBox" name="spinBox_2"/>
-                 </item>
-                </layout>
-               </widget>
-               <widget class="QCheckBox" name="rejectOverexposed">
-                <property name="geometry">
-                 <rect>
-                  <x>30</x>
-                  <y>30</y>
-                  <width>291</width>
-                  <height>20</height>
-                 </rect>
-                </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable rejection of over-exposed frames.  A frame is considered to be over-exposed when the number of pixels with the maximum value is greater than the vaue set here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                </property>
-                <property name="text">
-                 <string>Reject frames with over-exposed pixels</string>
-                </property>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="flipRotateLayout">
-               <property name="title">
-                <string>Flip and Rotatae</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_19">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>40</y>
-                  <width>246</width>
-                  <height>53</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_7">
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_12">
-                   <item>
-                    <widget class="QCheckBox" name="horizontalFip">
-                     <property name="text">
-                      <string>Flip Horizontally</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="verticalFlip">
-                     <property name="text">
-                      <string>Flip Vertically</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <widget class="QComboBox" name="comboBox_6">
-                   <item>
-                    <property name="text">
-                     <string>No rotation</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Rotate 90 ° clockwise</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Rotate 90° anti-clockwise</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>Rotate 180°</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-            </layout>
+            <property name="text">
+             <string>R,G &amp; B channels</string>
+            </property>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="processingLayoutRHS">
-             <item>
-              <widget class="QGroupBox" name="stabilisationLayout">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="title">
-                <string>Frame Stabilisation Mode</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_20">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>50</y>
-                  <width>329</width>
-                  <height>22</height>
-                 </rect>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_9">
-                 <property name="sizeConstraint">
-                  <enum>QLayout::SetDefaultConstraint</enum>
-                 </property>
-                 <item>
-                  <widget class="QRadioButton" name="noStabilisation">
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not show controls for any kind of frame stabilisation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="text">
-                    <string>None</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QRadioButton" name="objectStabilisation">
-                   <property name="toolTip">
-                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show controls for object or planetary frame stabilisation.  This type of object works by detecting a complete bright object on a dark background.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                   </property>
-                   <property name="text">
-                    <string>Object/Planetary</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QRadioButton" name="featureStabilisation">
-                   <property name="text">
-                    <string>Surface Feature</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="objectDetectionBox">
-               <property name="title">
-                <string>Object Detection</string>
-               </property>
-               <layout class="QVBoxLayout" name="objDetLayout1">
-                <item>
-                 <widget class="QCheckBox" name="enableObjectDetection">
-                  <property name="toolTip">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rejects frames where a complete object is not found on the frame&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                  <property name="text">
-                   <string>Enable object detection (rejects frames without object)</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QGroupBox" name="objDetLayout2">
-                  <property name="title">
-                   <string>Object Detection Parameters</string>
-                  </property>
-                  <widget class="QWidget" name="layoutWidget_21">
-                   <property name="geometry">
-                    <rect>
-                     <x>10</x>
-                     <y>20</y>
-                     <width>400</width>
-                     <height>126</height>
-                    </rect>
-                   </property>
-                   <layout class="QVBoxLayout" name="objDetLayout3">
-                    <item>
-                     <layout class="QHBoxLayout" name="horizontalLayout_14">
-                      <item>
-                       <widget class="QLabel" name="minSizeLabel">
-                        <property name="text">
-                         <string>Minimum object size (pixels)</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QSpinBox" name="minObjectSize"/>
-                      </item>
-                     </layout>
-                    </item>
-                    <item>
-                     <widget class="QGroupBox" name="objDetLayout6">
-                      <property name="title">
-                       <string>Object Detection Threshold</string>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_15">
-                       <item>
-                        <layout class="QVBoxLayout" name="objDetLayout5">
-                         <item>
-                          <widget class="QCheckBox" name="autoObjectDetection">
-                           <property name="text">
-                            <string>Auto object detection threshold</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item>
-                          <layout class="QHBoxLayout" name="objDetLayout4">
-                           <item>
-                            <widget class="QLabel" name="detectionThresholdLabel">
-                             <property name="text">
-                              <string>Object Detection Threshold (1 to 255)</string>
-                             </property>
-                            </widget>
-                           </item>
-                           <item>
-                            <widget class="QSpinBox" name="detectionThreshold"/>
-                           </item>
-                          </layout>
-                         </item>
-                        </layout>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="blah">
-                         <property name="text">
-                          <string>blah</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                   </layout>
-                  </widget>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="surfaceStabilisationBox">
-               <property name="title">
-                <string>Surface Stabilisation</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_22">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>20</y>
-                  <width>361</width>
-                  <height>131</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_10">
-                 <item>
-                  <widget class="QCheckBox" name="surfaceFeatureTracking">
-                   <property name="text">
-                    <string>Enable surface feature tracking</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QCheckBox" name="surfaceStabilisation">
-                   <property name="text">
-                    <string>Enable surface stabilisation</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="anchorFeaturesBox">
-                   <property name="title">
-                    <string>Anchor Feature Box (AFB)</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_23">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>20</y>
-                      <width>351</width>
-                      <height>84</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout_25">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="anchorXLabel">
-                       <property name="text">
-                        <string>X Position</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QSpinBox" name="anchorX"/>
-                     </item>
-                     <item row="0" column="2">
-                      <widget class="QLabel" name="anchorWidthLabel">
-                       <property name="text">
-                        <string>Width</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="3">
-                      <widget class="QSpinBox" name="anchorWidth"/>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="anchorYLabel">
-                       <property name="text">
-                        <string>Y Position</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <widget class="QSpinBox" name="anchorY"/>
-                     </item>
-                     <item row="1" column="2">
-                      <widget class="QLabel" name="anchorHeightLabel">
-                       <property name="text">
-                        <string>Height</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="3">
-                      <widget class="QSpinBox" name="anchorHeight"/>
-                     </item>
-                     <item row="2" column="0" colspan="4">
-                      <widget class="QCheckBox" name="rejectNoAnchor">
-                       <property name="text">
-                        <string>Reject frames without anchor feature</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="areaOfInterestBox">
-               <property name="title">
-                <string>Area Of Interest (AOI)</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_8">
-                <item row="0" column="0" colspan="4">
-                 <widget class="QCheckBox" name="enableAOI">
-                  <property name="text">
-                   <string>Enable Area Of Interest</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="aoiXLabel">
-                  <property name="text">
-                   <string>X Position</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QSpinBox" name="aoiX"/>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QLabel" name="aoiWidthLabel">
-                  <property name="text">
-                   <string>Width</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="3">
-                 <widget class="QSpinBox" name="aoiWidth"/>
-                </item>
-                <item row="2" column="0">
-                 <widget class="QLabel" name="aoiYLabel">
-                  <property name="text">
-                   <string>Y Position</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="1">
-                 <widget class="QSpinBox" name="aoiY"/>
-                </item>
-                <item row="2" column="2">
-                 <widget class="QLabel" name="aoiHeightLabel">
-                  <property name="text">
-                   <string>Height</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="2" column="3">
-                 <widget class="QSpinBox" name="aoiHeight"/>
-                </item>
-                <item row="3" column="0" colspan="4">
-                 <widget class="QCheckBox" name="rejectIncompleteAOI">
-                  <property name="text">
-                   <string>Reject frames with incomplete area of interest</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="4" column="0" colspan="4">
-                 <widget class="QCheckBox" name="aoiCrop">
-                  <property name="text">
-                   <string>Crop frames to area of interest</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="croppingLayout">
-               <property name="title">
-                <string>Cropping</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_24">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>40</y>
-                  <width>285</width>
-                  <height>86</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_8">
-                 <item>
-                  <widget class="QCheckBox" name="enableCropping">
-                   <property name="text">
-                    <string>Enable Cropping</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <layout class="QGridLayout" name="gridLayout_7">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="cropLabel1">
-                     <property name="text">
-                      <string>Crop Width</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="1">
-                    <widget class="QSpinBox" name="spinBox_4"/>
-                   </item>
-                   <item row="1" column="4">
-                    <widget class="QSpinBox" name="spinBox_6"/>
-                   </item>
-                   <item row="1" column="0">
-                    <widget class="QLabel" name="cropLabel2">
-                     <property name="text">
-                      <string>Crop Height</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="1" column="3">
-                    <widget class="QLabel" name="cropLabel4">
-                     <property name="text">
-                      <string>Y Offset</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item row="0" column="4">
-                    <widget class="QSpinBox" name="spinBox_5"/>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QSpinBox" name="spinBox_3"/>
-                   </item>
-                   <item row="0" column="3">
-                    <widget class="QLabel" name="cropLabel3">
-                     <property name="text">
-                      <string>X Offset</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="resizeLayout">
-               <property name="title">
-                <string>Frame Resize (Reduce)</string>
-               </property>
-               <widget class="QWidget" name="layoutWidget_25">
-                <property name="geometry">
-                 <rect>
-                  <x>20</x>
-                  <y>40</y>
-                  <width>222</width>
-                  <height>81</height>
-                 </rect>
-                </property>
-                <layout class="QVBoxLayout" name="verticalLayout_9">
-                 <item>
-                  <widget class="QCheckBox" name="resizeFrames">
-                   <property name="text">
-                    <string>Resize Frames</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QCheckBox" name="keepAspectRatio">
-                   <property name="text">
-                    <string>Keep original aspect ratio</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <layout class="QHBoxLayout" name="horizontalLayout_13">
-                   <item>
-                    <widget class="QLabel" name="widthLabel">
-                     <property name="text">
-                      <string>Width</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QSpinBox" name="resizeWidth"/>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="heightLabel">
-                     <property name="text">
-                      <string>Height</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QSpinBox" name="resizeHeight"/>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
-               </widget>
-              </widget>
-             </item>
-            </layout>
+            <property name="text">
+             <string>R channel only</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G channel only</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>B channel only</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>R &amp; G channels</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>R &amp; B channels</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>G &amp; B chennels</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="histogramLayout">
+       <property name="title">
+        <string>Histogram  Equalisation</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_17">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>30</y>
+          <width>346</width>
+          <height>79</height>
+         </rect>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_5">
+         <item row="0" column="0">
+          <widget class="QCheckBox" name="whitePointBox">
+           <property name="text">
+            <string>Stretch historgram white point to</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QSpinBox" name="whitePointVal"/>
+         </item>
+         <item row="0" column="2">
+          <widget class="QLabel" name="percentLabel">
+           <property name="text">
+            <string>%</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QCheckBox" name="blackPointBox">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Set the black point for each frame to 0.  This operation can be useful where frames have a bright background&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Set histogram black point to 0%</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QCheckBox" name="equaliseIndividually">
+           <property name="text">
+            <string>Equalise R, B and G channels individually</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="overexposureLayout">
+       <property name="title">
+        <string>Overexposure Detection</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_18">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>60</y>
+          <width>340</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_11">
+         <item>
+          <widget class="QLabel" name="rejectionPixels">
+           <property name="text">
+            <string>Number of over-exposed pixels before rejection</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="numOverexposed"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QCheckBox" name="rejectOverexposed">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>30</y>
+          <width>291</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable rejection of over-exposed frames.  A frame is considered to be over-exposed when the number of pixels with the maximum value is greater than the vaue set here.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>Reject frames with over-exposed pixels</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="flipRotateLayout">
+       <property name="title">
+        <string>Flip and Rotatae</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_19">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>246</width>
+          <height>53</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_7">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_12">
+           <item>
+            <widget class="QCheckBox" name="horizontalFlip">
+             <property name="text">
+              <string>Flip Horizontally</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="verticalFlip">
+             <property name="text">
+              <string>Flip Vertically</string>
+             </property>
+            </widget>
            </item>
           </layout>
+         </item>
+         <item>
+          <widget class="QComboBox" name="rotation">
+           <item>
+            <property name="text">
+             <string>No rotation</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotate 90 ° clockwise</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotate 90° anti-clockwise</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Rotate 180°</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="processingLayoutRHS">
+     <item>
+      <widget class="QGroupBox" name="stabilisationLayout">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="title">
+        <string>Frame Stabilisation Mode</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_20">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>50</y>
+          <width>329</width>
+          <height>22</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_9">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QRadioButton" name="noStabilisation">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Do not show controls for any kind of frame stabilisation.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>None</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="objectStabilisation">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Show controls for object or planetary frame stabilisation.  This type of object works by detecting a complete bright object on a dark background.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="text">
+            <string>Object/Planetary</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QRadioButton" name="featureStabilisation">
+           <property name="text">
+            <string>Surface Feature</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="objectDetectionBox">
+       <property name="title">
+        <string>Object Detection</string>
+       </property>
+       <layout class="QVBoxLayout" name="objDetLayout1">
+        <item>
+         <widget class="QCheckBox" name="enableObjectDetection">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Rejects frames where a complete object is not found on the frame&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Enable object detection (rejects frames without object)</string>
+          </property>
          </widget>
+        </item>
+        <item>
+         <widget class="QGroupBox" name="objDetLayout2">
+          <property name="title">
+           <string>Object Detection Parameters</string>
+          </property>
+          <widget class="QWidget" name="layoutWidget_21">
+           <property name="geometry">
+            <rect>
+             <x>10</x>
+             <y>20</y>
+             <width>400</width>
+             <height>126</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="objDetLayout3">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_14">
+              <item>
+               <widget class="QLabel" name="minSizeLabel">
+                <property name="text">
+                 <string>Minimum object size (pixels)</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="minObjectSize"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="objDetLayout6">
+              <property name="title">
+               <string>Object Detection Threshold</string>
+              </property>
+              <layout class="QHBoxLayout" name="horizontalLayout_15">
+               <item>
+                <layout class="QVBoxLayout" name="objDetLayout5">
+                 <item>
+                  <widget class="QCheckBox" name="autoObjectDetection">
+                   <property name="text">
+                    <string>Auto object detection threshold</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" name="objDetLayout4">
+                   <item>
+                    <widget class="QLabel" name="detectionThresholdLabel">
+                     <property name="text">
+                      <string>Object Detection Threshold (1 to 255)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QSpinBox" name="detectionThreshold"/>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QPushButton" name="blah">
+                 <property name="text">
+                  <string>blah</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="surfaceStabilisationBox">
+       <property name="title">
+        <string>Surface Stabilisation</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_22">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>361</width>
+          <height>131</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_10">
+         <item>
+          <widget class="QCheckBox" name="surfaceFeatureTracking">
+           <property name="text">
+            <string>Enable surface feature tracking</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="surfaceStabilisation">
+           <property name="text">
+            <string>Enable surface stabilisation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="anchorFeaturesBox">
+           <property name="title">
+            <string>Anchor Feature Box (AFB)</string>
+           </property>
+           <widget class="QWidget" name="layoutWidget_23">
+            <property name="geometry">
+             <rect>
+              <x>10</x>
+              <y>20</y>
+              <width>351</width>
+              <height>84</height>
+             </rect>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_25">
+             <item row="0" column="0">
+              <widget class="QLabel" name="anchorXLabel">
+               <property name="text">
+                <string>X Position</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QSpinBox" name="anchorX"/>
+             </item>
+             <item row="0" column="2">
+              <widget class="QLabel" name="anchorWidthLabel">
+               <property name="text">
+                <string>Width</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="3">
+              <widget class="QSpinBox" name="anchorWidth"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="anchorYLabel">
+               <property name="text">
+                <string>Y Position</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QSpinBox" name="anchorY"/>
+             </item>
+             <item row="1" column="2">
+              <widget class="QLabel" name="anchorHeightLabel">
+               <property name="text">
+                <string>Height</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="3">
+              <widget class="QSpinBox" name="anchorHeight"/>
+             </item>
+             <item row="2" column="0" colspan="4">
+              <widget class="QCheckBox" name="rejectNoAnchor">
+               <property name="text">
+                <string>Reject frames without anchor feature</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="areaOfInterestBox">
+       <property name="title">
+        <string>Area Of Interest (AOI)</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="0" column="0" colspan="4">
+         <widget class="QCheckBox" name="enableAOI">
+          <property name="text">
+           <string>Enable Area Of Interest</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="aoiXLabel">
+          <property name="text">
+           <string>X Position</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QSpinBox" name="aoiX"/>
+        </item>
+        <item row="1" column="2">
+         <widget class="QLabel" name="aoiWidthLabel">
+          <property name="text">
+           <string>Width</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="3">
+         <widget class="QSpinBox" name="aoiWidth"/>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="aoiYLabel">
+          <property name="text">
+           <string>Y Position</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QSpinBox" name="aoiY"/>
+        </item>
+        <item row="2" column="2">
+         <widget class="QLabel" name="aoiHeightLabel">
+          <property name="text">
+           <string>Height</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <widget class="QSpinBox" name="aoiHeight"/>
+        </item>
+        <item row="3" column="0" colspan="4">
+         <widget class="QCheckBox" name="rejectIncompleteAOI">
+          <property name="text">
+           <string>Reject frames with incomplete area of interest</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0" colspan="4">
+         <widget class="QCheckBox" name="aoiCrop">
+          <property name="text">
+           <string>Crop frames to area of interest</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="croppingLayout">
+       <property name="title">
+        <string>Cropping</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_24">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>285</width>
+          <height>86</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_8">
+         <item>
+          <widget class="QCheckBox" name="enableCropping">
+           <property name="text">
+            <string>Enable Cropping</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="QLabel" name="cropLabel1">
+             <property name="text">
+              <string>Crop Width</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QSpinBox" name="cropHeight"/>
+           </item>
+           <item row="1" column="4">
+            <widget class="QSpinBox" name="cropY"/>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="cropLabel2">
+             <property name="text">
+              <string>Crop Height</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QLabel" name="cropLabel4">
+             <property name="text">
+              <string>Y Offset</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="4">
+            <widget class="QSpinBox" name="cropX"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QSpinBox" name="cropWidth"/>
+           </item>
+           <item row="0" column="3">
+            <widget class="QLabel" name="cropLabel3">
+             <property name="text">
+              <string>X Offset</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="resizeLayout">
+       <property name="title">
+        <string>Frame Resize (Reduce)</string>
+       </property>
+       <widget class="QWidget" name="layoutWidget_25">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>222</width>
+          <height>81</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <widget class="QCheckBox" name="resizeFrames">
+           <property name="text">
+            <string>Resize Frames</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="keepAspectRatio">
+           <property name="text">
+            <string>Keep original aspect ratio</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_13">
+           <item>
+            <widget class="QLabel" name="widthLabel">
+             <property name="text">
+              <string>Width</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="resizeWidth"/>
+           </item>
+           <item>
+            <widget class="QLabel" name="heightLabel">
+             <property name="text">
+              <string>Height</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="resizeHeight"/>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
  <resources/>
  <connections/>
 </ui>
