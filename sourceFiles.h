@@ -42,6 +42,9 @@ class SourceFiles : public QTabWidget
     virtual ~SourceFiles();
 
 	private:
+		void							setUpConnections ( void );
+
+	private:
 		void							updateImagesLabel ( void );
 		void							updateDarksLabel ( void );
 		void							updateFlatsLabel ( void );
@@ -52,4 +55,8 @@ class SourceFiles : public QTabWidget
 		int								numDarks;
 		int								numFlats;
 		int								numFlatDarks;
+
+	private slots:
+		void							unimplemented1 ( void );
+		void							unimplemented2 ( const QString& text );
 };

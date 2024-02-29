@@ -26,6 +26,7 @@
  *****************************************************************************/
 
 #include <QtCore>
+#include <QtWidgets>
 #include <source_location>
 
 #include "sourceFiles.h"
@@ -52,6 +53,8 @@ SourceFiles::SourceFiles ( QWidget* parent ) :
 	ui->removeAllFlatsButton->setEnabled ( false );
 	ui->removeFlatDarksButton->setEnabled ( false );
 	ui->removeAllFlatDarksButton->setEnabled ( false );
+
+	setUpConnections();
 
 	QString err = std::source_location::current().function_name();
   err += " not fully implemented";
@@ -95,4 +98,101 @@ SourceFiles::updateFlatDarksLabel ( void )
 {
 	QString label = QObject::tr ( "Flat Dark Files (%1 frames)" );
 	setTabText ( 3, label.arg ( numFlatDarks ));
+}
+
+
+void
+SourceFiles::setUpConnections ( void )
+{
+  connect ( ui->addImagesButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeImagesButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeAllImagesButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->imagesUpButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->imagesDownButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->batchMode, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->joinMode, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->closeUpButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->aviButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->fullDiscButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->gifButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->planetaryButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->issButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->archiveButton, &QRadioButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->addDarksButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeDarksButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeAllDarksButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->enableDarkFrameSubtraction, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->saveMasterDark, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+
+  connect ( ui->thresholdVal, &QSpinBox::textChanged, this,
+			&SourceFiles::unimplemented2 );
+  connect ( ui->enableHotPixel, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->addFlatsButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeFlatsButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeAllFlatsButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->enableFlatFrameCorrection, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->flatsMonoWithBayer, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->saveMasterFlat, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->addFlatDarksButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeFlatDarksButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->removeAllFlatDarksButton, &QPushButton::clicked, this,
+			&SourceFiles::unimplemented1 );
+
+  connect ( ui->enableFlatDarkFrameSubtraction, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+  connect ( ui->saveMasterFlatDark, &QCheckBox::clicked, this,
+			&SourceFiles::unimplemented1 );
+}
+
+
+void
+SourceFiles::unimplemented1 ( void )
+{
+	qDebug() << "slot not yet implemented";
+}
+
+
+void
+SourceFiles::unimplemented2 ( const QString& text )
+{
+	Q_UNUSED ( text )
+
+	qDebug() << "slot not yet implemented";
 }
