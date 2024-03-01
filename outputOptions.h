@@ -42,5 +42,12 @@ class OutputOptions : public QWidget
     virtual ~OutputOptions();
 
 	private:
+		void									setUpConnections ( void );
+
+	private:
 		Ui::OutputOptions*		ui;
+
+	private slots:
+    void                unimplemented1 ( void );
+    void                unimplemented2 ( const QString& text );
 };

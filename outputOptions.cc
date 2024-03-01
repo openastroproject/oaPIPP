@@ -37,6 +37,8 @@ OutputOptions::OutputOptions ( QWidget* parent ) :
 {
 	ui->setupUi ( this );
 
+	setUpConnections();
+
   QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
@@ -47,4 +49,82 @@ OutputOptions::OutputOptions ( QWidget* parent ) :
 OutputOptions::~OutputOptions ( void )
 {
 	delete ui;
+}
+
+
+void
+OutputOptions::setUpConnections ( void )
+{
+  connect ( ui->outputAVI, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputSER, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputBMP, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputTIFF, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputFITS, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputPNG, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputAnimGIF, &QRadioButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+
+  connect ( ui->useDefaultOutputDir, &QPushButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->selectOutputDir, &QPushButton::clicked, this,
+			&OutputOptions::unimplemented1 );
+
+  connect ( ui->createOutputSubdir, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputSubdirName, &QLineEdit::editingFinished, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->appendDateTime, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputFilePrefix, &QLineEdit::editingFinished, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->outputFileSuffix, &QLineEdit::editingFinished, this,
+			&OutputOptions::unimplemented1 );
+
+  connect ( ui->splitRGB, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+
+  connect ( ui->framesToDrop, &QSpinBox::textChanged, this,
+			&OutputOptions::unimplemented2 );
+
+  connect ( ui->outputCodec, &QComboBox::currentTextChanged, this,
+			&OutputOptions::unimplemented2 );
+  connect ( ui->outputQuality, &QSpinBox::textChanged, this,
+			&OutputOptions::unimplemented2 );
+  connect ( ui->oldFormatAVI, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->maxAVISize, &QComboBox::currentTextChanged, this,
+			&OutputOptions::unimplemented2 );
+  connect ( ui->safeSize, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->matchInputFrameRate, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->defaultFrameRate, &QSpinBox::textChanged, this,
+			&OutputOptions::unimplemented2 );
+
+  connect ( ui->winjuposNames, &QCheckBox::clicked, this,
+			&OutputOptions::unimplemented1 );
+  connect ( ui->filenameTime, &QComboBox::currentTextChanged, this,
+			&OutputOptions::unimplemented2 );
+}
+
+
+void
+OutputOptions::unimplemented1 ( void )
+{
+	qDebug() << "slot not yet implemented";
+}
+
+
+void
+OutputOptions::unimplemented2 ( const QString& text )
+{
+	Q_UNUSED ( text )
+
+	qDebug() << "slot not yet implemented";
 }

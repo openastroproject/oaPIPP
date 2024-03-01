@@ -295,7 +295,7 @@
                     </widget>
                    </item>
                    <item>
-                    <widget class="QSpinBox" name="spinBox"/>
+                    <widget class="QSpinBox" name="outputQuality"/>
                    </item>
                   </layout>
                  </item>
