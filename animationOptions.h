@@ -42,5 +42,12 @@ class AnimationOptions : public QWidget
     virtual ~AnimationOptions();
 
 	private:
+		void										setUpConnections ( void );
+
+	private:
 		Ui::AnimationOptions*		ui;
+
+	private slots:
+		void										unimplemented1 ( void );
+		void										unimplemented2 ( const QString& text );
 };

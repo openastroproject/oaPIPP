@@ -31,7 +31,7 @@
                   </widget>
                  </item>
                  <item>
-                  <widget class="QCheckBox" name="pauseFInalForward">
+                  <widget class="QCheckBox" name="pauseFinalForward">
                    <property name="text">
                     <string>Pause final frame of each forward play</string>
                    </property>

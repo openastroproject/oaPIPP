@@ -26,6 +26,7 @@
  *****************************************************************************/
 
 #include <QtCore>
+#include <QtWidgets>
 #include <source_location>
 
 #include "animationOptions.h"
@@ -37,6 +38,8 @@ AnimationOptions::AnimationOptions ( QWidget* parent ) :
 {
 	ui->setupUi ( this );
 
+	setUpConnections();
+
 	QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
@@ -47,4 +50,46 @@ AnimationOptions::AnimationOptions ( QWidget* parent ) :
 AnimationOptions::~AnimationOptions ( void )
 {
 	delete ui;
+}
+
+
+void
+AnimationOptions::setUpConnections ( void )
+{
+  connect ( ui->playForward, &QCheckBox::clicked, this,
+			&AnimationOptions::unimplemented1 );
+  connect ( ui->pauseFinalForward, &QCheckBox::clicked, this,
+			&AnimationOptions::unimplemented1 );
+  connect ( ui->forwardPauseFrames, &QSpinBox::textChanged, this,
+			&AnimationOptions::unimplemented2 );
+
+  connect ( ui->playReverse, &QCheckBox::clicked, this,
+			&AnimationOptions::unimplemented1 );
+  connect ( ui->pauseFinalReverse, &QCheckBox::clicked, this,
+			&AnimationOptions::unimplemented1 );
+  connect ( ui->reversePauseFrames, &QSpinBox::textChanged, this,
+			&AnimationOptions::unimplemented2 );
+
+  connect ( ui->repeatFrames, &QCheckBox::clicked, this,
+			&AnimationOptions::unimplemented1 );
+  connect ( ui->repeatCount, &QSpinBox::textChanged, this,
+			&AnimationOptions::unimplemented2 );
+  connect ( ui->dontReverseFinal, &QCheckBox::clicked, this,
+			&AnimationOptions::unimplemented1 );
+}
+
+
+void
+AnimationOptions::unimplemented1 ( void )
+{
+	qDebug() << "slot not yet implemented";
+}
+
+
+void
+AnimationOptions::unimplemented2 ( const QString& text )
+{
+	Q_UNUSED ( text )
+
+	qDebug() << "slot not yet implemented";
 }
