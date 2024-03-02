@@ -37,6 +37,8 @@ DoProcessing::DoProcessing ( QWidget* parent  ) :
 {
 	ui->setupUi ( this );
 
+	setUpConnections();
+
   QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
@@ -47,4 +49,32 @@ DoProcessing::DoProcessing ( QWidget* parent  ) :
 DoProcessing::~DoProcessing ( void )
 {
 	delete ui;
+}
+
+
+void
+DoProcessing::setUpConnections ( void )
+{
+  connect ( ui->startProcessing, &QPushButton::clicked, this,
+			&DoProcessing::unimplemented1 );
+  connect ( ui->cancelProcessing, &QPushButton::clicked, this,
+			&DoProcessing::unimplemented1 );
+  connect ( ui->openOutputDir, &QPushButton::clicked, this,
+			&DoProcessing::unimplemented1 );
+}
+
+
+void
+DoProcessing::unimplemented1 ( void )
+{
+	qDebug() << "slot not yet implemented";
+}
+
+
+void
+DoProcessing::unimplemented2 ( const QString& text )
+{
+	Q_UNUSED ( text )
+
+	qDebug() << "slot not yet implemented";
 }
