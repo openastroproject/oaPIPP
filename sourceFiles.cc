@@ -28,9 +28,28 @@
 #include <QtCore>
 #include <QtWidgets>
 #include <source_location>
+#include <filesystem>
+#include <algorithm>
+#include <chrono>
+#include <cmath>
+// Supposed to be in C++20, but not for GNU CC :(
+#ifndef __cpp_lib_format
+// std::format polyfill using fmtlib
+#include <fmt/core.h>
+namespace std {
+  using fmt::format;
+}
+#else
+  #include <format>
+#endif
+
 
 #include "sourceFiles.h"
 #include "ui_sourceFiles.h"
+
+namespace fs = std::filesystem;
+using namespace std::chrono_literals;
+using file_time_type = std::chrono::time_point<std::chrono::file_clock>;
 
 SourceFiles::SourceFiles ( QWidget* parent ) :
 	QTabWidget ( parent ),
@@ -54,6 +73,14 @@ SourceFiles::SourceFiles ( QWidget* parent ) :
 	ui->removeFlatDarksButton->setEnabled ( false );
 	ui->removeAllFlatDarksButton->setEnabled ( false );
 
+	ui->enableDarkFrameSubtraction->setEnabled ( false );
+	ui->enableFlatFrameCorrection->setEnabled ( false );
+	ui->enableFlatDarkFrameSubtraction->setEnabled ( false );
+
+	ui->imagesUpButton->setEnabled ( false );
+	ui->imagesDownButton->setEnabled ( false );
+
+	setUpTables();
 	setUpConnections();
 
 	QString err = std::source_location::current().function_name();
@@ -105,11 +132,11 @@ void
 SourceFiles::setUpConnections ( void )
 {
   connect ( ui->addImagesButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::loadImageFiles );
   connect ( ui->removeImagesButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeImageFiles );
   connect ( ui->removeAllImagesButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeAllImageFiles );
 
   connect ( ui->imagesUpButton, &QPushButton::clicked, this,
 			&SourceFiles::unimplemented1 );
@@ -137,17 +164,16 @@ SourceFiles::setUpConnections ( void )
 			&SourceFiles::unimplemented1 );
 
   connect ( ui->addDarksButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::loadDarkFiles );
   connect ( ui->removeDarksButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeDarkFiles );
   connect ( ui->removeAllDarksButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeAllDarkFiles );
 
   connect ( ui->enableDarkFrameSubtraction, &QCheckBox::clicked, this,
 			&SourceFiles::unimplemented1 );
   connect ( ui->saveMasterDark, &QCheckBox::clicked, this,
 			&SourceFiles::unimplemented1 );
-
 
   connect ( ui->thresholdVal, &QSpinBox::textChanged, this,
 			&SourceFiles::unimplemented2 );
@@ -155,11 +181,11 @@ SourceFiles::setUpConnections ( void )
 			&SourceFiles::unimplemented1 );
 
   connect ( ui->addFlatsButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::loadFlatFiles );
   connect ( ui->removeFlatsButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeFlatFiles );
   connect ( ui->removeAllFlatsButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeAllFlatFiles );
 
   connect ( ui->enableFlatFrameCorrection, &QCheckBox::clicked, this,
 			&SourceFiles::unimplemented1 );
@@ -169,16 +195,18 @@ SourceFiles::setUpConnections ( void )
 			&SourceFiles::unimplemented1 );
 
   connect ( ui->addFlatDarksButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::loadFlatDarkFiles );
   connect ( ui->removeFlatDarksButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeFlatDarkFiles );
   connect ( ui->removeAllFlatDarksButton, &QPushButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::removeAllFlatDarkFiles );
 
   connect ( ui->enableFlatDarkFrameSubtraction, &QCheckBox::clicked, this,
 			&SourceFiles::unimplemented1 );
   connect ( ui->saveMasterFlatDark, &QCheckBox::clicked, this,
 			&SourceFiles::unimplemented1 );
+
+	qDebug() << "Need to add connector for moving images up/down";
 }
 
 
@@ -195,4 +223,318 @@ SourceFiles::unimplemented2 ( const QString& text )
 	Q_UNUSED ( text )
 
 	qDebug() << "slot not yet implemented";
+}
+
+
+void
+SourceFiles::loadImageFiles ( void )
+{
+	QString title = tr ( "Select image files" );
+
+	loadFiles ( title, ui->imageFileList, numLights );
+	updateImagesLabel();
+
+	if ( numLights ) {
+		ui->removeImagesButton->setEnabled ( true );
+		ui->removeAllImagesButton->setEnabled ( true );
+	}
+	qDebug() << "Enable batch/join mode && image up/down";
+}
+
+
+void
+SourceFiles::loadDarkFiles ( void )
+{
+	QString title = tr ( "Select dark files" );
+
+	loadFiles ( title, ui->darksFileList, numDarks );
+	updateDarksLabel();
+
+	if ( numDarks ) {
+		ui->removeDarksButton->setEnabled ( true );
+		ui->removeAllDarksButton->setEnabled ( true );
+		ui->enableDarkFrameSubtraction->setEnabled ( true );
+	  qDebug() << "Enable darks subtraction option";
+	}
+}
+
+
+void
+SourceFiles::loadFlatFiles ( void )
+{
+	QString title = tr ( "Select flat files" );
+
+	loadFiles ( title, ui->flatsFileList, numFlats );
+	updateFlatsLabel();
+
+	if ( numFlats ) {
+		ui->removeFlatsButton->setEnabled ( true );
+		ui->removeAllFlatsButton->setEnabled ( true );
+		ui->enableFlatFrameCorrection->setEnabled ( true );
+		qDebug() << "Enable flat frame correction";
+	}
+
+}
+
+
+void
+SourceFiles::loadFlatDarkFiles ( void )
+{
+	QString title = tr ( "Select flat dark files" );
+
+	loadFiles ( title, ui->flatDarksFileList, numFlatDarks );
+	updateFlatDarksLabel();
+
+	if ( numFlatDarks ) {
+		ui->removeFlatDarksButton->setEnabled ( true );
+		ui->removeAllFlatDarksButton->setEnabled ( true );
+		ui->enableFlatDarkFrameSubtraction->setEnabled ( true );
+	}
+
+	qDebug() << "Enable flat dark frame subtraction";
+}
+
+
+void
+SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
+		int& fileCount )
+{
+	QString filters = tr (
+		"All supported types (*.png *.jpg *.tiff *.tif *.avi *.ser *.CR2 *.CR3);;"
+		"Video files (*.avi);;"
+		"LuCam Recorder SER (*.ser);;"
+		"Image files (*.png *.jpg *.tiff *.tif);;"
+		"Raw image files (*.CR2 *.CR3)");
+
+	QFileDialog dialog ( this, title, "", filters );
+
+	dialog.setFileMode ( QFileDialog::ExistingFiles );
+	dialog.setViewMode ( QFileDialog::Detail );
+	dialog.setAcceptMode ( QFileDialog::AcceptOpen );
+	if ( dialog.exec()) {
+		QStringList filenames = dialog.selectedFiles();
+		for ( auto &file : filenames ) {
+
+			// this is a bit messy
+
+			fs::path p = file.toStdString();
+			fs::path parent = p.root_name() / p.parent_path();
+			fs::path f = p.filename();
+			QString dir = QString::fromStdString ( parent.string());
+			QString fname = QString::fromStdString ( f.string());
+			QString extn = QString::fromStdString ( f.extension().string());
+
+			// now we have:
+			// fname: just the filename
+			// dir: full path of the directory containing the file
+			// extn: file name extension
+
+			int tableRows = table->rowCount();
+			if ( tableRows == fileCount ) {
+				table->insertRow ( tableRows );
+			}
+			QTableWidgetItem* newItem;
+			newItem = new QTableWidgetItem ( fname );
+			// FIX ME -- might be neater to do this with an enum value for column
+			table->setItem ( fileCount, 0, newItem );
+
+			// FIX ME -- should check error codes in case the file is missing
+
+			fs::file_time_type ftime = fs::last_write_time ( p );
+
+			/*
+			 * FIX ME -- std::format is not widely supported.  Come back to this
+			 * later
+			newItem = new QTableWidgetItem ( QString::fromStdString (
+						std::format ( "%F %R", ftime )));
+			table->setItem ( fileCount, 5, newItem );
+			*/
+
+			newItem = new QTableWidgetItem ( humanReadable ( fs::file_size ( p )));
+			table->setItem ( fileCount, 6, newItem );
+
+			newItem = new QTableWidgetItem ( dir );
+			table->setItem ( fileCount, 7, newItem );
+
+			fileCount++;
+		}
+	}
+}
+
+
+void
+SourceFiles::setUpTables ( void )
+{
+	const QStringList headers = {
+		tr ( "Filename" ),
+		tr ( "Type" ),
+		tr ( "Frames" ),
+		tr ( "FPS" ),
+		tr ( "Size" ),
+		tr ( "Date" ),
+		tr ( "Filesize" ),
+		tr ( "Directory" )
+	};
+
+	QList<QTableWidget*> tables = { ui->imageFileList, ui->darksFileList,
+		ui->flatsFileList, ui->flatDarksFileList };
+
+	for ( auto table : tables ) {
+		table->setColumnCount ( 8 );
+    table->setRowCount( 0 );
+		table->setHorizontalHeaderLabels ( headers );
+		table->verticalHeader()->setVisible ( false );
+		table->setSelectionMode ( QTableWidget::ExtendedSelection );
+		table->setSelectionBehavior ( QTableWidget::SelectRows );
+	}
+}
+
+
+QString
+SourceFiles::humanReadable ( std::uintmax_t bytes )
+{
+	int idx = 0;
+	double mantissa = bytes;
+	QString ret;
+
+	for ( ; mantissa >= 1024. ; mantissa /= 1024. , idx++ );
+	ret = QString ( "%1%2B" ).arg ( std::ceil ( mantissa * 100. ) / 100. ).arg
+			( "BKMGTPE"[idx] );
+	return ret;
+}
+
+
+void
+SourceFiles::removeAllImageFiles ( void )
+{
+	removeAllFiles ( ui->imageFileList, numLights );
+	updateImagesLabel();
+
+	ui->removeImagesButton->setEnabled ( false );
+	ui->removeAllImagesButton->setEnabled ( false );
+}
+
+
+void
+SourceFiles::removeAllDarkFiles ( void )
+{
+	removeAllFiles ( ui->darksFileList, numDarks );
+	updateDarksLabel();
+
+	ui->removeDarksButton->setEnabled ( false );
+	ui->removeAllDarksButton->setEnabled ( false );
+	ui->enableDarkFrameSubtraction->setEnabled ( false );
+  qDebug() << "disable darks subtraction option";
+}
+
+
+void
+SourceFiles::removeAllFlatFiles ( void )
+{
+	removeAllFiles ( ui->flatsFileList, numFlats );
+	updateFlatsLabel();
+
+	ui->removeFlatsButton->setEnabled ( false );
+	ui->removeAllFlatsButton->setEnabled ( false );
+	ui->enableFlatFrameCorrection->setEnabled ( false );
+	qDebug() << "disable flat frame correction";
+}
+
+
+void
+SourceFiles::removeAllFlatDarkFiles ( void )
+{
+	removeAllFiles ( ui->flatDarksFileList, numFlatDarks );
+	updateFlatDarksLabel();
+
+	ui->removeFlatDarksButton->setEnabled ( false );
+	ui->removeAllFlatDarksButton->setEnabled ( false );
+	ui->enableFlatDarkFrameSubtraction->setEnabled ( false );
+	qDebug() << "Disable flat dark frame subtraction";
+}
+
+
+void
+SourceFiles::removeAllFiles ( QTableWidget* table, int& fileCount )
+{
+	fileCount = 0;
+	table->clearContents();
+	table->setRowCount ( 0 );
+}
+
+
+void
+SourceFiles::removeImageFiles ( void )
+{
+	removeFiles ( ui->imageFileList, numLights );
+	updateImagesLabel();
+
+	if ( !numLights ) {
+		ui->removeImagesButton->setEnabled ( false );
+		ui->removeImagesButton->setEnabled ( false );
+	}
+}
+
+
+void
+SourceFiles::removeDarkFiles ( void )
+{
+	removeFiles ( ui->darksFileList, numDarks );
+	updateDarksLabel();
+
+	if ( !numDarks ) {
+		ui->removeDarksButton->setEnabled ( false );
+		ui->removeDarksButton->setEnabled ( false );
+		ui->enableDarkFrameSubtraction->setEnabled ( false );
+		qDebug() << "disable darks subtraction option";
+	}
+}
+
+
+void
+SourceFiles::removeFlatFiles ( void )
+{
+	removeFiles ( ui->flatsFileList, numFlats );
+	updateFlatsLabel();
+
+	if ( !numFlats ) {
+		ui->removeFlatsButton->setEnabled ( false );
+		ui->removeFlatsButton->setEnabled ( false );
+		ui->enableFlatFrameCorrection->setEnabled ( false );
+		qDebug() << "disable flat frame correction";
+	}
+}
+
+
+void
+SourceFiles::removeFlatDarkFiles ( void )
+{
+	removeFiles ( ui->flatDarksFileList, numFlatDarks );
+	updateFlatDarksLabel();
+
+	if ( !numFlatDarks ) {
+		ui->removeFlatDarksButton->setEnabled ( false );
+		ui->removeFlatDarksButton->setEnabled ( false );
+		ui->enableFlatDarkFrameSubtraction->setEnabled ( false );
+		qDebug() << "Disable flat dark frame subtraction";
+	}
+}
+
+
+void
+SourceFiles::removeFiles ( QTableWidget* table, int& fileCount )
+{
+	QList<QTableWidgetSelectionRange> ranges = table->selectedRanges();
+
+	// deal with everything backwards, so the row numbers don't change
+	// as we remove rows
+	std::reverse ( ranges.begin(), ranges.end());
+	for ( auto range : ranges ) {
+		int last = range.bottomRow();
+		int first = range.topRow();
+		for ( int i = last; i >= first; i-- ) {
+			table->removeRow ( i );
+			fileCount--;
+		}
+	}
 }
