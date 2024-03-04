@@ -39,6 +39,11 @@
 namespace std {
   using fmt::format;
 }
+extern "C" {
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+}
 #else
   #include <format>
 #endif
@@ -306,6 +311,8 @@ SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 		"Image files (*.png *.jpg *.tiff *.tif);;"
 		"Raw image files (*.CR2 *.CR3)");
 
+	QStringList singleImageExtns = { "png", "jpg", "tif", "cr2", "cr3" };
+
 	QFileDialog dialog ( this, title, "", filters );
 
 	dialog.setFileMode ( QFileDialog::ExistingFiles );
@@ -322,7 +329,9 @@ SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 			fs::path f = p.filename();
 			QString dir = QString::fromStdString ( parent.string());
 			QString fname = QString::fromStdString ( f.string());
-			QString extn = QString::fromStdString ( f.extension().string());
+			// possibly iffy calling toLower() here, but it _is_ an extension
+			QString extn = QString::fromStdString ( f.extension().string()).
+				remove ( 0, 1 ).toLower();
 
 			// now we have:
 			// fname: just the filename
@@ -338,19 +347,54 @@ SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 			// FIX ME -- might be neater to do this with an enum value for column
 			table->setItem ( fileCount, 0, newItem );
 
+			int numFrames = 1;  // default value
+			QString type = extn;
+			QString fps = "-";
+			QString frameSize = "-";
+			if ( singleImageExtns.contains ( extn )) {
+				qDebug() << "calculate frame size for file";
+			} else {
+				qDebug() << "calculate frame count, video codec etc. for file";
+				numFrames = -1;
+			}
+			newItem = new QTableWidgetItem ( type );
+			newItem->setTextAlignment ( Qt::AlignCenter );
+			table->setItem ( fileCount, 1, newItem );
+			newItem = new QTableWidgetItem ( QString ( "%1" ).arg ( numFrames ));
+			newItem->setTextAlignment ( Qt::AlignRight );
+			table->setItem ( fileCount, 2, newItem );
+			newItem = new QTableWidgetItem ( fps );
+			newItem->setTextAlignment ( Qt::AlignRight );
+			table->setItem ( fileCount, 3, newItem );
+			newItem = new QTableWidgetItem ( frameSize );
+			newItem->setTextAlignment ( Qt::AlignRight );
+			table->setItem ( fileCount, 4, newItem );
+
+
 			// FIX ME -- should check error codes in case the file is missing
 
+#ifdef __cpp_lib_format
 			fs::file_time_type ftime = fs::last_write_time ( p );
-
-			/*
-			 * FIX ME -- std::format is not widely supported.  Come back to this
-			 * later
 			newItem = new QTableWidgetItem ( QString::fromStdString (
 						std::format ( "%F %R", ftime )));
+#else
+			// An ugly workaround for the code above if we don't have std::format
+			// Really needs some error checking.
+
+			struct stat buf;
+			struct tm* ti;
+			char filedate_c[64];
+
+			stat ( p.c_str(), &buf );
+			ti = localtime ( &buf.st_mtime );
+			strftime ( filedate_c, 63, "%F %R", ti );
+			QString filedate = filedate_c;
+			newItem = new QTableWidgetItem ( filedate );
+#endif
 			table->setItem ( fileCount, 5, newItem );
-			*/
 
 			newItem = new QTableWidgetItem ( humanReadable ( fs::file_size ( p )));
+			newItem->setTextAlignment ( Qt::AlignRight );
 			table->setItem ( fileCount, 6, newItem );
 
 			newItem = new QTableWidgetItem ( dir );
@@ -370,7 +414,7 @@ SourceFiles::setUpTables ( void )
 		tr ( "Type" ),
 		tr ( "Frames" ),
 		tr ( "FPS" ),
-		tr ( "Size" ),
+		tr ( "Frame size" ),
 		tr ( "Date" ),
 		tr ( "Filesize" ),
 		tr ( "Directory" )
@@ -386,6 +430,7 @@ SourceFiles::setUpTables ( void )
 		table->verticalHeader()->setVisible ( false );
 		table->setSelectionMode ( QTableWidget::ExtendedSelection );
 		table->setSelectionBehavior ( QTableWidget::SelectRows );
+		table->setAlternatingRowColors ( true );
 	}
 }
 

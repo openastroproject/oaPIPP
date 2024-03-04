@@ -43,12 +43,27 @@ class SourceFiles : public QTabWidget
 
 	private:
 		void							setUpConnections ( void );
-
-	private:
+		void							setUpTables ( void );
+		void							loadImageFiles ( void );
+		void							loadDarkFiles ( void );
+		void							loadFlatFiles ( void );
+		void							loadFlatDarkFiles ( void );
+		void							loadFiles ( const QString&, QTableWidget*, int& ); 
+		void							removeImageFiles ( void );
+		void							removeDarkFiles ( void );
+		void							removeFlatFiles ( void );
+		void							removeFlatDarkFiles ( void );
+		void							removeFiles ( QTableWidget*, int& ); 
+		void							removeAllImageFiles ( void );
+		void							removeAllDarkFiles ( void );
+		void							removeAllFlatFiles ( void );
+		void							removeAllFlatDarkFiles ( void );
+		void							removeAllFiles ( QTableWidget*, int& ); 
 		void							updateImagesLabel ( void );
 		void							updateDarksLabel ( void );
 		void							updateFlatsLabel ( void );
 		void							updateFlatDarksLabel ( void );
+		QString						humanReadable ( std::uintmax_t );
 
 		Ui::SourceFiles*	ui;
 	  int								numLights;
