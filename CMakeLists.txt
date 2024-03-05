@@ -31,6 +31,7 @@ project ( oapipp VERSION 0.0.1 )
 set ( CMAKE_CXX_STANDARD 20 )
 
 include ( FindPkgConfig )
+include ( CheckIncludeFileCXX )
 
 if ( PKG_CONFIG_FOUND )
   pkg_search_module ( LIBTIFF4 libtiff-4 )
@@ -49,6 +50,13 @@ endif()
 if ( NOT LIBCFITSIO_FOUND )
   message ( FATAL_ERROR "libcfitsio required for build" )
 endif()
+
+# This is to deal with possibly not having std::format in C++20 (like GCC)
+check_include_file_cxx ( "format" CXX_FORMAT_SUPPORT )
+if ( NOT CXX_FORMAT_SUPPORT )
+    find_package (fmt REQUIRED )
+endif()
+
 
 set( top ${CMAKE_SOURCE_DIR} )
 set( cwd ${CMAKE_CURRENT_SOURCE_DIR} )
@@ -98,3 +106,8 @@ target_link_libraries( oapipp
 	raw
   pthread
 )
+
+if (NOT CXX_FORMAT_SUPPORT)
+	target_link_libraries( oapipp fmt::fmt)
+endif()
+
