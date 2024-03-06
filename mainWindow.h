@@ -36,6 +36,7 @@
 #include "animationOptions.h"
 #include "outputOptions.h"
 #include "doProcessing.h"
+#include "about.h"
 
 namespace Ui {
 	class MainWindow;
@@ -61,4 +62,9 @@ class MainWindow : public QMainWindow
 		AnimationOptions*		animationOptions;
 		OutputOptions*			outputOptions;
 		DoProcessing*				doProcessing;
+		About*							aboutPopup;
+
+	private slots:
+		void								quit ( void );
+		void								about ( void );
 };

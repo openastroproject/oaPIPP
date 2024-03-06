@@ -44,20 +44,8 @@ class SourceFiles : public QTabWidget
 	private:
 		void							setUpConnections ( void );
 		void							setUpTables ( void );
-		void							loadImageFiles ( void );
-		void							loadDarkFiles ( void );
-		void							loadFlatFiles ( void );
-		void							loadFlatDarkFiles ( void );
 		void							loadFiles ( const QString&, QTableWidget*, int& ); 
-		void							removeImageFiles ( void );
-		void							removeDarkFiles ( void );
-		void							removeFlatFiles ( void );
-		void							removeFlatDarkFiles ( void );
 		void							removeFiles ( QTableWidget*, int& ); 
-		void							removeAllImageFiles ( void );
-		void							removeAllDarkFiles ( void );
-		void							removeAllFlatFiles ( void );
-		void							removeAllFlatDarkFiles ( void );
 		void							removeAllFiles ( QTableWidget*, int& ); 
 		void							updateImagesLabel ( void );
 		void							updateDarksLabel ( void );
@@ -71,7 +59,22 @@ class SourceFiles : public QTabWidget
 		int								numFlats;
 		int								numFlatDarks;
 
+	public slots:
+		void							loadImageFiles ( void );
+		void							removeImageFiles ( void );
+		void							unloadAllFiles ( void );
+
 	private slots:
 		void							unimplemented1 ( void );
 		void							unimplemented2 ( const QString& text );
+		void							loadDarkFiles ( void );
+		void							loadFlatFiles ( void );
+		void							loadFlatDarkFiles ( void );
+		void							removeDarkFiles ( void );
+		void							removeFlatFiles ( void );
+		void							removeFlatDarkFiles ( void );
+		void							removeAllImageFiles ( void );
+		void							removeAllDarkFiles ( void );
+		void							removeAllFlatFiles ( void );
+		void							removeAllFlatDarkFiles ( void );
 };

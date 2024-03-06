@@ -31,6 +31,7 @@
 
 #include "ui_pipp.h"
 #include "mainWindow.h"
+#include "sourceFiles.h"
 
 static const char* styleGroupBoxBorders =
   "QGroupBox { "
@@ -48,6 +49,8 @@ MainWindow::MainWindow ( void ) :
   ui ( new Ui::MainWindow )
 {
 	ui->setupUi ( this );
+
+	setWindowTitle ( APPLICATION_NAME + " " + VERSION_STR );
 
   // The gtk+ style doesn't enable group box borders by default, which makes
   // the display look confusing.
@@ -98,6 +101,41 @@ MainWindow::initialise ( void )
 
 	doProcessing = new DoProcessing;
 	ui->outerTabWidget->addTab ( doProcessing, tr ( "Do Processing" ));
+
+	aboutPopup = new About;
+	aboutPopup->hide();
+
+	// Set up slots for the various menu actions
+
+	connect ( ui->actionAddSourceFiles, &QAction::triggered, sourceFiles,
+			&SourceFiles::loadImageFiles );
+	connect ( ui->actionRemoveAllFiles, &QAction::triggered, sourceFiles,
+			&SourceFiles::unloadAllFiles );
+	connect ( ui->actionQuit, &QAction::triggered, this,
+			&MainWindow::quit );
+
+	connect ( ui->actionResetOptions, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionUndoResetOptions, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionSaveOptions, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionLoadOptions, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionSaveRejectedFrames, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionUseRAMBuffers, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+
+	connect ( ui->actionTestOptions, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionStartProcessing, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+	connect ( ui->actionCancelProcessing, &QAction::triggered, this,
+			&MainWindow::unimplemented );
+
+	connect ( ui->actionAbout, &QAction::triggered, this,
+			&MainWindow::about );
 }
 
 
@@ -111,6 +149,21 @@ MainWindow::~MainWindow ( void )
 	delete inputOptions;
 	delete sourceFiles;
 	delete ui;
+}
+
+
+void
+MainWindow::quit ( void )
+{
+	qDebug() << "Write settings on exit?";
+	qApp->quit();
+}
+
+
+void
+MainWindow::about ( void )
+{
+	aboutPopup->show();
 }
 
 

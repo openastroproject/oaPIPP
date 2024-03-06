@@ -1,508 +1,522 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>SourceFiles</class>
-            <widget class="QTabWidget" name="sourceFilesTabWidget">
-             <property name="currentIndex">
-              <number>0</number>
-             </property>
-             <widget class="QWidget" name="imagesTab">
-              <attribute name="title">
-               <string>Image Files (%1 frames)</string>
-              </attribute>
-              <layout class="QVBoxLayout" name="imagesTabLayout">
-               <item>
-                <widget class="QTableWidget" name="imageFileList"/>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="imageFilesButtonsLayout">
-                 <item>
-                  <layout class="QVBoxLayout" name="filesButtonsLayout">
-                   <item>
-                    <widget class="QPushButton" name="addImagesButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new source files to list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Add Image Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeImagesButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected source files from list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove Selected Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeAllImagesButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all source files from list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove All Image Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <layout class="QVBoxLayout" name="verticalLayout">
-                   <item>
-                    <widget class="QPushButton" name="imagesUpButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move the selected source files up in the source file list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>^</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="imagesDownButton">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move the selected source files down in the source file list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>v</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="modeBox">
-                   <property name="title">
-                    <string>Multiple Source Files</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_01">
-                    <property name="geometry">
-                     <rect>
-                      <x>20</x>
-                      <y>30</y>
-                      <width>106</width>
-                      <height>48</height>
-                     </rect>
-                    </property>
-                    <layout class="QVBoxLayout" name="modeBoxLayout">
-                     <item>
-                      <widget class="QRadioButton" name="batchMode">
-                       <property name="toolTip">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Process each input file separately&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="text">
-                        <string>Batch Mode</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QRadioButton" name="joinMode">
-                       <property name="toolTip">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Process all input files together as if they were a single file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="text">
-                        <string>Join Mode</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="optimiseBox">
-                   <property name="title">
-                    <string>Optimise Options For</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_02">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>20</y>
-                      <width>449</width>
-                      <height>74</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="optimiseBoxLayout">
-                     <item row="0" column="1">
-                      <widget class="QRadioButton" name="closeUpButton">
-                       <property name="text">
-                        <string>Solar/Lunar Close-up</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="2">
-                      <widget class="QRadioButton" name="aviButton">
-                       <property name="text">
-                        <string>Planetary Animation (AVI)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <widget class="QRadioButton" name="fullDiscButton">
-                       <property name="text">
-                        <string>Solar/Lunar Full Disc</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="2">
-                      <widget class="QRadioButton" name="gifButton">
-                       <property name="text">
-                        <string>Planetary Animation (GIF)</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="0">
-                      <widget class="QRadioButton" name="planetaryButton">
-                       <property name="text">
-                        <string>Planetary</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QRadioButton" name="issButton">
-                       <property name="text">
-                        <string>ISS</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="0">
-                      <widget class="QRadioButton" name="archiveButton">
-                       <property name="text">
-                        <string>AVI Archive</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
+ <widget class="QTabWidget" name="SourceFiles">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>829</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="currentIndex">
+   <number>0</number>
+  </property>
+  <widget class="QWidget" name="imagesTab">
+   <attribute name="title">
+    <string>Image Files (%1 frames)</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="imagesTabLayout">
+    <item>
+     <widget class="QTableWidget" name="imageFileList"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="imageFilesButtonsLayout" stretch="1,1,1,3">
+      <item>
+       <layout class="QVBoxLayout" name="filesButtonsLayout">
+        <item>
+         <widget class="QPushButton" name="addImagesButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new source files to list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Add Image Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeImagesButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected source files from list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove Selected Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeAllImagesButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all source files from list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove All Image Files</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="imagesUpButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move the selected source files up in the source file list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>^</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="imagesDownButton">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Move the selected source files down in the source file list&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>v</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="modeBox">
+        <property name="title">
+         <string>Multiple Source Files</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget_01">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>30</y>
+           <width>106</width>
+           <height>48</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="modeBoxLayout">
+          <item>
+           <widget class="QRadioButton" name="batchMode">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Process each input file separately&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Batch Mode</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QRadioButton" name="joinMode">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Process all input files together as if they were a single file&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Join Mode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="optimiseBox">
+        <property name="styleSheet">
+         <string notr="true">QRadioButton{ color: green; background-color: rgba(255, 255, 255, 0);}</string>
+        </property>
+        <property name="title">
+         <string>Optimise Options For</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget_02">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>449</width>
+           <height>74</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="optimiseBoxLayout">
+          <item row="0" column="1">
+           <widget class="QRadioButton" name="closeUpButton">
+            <property name="text">
+             <string>Solar/Lunar Close-up</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="2">
+           <widget class="QRadioButton" name="aviButton">
+            <property name="text">
+             <string>Planetary Animation (AVI)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QRadioButton" name="fullDiscButton">
+            <property name="text">
+             <string>Solar/Lunar Full Disc</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QRadioButton" name="gifButton">
+            <property name="text">
+             <string>Planetary Animation (GIF)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QRadioButton" name="planetaryButton">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
+            <property name="text">
+             <string>Planetary</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QRadioButton" name="issButton">
+            <property name="text">
+             <string>ISS</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QRadioButton" name="archiveButton">
+            <property name="text">
+             <string>AVI Archive</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="darksTab">
+   <attribute name="title">
+    <string>Dark Files (%1 frames)</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="darksTabLayout">
+    <item>
+     <widget class="QTableWidget" name="darksFileList"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="darkFilesButtonsLayout">
+      <item>
+       <layout class="QVBoxLayout" name="filesButtonsLayout2">
+        <item>
+         <widget class="QPushButton" name="addDarksButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new dark files to the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Add Dark Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeDarksButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected files from the list of dark files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove Selected Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeAllDarksButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all dark files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove All Dark Files</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="darksOptionsBox">
+        <property name="title">
+         <string>Dark Frame Options</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget_03">
+         <property name="geometry">
+          <rect>
+           <x>20</x>
+           <y>20</y>
+           <width>219</width>
+           <height>48</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="darksOptionsLayout">
+          <item>
+           <widget class="QCheckBox" name="enableDarkFrameSubtraction">
+            <property name="text">
+             <string>Enable Dark Frame Subtraction</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="saveMasterDark">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled the master dark file is saved as a TIFF file in the logs directory that PIPP generates&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Save Master Dark Frame</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="hotPixelOptionsBox">
+        <property name="title">
+         <string>Hot Pixel Options</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget_04">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>20</y>
+           <width>536</width>
+           <height>74</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="hotPixelBoxLayout">
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="darksMonoWithBayer">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable this control when the image data is raw colour data (monochrome data with a bayer pattern).  This allos PIPP to use the correct neighbouring pixels when doing hot pixel replacement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Data Is Monochrome With Bayer Pattern</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="thresholdLayout">
+            <item>
+             <widget class="QLabel" name="thresholdLabel">
+              <property name="toolTip">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This control sets the threshold that a master dark pixel must reach to be considered a hot pixel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+              <property name="text">
+               <string>Hot PIxel Threshold %</string>
+              </property>
              </widget>
-             <widget class="QWidget" name="darksTab">
-              <attribute name="title">
-               <string>Dark Files (%1 frames)</string>
-              </attribute>
-              <layout class="QVBoxLayout" name="darksTabLayout">
-               <item>
-                <widget class="QTableWidget" name="darksFileList"/>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="darkFilesButtonsLayout">
-                 <item>
-                  <layout class="QVBoxLayout" name="filesButtonsLayout2">
-                   <item>
-                    <widget class="QPushButton" name="addDarksButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new dark files to the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Add Dark Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeDarksButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected files from the list of dark files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove Selected Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeAllDarksButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all dark files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove All Dark Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="darksOptionsBox">
-                   <property name="title">
-                    <string>Dark Frame Options</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_03">
-                    <property name="geometry">
-                     <rect>
-                      <x>20</x>
-                      <y>20</y>
-                      <width>219</width>
-                      <height>48</height>
-                     </rect>
-                    </property>
-                    <layout class="QVBoxLayout" name="darksOptionsLayout">
-                     <item>
-                      <widget class="QCheckBox" name="enableDarkFrameSubtraction">
-                       <property name="text">
-                        <string>Enable Dark Frame Subtraction</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QCheckBox" name="saveMasterDark">
-                       <property name="toolTip">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled the master dark file is saved as a TIFF file in the logs directory that PIPP generates&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="text">
-                        <string>Save Master Dark Frame</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="hotPixelOptionsBox">
-                   <property name="title">
-                    <string>Hot Pixel Options</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_04">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>20</y>
-                      <width>536</width>
-                      <height>74</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="hotPixelBoxLayout">
-                     <item row="0" column="1">
-                      <widget class="QCheckBox" name="darksMonoWithBayer">
-                       <property name="toolTip">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enable this control when the image data is raw colour data (monochrome data with a bayer pattern).  This allos PIPP to use the correct neighbouring pixels when doing hot pixel replacement&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="text">
-                        <string>Data Is Monochrome With Bayer Pattern</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <layout class="QHBoxLayout" name="thresholdLayout">
-                       <item>
-                        <widget class="QLabel" name="thresholdLabel">
-                         <property name="toolTip">
-                          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This control sets the threshold that a master dark pixel must reach to be considered a hot pixel&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                         </property>
-                         <property name="text">
-                          <string>Hot PIxel Threshold %</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QSpinBox" name="thresholdVal"/>
-                       </item>
-                      </layout>
-                     </item>
-                     <item row="0" column="0">
-                      <widget class="QCheckBox" name="enableHotPixel">
-                       <property name="text">
-                        <string>Enable Hot Pixel Replacement</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="flatsTab">
-              <attribute name="title">
-               <string>Flat Files (%1 frames)</string>
-              </attribute>
-              <layout class="QVBoxLayout" name="flatsTabLayout">
-               <item>
-                <widget class="QTableWidget" name="flatsFileList"/>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="flatFilesButtonsLayout">
-                 <item>
-                  <layout class="QVBoxLayout" name="filesButtonsLayout3">
-                   <item>
-                    <widget class="QPushButton" name="addFlatsButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new flat files to the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Add Flat Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeFlatsButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected flat files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove Selected Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeAllFlatsButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all flat files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove All Flat Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="flatsOptionsBox">
-                   <property name="title">
-                    <string>Flat Frame Options</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_05">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>30</y>
-                      <width>481</width>
-                      <height>48</height>
-                     </rect>
-                    </property>
-                    <layout class="QGridLayout" name="gridLayout">
-                     <item row="0" column="0">
-                      <widget class="QCheckBox" name="enableFlatFrameCorrection">
-                       <property name="text">
-                        <string>Enable Flat Frame Correction</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QCheckBox" name="flatsMonoWithBayer">
-                       <property name="text">
-                        <string>Data Is Monochrome With Bayer Pattern</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QCheckBox" name="saveMasterFlat">
-                       <property name="toolTip">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled the master flat frame is saved as a TIFF file in the logs directory that PIPP generates&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="text">
-                        <string>Save Master Flat Frame</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-             <widget class="QWidget" name="flatDarksTab">
-              <attribute name="title">
-               <string>Flat Dark Files (%1 frames)</string>
-              </attribute>
-              <layout class="QVBoxLayout" name="flatDarksTabLayout">
-               <item>
-                <widget class="QTableWidget" name="flatDarksFileList"/>
-               </item>
-               <item>
-                <layout class="QHBoxLayout" name="flatDarkFilesButtonsLayout">
-                 <item>
-                  <layout class="QVBoxLayout" name="filesButtonsLayout4">
-                   <item>
-                    <widget class="QPushButton" name="addFlatDarksButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new flat dark files to the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Add Flat Dark Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeFlatDarksButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected flat dark files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove Selected Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="removeAllFlatDarksButton">
-                     <property name="toolTip">
-                      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all flat dark files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                     </property>
-                     <property name="text">
-                      <string>Remove All Flat Dark Files</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <widget class="QGroupBox" name="flatDarksOptionsBox">
-                   <property name="title">
-                    <string>Flat Dark Frame Options</string>
-                   </property>
-                   <widget class="QWidget" name="layoutWidget_06">
-                    <property name="geometry">
-                     <rect>
-                      <x>10</x>
-                      <y>30</y>
-                      <width>481</width>
-                      <height>48</height>
-                     </rect>
-                    </property>
-                    <layout class="QVBoxLayout" name="flatDarksOptionsLayout">
-                     <item>
-                      <widget class="QCheckBox" name="enableFlatDarkFrameSubtraction">
-                       <property name="text">
-                        <string>Enable Flat Dark Frame Subtraction</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item>
-                      <widget class="QCheckBox" name="saveMasterFlatDark">
-                       <property name="toolTip">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled the master dark frame is saved as a TIFF files in the logs directory that PIPP generates&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                       <property name="text">
-                        <string>Save Master Flat Dark Frame</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </widget>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-              </layout>
-             </widget>
-            </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="thresholdVal"/>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="enableHotPixel">
+            <property name="text">
+             <string>Enable Hot Pixel Replacement</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="flatsTab">
+   <attribute name="title">
+    <string>Flat Files (%1 frames)</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="flatsTabLayout">
+    <item>
+     <widget class="QTableWidget" name="flatsFileList"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="flatFilesButtonsLayout">
+      <item>
+       <layout class="QVBoxLayout" name="filesButtonsLayout3">
+        <item>
+         <widget class="QPushButton" name="addFlatsButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new flat files to the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Add Flat Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeFlatsButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected flat files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove Selected Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeAllFlatsButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all flat files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove All Flat Files</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="flatsOptionsBox">
+        <property name="title">
+         <string>Flat Frame Options</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget_05">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>481</width>
+           <height>48</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="enableFlatFrameCorrection">
+            <property name="text">
+             <string>Enable Flat Frame Correction</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QCheckBox" name="flatsMonoWithBayer">
+            <property name="text">
+             <string>Data Is Monochrome With Bayer Pattern</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="saveMasterFlat">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled the master flat frame is saved as a TIFF file in the logs directory that PIPP generates&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Save Master Flat Frame</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="flatDarksTab">
+   <attribute name="title">
+    <string>Flat Dark Files (%1 frames)</string>
+   </attribute>
+   <layout class="QVBoxLayout" name="flatDarksTabLayout">
+    <item>
+     <widget class="QTableWidget" name="flatDarksFileList"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="flatDarkFilesButtonsLayout">
+      <item>
+       <layout class="QVBoxLayout" name="filesButtonsLayout4">
+        <item>
+         <widget class="QPushButton" name="addFlatDarksButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Add new flat dark files to the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Add Flat Dark Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeFlatDarksButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove selected flat dark files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove Selected Files</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="removeAllFlatDarksButton">
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Remove all flat dark files from the list of files to be processed&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          </property>
+          <property name="text">
+           <string>Remove All Flat Dark Files</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="flatDarksOptionsBox">
+        <property name="title">
+         <string>Flat Dark Frame Options</string>
+        </property>
+        <widget class="QWidget" name="layoutWidget_06">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>481</width>
+           <height>48</height>
+          </rect>
+         </property>
+         <layout class="QVBoxLayout" name="flatDarksOptionsLayout">
+          <item>
+           <widget class="QCheckBox" name="enableFlatDarkFrameSubtraction">
+            <property name="text">
+             <string>Enable Flat Dark Frame Subtraction</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="saveMasterFlatDark">
+            <property name="toolTip">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;When this option is enabled the master dark frame is saved as a TIFF files in the logs directory that PIPP generates&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+            <property name="text">
+             <string>Save Master Flat Dark Frame</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
  <resources/>
  <connections/>
 </ui>

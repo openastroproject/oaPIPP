@@ -583,3 +583,13 @@ SourceFiles::removeFiles ( QTableWidget* table, int& fileCount )
 		}
 	}
 }
+
+
+void
+SourceFiles::unloadAllFiles ( void )
+{
+	removeAllImageFiles();
+	removeAllDarkFiles();
+	removeAllFlatFiles();
+	removeAllFlatDarkFiles();
+}

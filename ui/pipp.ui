@@ -73,7 +73,7 @@
      <string>File</string>
     </property>
     <addaction name="actionAddSourceFiles"/>
-    <addaction name="actionRemoveSourceFiles"/>
+    <addaction name="actionRemoveAllFiles"/>
     <addaction name="actionQuit"/>
    </widget>
    <widget class="QMenu" name="menuOptions">
@@ -116,9 +116,9 @@
     <enum>Qt::WindowShortcut</enum>
    </property>
   </action>
-  <action name="actionRemoveSourceFiles">
+  <action name="actionRemoveAllFiles">
    <property name="text">
-    <string>Remove Source Files</string>
+    <string>Remove All Files</string>
    </property>
   </action>
   <action name="actionQuit">
