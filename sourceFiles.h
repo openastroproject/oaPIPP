@@ -29,6 +29,9 @@
 
 #include <QTabWidget>
 
+#include "configuration.h"
+
+
 namespace Ui {
 	class SourceFiles;
 }
@@ -38,13 +41,13 @@ class SourceFiles : public QTabWidget
 	Q_OBJECT
 
   public:
-    explicit SourceFiles ( QWidget* parent = nullptr );
+    explicit SourceFiles ( QWidget* parent, Configuration* conf );
     virtual ~SourceFiles();
 
 	private:
 		void							setUpConnections ( void );
 		void							setUpTables ( void );
-		void							loadFiles ( const QString&, QTableWidget*, int& ); 
+		bool							loadFiles ( const QString&, QTableWidget*, int& ); 
 		void							removeFiles ( QTableWidget*, int& ); 
 		void							removeAllFiles ( QTableWidget*, int& ); 
 		void							updateImagesLabel ( void );
@@ -58,6 +61,7 @@ class SourceFiles : public QTabWidget
 		int								numDarks;
 		int								numFlats;
 		int								numFlatDarks;
+		Configuration*		config;
 
 	public slots:
 		void							loadImageFiles ( void );

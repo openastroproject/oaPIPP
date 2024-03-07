@@ -84,6 +84,7 @@ add_executable ( oapipp
   processingOptions.cc
   qualityOptions.cc
   sourceFiles.cc
+	configuration.cc
 )
 
 target_include_directories ( oapipp

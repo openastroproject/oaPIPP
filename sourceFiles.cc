@@ -25,6 +25,8 @@
  *
  *****************************************************************************/
 
+#include "oapipp_common.h"
+
 #include <QtCore>
 #include <QtWidgets>
 #include <source_location>
@@ -49,6 +51,7 @@ extern "C" {
 #endif
 
 
+#include "configuration.h"
 #include "sourceFiles.h"
 #include "ui_sourceFiles.h"
 
@@ -56,10 +59,12 @@ namespace fs = std::filesystem;
 using namespace std::chrono_literals;
 using file_time_type = std::chrono::time_point<std::chrono::file_clock>;
 
-SourceFiles::SourceFiles ( QWidget* parent ) :
+SourceFiles::SourceFiles ( QWidget* parent, Configuration* conf ) :
 	QTabWidget ( parent ),
 	ui ( new Ui::SourceFiles )
 {
+	config = conf;
+
 	ui->setupUi ( this );
 
 	numLights = numDarks = numFlats = numFlatDarks = 0;
@@ -236,14 +241,23 @@ SourceFiles::loadImageFiles ( void )
 {
 	QString title = tr ( "Select image files" );
 
-	loadFiles ( title, ui->imageFileList, numLights );
+	bool single = loadFiles ( title, ui->imageFileList, numLights );
 	updateImagesLabel();
 
 	if ( numLights ) {
 		ui->removeImagesButton->setEnabled ( true );
 		ui->removeAllImagesButton->setEnabled ( true );
 	}
-	qDebug() << "Enable batch/join mode && image up/down";
+
+	if ( single ) {
+		ui->joinMode->click();
+		QMessageBox::information ( this, APPLICATION_NAME,
+				tr ( "Selecting join mode because one or "
+				"more source files are individual image files" ));
+	}
+
+	ui->imagesUpButton->setEnabled ( true );
+	ui->imagesDownButton->setEnabled ( true );
 }
 
 
@@ -252,14 +266,14 @@ SourceFiles::loadDarkFiles ( void )
 {
 	QString title = tr ( "Select dark files" );
 
-	loadFiles ( title, ui->darksFileList, numDarks );
+	std::ignore = loadFiles ( title, ui->darksFileList, numDarks );
 	updateDarksLabel();
 
 	if ( numDarks ) {
 		ui->removeDarksButton->setEnabled ( true );
 		ui->removeAllDarksButton->setEnabled ( true );
 		ui->enableDarkFrameSubtraction->setEnabled ( true );
-	  qDebug() << "Enable darks subtraction option";
+		qDebug() << "check darks subtraction bubbles down";
 	}
 }
 
@@ -269,14 +283,14 @@ SourceFiles::loadFlatFiles ( void )
 {
 	QString title = tr ( "Select flat files" );
 
-	loadFiles ( title, ui->flatsFileList, numFlats );
+	std::ignore = loadFiles ( title, ui->flatsFileList, numFlats );
 	updateFlatsLabel();
 
 	if ( numFlats ) {
 		ui->removeFlatsButton->setEnabled ( true );
 		ui->removeAllFlatsButton->setEnabled ( true );
 		ui->enableFlatFrameCorrection->setEnabled ( true );
-		qDebug() << "Enable flat frame correction";
+		qDebug() << "check flat frame correction bubbles down";
 	}
 
 }
@@ -287,20 +301,19 @@ SourceFiles::loadFlatDarkFiles ( void )
 {
 	QString title = tr ( "Select flat dark files" );
 
-	loadFiles ( title, ui->flatDarksFileList, numFlatDarks );
+	std::ignore = loadFiles ( title, ui->flatDarksFileList, numFlatDarks );
 	updateFlatDarksLabel();
 
 	if ( numFlatDarks ) {
 		ui->removeFlatDarksButton->setEnabled ( true );
 		ui->removeAllFlatDarksButton->setEnabled ( true );
 		ui->enableFlatDarkFrameSubtraction->setEnabled ( true );
+		qDebug() << "check flat dark subtraction bubbles down";
 	}
-
-	qDebug() << "Enable flat dark frame subtraction";
 }
 
 
-void
+bool
 SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 		int& fileCount )
 {
@@ -312,8 +325,8 @@ SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 		"Raw image files (*.CR2 *.CR3)");
 
 	QStringList singleImageExtns = { "png", "jpg", "tif", "cr2", "cr3" };
-
 	QFileDialog dialog ( this, title, "", filters );
+	bool				haveSingleFrameFile = false;
 
 	dialog.setFileMode ( QFileDialog::ExistingFiles );
 	dialog.setViewMode ( QFileDialog::Detail );
@@ -352,6 +365,7 @@ SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 			QString fps = "-";
 			QString frameSize = "-";
 			if ( singleImageExtns.contains ( extn )) {
+				haveSingleFrameFile = true;
 				qDebug() << "calculate frame size for file";
 			} else {
 				qDebug() << "calculate frame count, video codec etc. for file";
@@ -403,6 +417,8 @@ SourceFiles::loadFiles ( const QString& title, QTableWidget* table,
 			fileCount++;
 		}
 	}
+
+	return haveSingleFrameFile;
 }
 
 
@@ -457,6 +473,8 @@ SourceFiles::removeAllImageFiles ( void )
 
 	ui->removeImagesButton->setEnabled ( false );
 	ui->removeAllImagesButton->setEnabled ( false );
+	ui->imagesUpButton->setEnabled ( false );
+	ui->imagesDownButton->setEnabled ( false );
 }
 
 
@@ -469,7 +487,7 @@ SourceFiles::removeAllDarkFiles ( void )
 	ui->removeDarksButton->setEnabled ( false );
 	ui->removeAllDarksButton->setEnabled ( false );
 	ui->enableDarkFrameSubtraction->setEnabled ( false );
-  qDebug() << "disable darks subtraction option";
+  qDebug() << "check darks subtraction bubbles down";
 }
 
 

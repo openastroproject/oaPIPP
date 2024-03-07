@@ -32,6 +32,7 @@
 #include "ui_pipp.h"
 #include "mainWindow.h"
 #include "sourceFiles.h"
+#include "configuration.h"
 
 static const char* styleGroupBoxBorders =
   "QGroupBox { "
@@ -71,17 +72,22 @@ MainWindow::MainWindow ( void ) :
   if ( currentStyle.toLower() == "gtk+" || ( ok && qtMajorVersion > 4 )) {
     this->setStyleSheet ( styleGroupBoxBorders );
   }
+
+	config = new Configuration;
 }
 
 
 void
 MainWindow::initialise ( void )
 {
+	config->initConfig();
+	config->loadConfig();
+
 	// Initialise the various widgets for each tab in the main window
 	// Need to do this after calling setupUi and once this object has been
 	// instantiated
 
-	sourceFiles = new SourceFiles;
+	sourceFiles = new SourceFiles ( this, config );
 	ui->sourceFilesLayout->addWidget ( sourceFiles );
 
 	inputOptions = new InputOptions;
@@ -101,9 +107,6 @@ MainWindow::initialise ( void )
 
 	doProcessing = new DoProcessing;
 	ui->outerTabWidget->addTab ( doProcessing, tr ( "Do Processing" ));
-
-	aboutPopup = new About;
-	aboutPopup->hide();
 
 	// Set up slots for the various menu actions
 
@@ -149,6 +152,8 @@ MainWindow::~MainWindow ( void )
 	delete inputOptions;
 	delete sourceFiles;
 	delete ui;
+
+	delete config;
 }
 
 
@@ -163,7 +168,16 @@ MainWindow::quit ( void )
 void
 MainWindow::about ( void )
 {
-	aboutPopup->show();
+	QMessageBox about;
+	QString aboutText = tr ( "Planetary Imaging Preprocessor\n"
+		"Copyright Open Astro Project\n\n"
+		"Open source release based on PIPP v2.5.9\n"
+		"Copyright 2012-2017 Chris Garry\n" );
+
+  about.setText ( APPLICATION_NAME + " " + VERSION_STR );
+  about.setInformativeText ( aboutText );
+	// about.setIconPixmap ( ":/icons/pipp.png" );
+  about.exec();
 }
 
 
