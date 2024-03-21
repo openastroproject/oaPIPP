@@ -44,5 +44,12 @@ class Configuration
 		QVariant					getConfig ( const QString& );
 		
 	private:
-		QSettings					settings;
+		QSettings*				settings;
+		bool							settingsLoaded;
+
+	public:
+		static const QString	sourceMode;
+		static const QString	batchMode;
+		static const QString	joinMode;
 };
+

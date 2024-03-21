@@ -32,3 +32,5 @@
 const QString ORGANISATION_NAME = "Open Astro Project";
 const QString APPLICATION_NAME = "oaPIPP";
 const QString VERSION_STR = "0.0.1";
+
+const QString ORGANISATION_NAME_SETTINGS = "OpenAstro";

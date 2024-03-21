@@ -35,14 +35,21 @@ namespace fs = std::filesystem;
 
 #include "configuration.h"
 
+const QString Configuration::sourceMode = "sourceMode";
+const QString Configuration::batchMode = "batch";
+const QString Configuration::joinMode = "join";
 
 Configuration::Configuration ( void )
 {
+	settingsLoaded = false;
 }
 
 
 Configuration::~Configuration()
 {
+	if ( settingsLoaded ) {
+		delete settings;
+	}
 }
 
 
@@ -59,10 +66,8 @@ Configuration::initConfig ( void )
 void
 Configuration::loadConfig ( void )
 {
-	QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
-
-  qDebug() << err;
+	settings = new QSettings ( ORGANISATION_NAME_SETTINGS, APPLICATION_NAME );
+	settingsLoaded = true;
 }
 
 

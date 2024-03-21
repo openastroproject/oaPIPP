@@ -81,4 +81,6 @@ class SourceFiles : public QTabWidget
 		void							removeAllDarkFiles ( void );
 		void							removeAllFlatFiles ( void );
 		void							removeAllFlatDarkFiles ( void );
+		void							setBatchMode ( void );
+		void							setJoinMode ( void );
 };

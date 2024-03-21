@@ -154,9 +154,9 @@ SourceFiles::setUpConnections ( void )
 			&SourceFiles::unimplemented1 );
 
   connect ( ui->batchMode, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setBatchMode );
   connect ( ui->joinMode, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setJoinMode );
 
   connect ( ui->closeUpButton, &QRadioButton::clicked, this,
 			&SourceFiles::unimplemented1 );
@@ -610,4 +610,18 @@ SourceFiles::unloadAllFiles ( void )
 	removeAllDarkFiles();
 	removeAllFlatFiles();
 	removeAllFlatDarkFiles();
+}
+
+
+void
+SourceFiles::setBatchMode ( void )
+{
+	config->setConfig ( Configuration::sourceMode, Configuration::batchMode );
+}
+
+
+void
+SourceFiles::setJoinMode ( void )
+{
+	config->setConfig ( Configuration::sourceMode, Configuration::joinMode );
 }
