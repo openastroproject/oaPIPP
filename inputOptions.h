@@ -3,7 +3,7 @@
  * inputOptions.h -- header for inputOptions.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -29,25 +29,29 @@
 
 #include <QWidget>
 
+#include "configuration.h"
+
 namespace Ui {
-	class InputOptions;
+  class InputOptions;
 }
 
 class InputOptions : public QWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
-    explicit InputOptions ( QWidget* parent = nullptr );
+    explicit InputOptions ( QWidget*, Configuration* );
     virtual ~InputOptions();
 
-	private:
-		void								setUpConnections ( void );
+  private:
+    void                setUpConnections ( void );
 
-	private:
-		Ui::InputOptions*		ui;
+  private:
+    Ui::InputOptions*   ui;
+    Configuration*      config;
 
   private slots:
-    void		            unimplemented1 ( void );
-    void								unimplemented2 ( const QString& text );
+    void                unimplemented1 ( void );
+    void                unimplemented2 ( const QString& text );
+    void                setBinMode ( int );
 };

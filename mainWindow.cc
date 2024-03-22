@@ -90,7 +90,7 @@ MainWindow::initialise ( void )
 	sourceFiles = new SourceFiles ( this, config );
 	ui->sourceFilesLayout->addWidget ( sourceFiles );
 
-	inputOptions = new InputOptions;
+	inputOptions = new InputOptions ( this, config );
 	ui->outerTabWidget->addTab ( inputOptions, tr ( "Input Options" ));
 
 	processingOptions = new ProcessingOptions;

@@ -39,6 +39,8 @@ const QString Configuration::sourceMode = "sourceMode";
 const QString Configuration::batchMode = "batch";
 const QString Configuration::joinMode = "join";
 
+const QString Configuration::binning = "binning";
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;

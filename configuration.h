@@ -3,7 +3,7 @@
  * configuration.h -- handle the application's configuration
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -36,20 +36,28 @@ class Configuration
     explicit Configuration ( void );
     virtual ~Configuration();
 
-	public:
-		void							initConfig ( void );
-		void							loadConfig ( void );
-		void							saveConfig ( void );
-		void							setConfig ( const QString&, const QVariant& );
-		QVariant					getConfig ( const QString& );
-		
-	private:
-		QSettings*				settings;
-		bool							settingsLoaded;
+  public:
+    void              initConfig ( void );
+    void              loadConfig ( void );
+    void              saveConfig ( void );
+    void              setConfig ( const QString&, const QVariant& );
+    QVariant          getConfig ( const QString& );
+    
+  private:
+    QSettings*        settings;
+    bool              settingsLoaded;
 
-	public:
-		static const QString	sourceMode;
-		static const QString	batchMode;
-		static const QString	joinMode;
+  public:
+    static const QString  sourceMode;
+    static const QString  batchMode;
+    static const QString  joinMode;
+
+    static const QString  binning;
+    enum BinMode {
+      noBinning,
+      bin2,
+      bin3,
+      bin4,
+      bin5
+    };
 };
-

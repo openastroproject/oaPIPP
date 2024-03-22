@@ -3,7 +3,7 @@
  * inputOptions.cc -- manage the input options tab
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -29,18 +29,21 @@
 #include <QtWidgets>
 #include <source_location>
 
+#include "configuration.h"
 #include "inputOptions.h"
 #include "ui_inputOptions.h"
 
-InputOptions::InputOptions ( QWidget* parent ) :
-	QWidget ( parent ),
-	ui ( new Ui::InputOptions )
+InputOptions::InputOptions ( QWidget* parent, Configuration* conf ) :
+  QWidget ( parent ),
+  ui ( new Ui::InputOptions )
 {
-	ui->setupUi ( this );
+  config = conf;
 
-	setUpConnections();
+  ui->setupUi ( this );
 
-	QString err = std::source_location::current().function_name();
+  setUpConnections();
+
+  QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
   qDebug() << err;
@@ -49,74 +52,75 @@ InputOptions::InputOptions ( QWidget* parent ) :
 
 InputOptions::~InputOptions ( void )
 {
-	delete ui;
+  delete ui;
 }
 
 
 void
 InputOptions::setUpConnections ( void )
 {
-  connect ( ui->binningSelector, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+  connect ( ui->binningSelector,
+      QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
+      &InputOptions::setBinMode );
   connect ( ui->binningMethod, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
   connect ( ui->rawHotPixelFilter, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
   connect ( ui->debayerRaw, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
   connect ( ui->debayerRawMethod, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->colourSpace, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->highlightRecoveryMethod, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
   connect ( ui->dateFromFilename, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
   connect ( ui->convertToUTC, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
   connect ( ui->filenameFormat, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->rememberFormat, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
   connect ( ui->serFrameRate, &QSpinBox::textChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
   connect ( ui->strictY800, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
 
   connect ( ui->serOptions, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
   connect ( ui->whichFrames, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->frameStart, &QSpinBox::textChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->frameEnd, &QSpinBox::textChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->noOfFramesBox, &QSpinBox::textChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->whichFrames, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->limitFrameRange, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
 
   connect ( ui->droppedFrames, &QSpinBox::textChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
   connect ( ui->inputColourType, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
   connect ( ui->debayerMono, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
   connect ( ui->protectBayer, &QCheckBox::clicked, this,
-			&InputOptions::unimplemented1 );
+      &InputOptions::unimplemented1 );
 
   connect ( ui->debayerAlgorithm, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
   connect ( ui->bayerPattern, &QComboBox::currentTextChanged, this,
-			&InputOptions::unimplemented2 );
+      &InputOptions::unimplemented2 );
 
 }
 
@@ -124,14 +128,44 @@ InputOptions::setUpConnections ( void )
 void
 InputOptions::unimplemented1 ( void )
 {
-	qDebug() << "slot not yet implemented";
+  qDebug() << "slot not yet implemented";
 }
 
 
 void
 InputOptions::unimplemented2 ( const QString& text )
 {
-	Q_UNUSED ( text )
+  Q_UNUSED ( text )
 
-	qDebug() << "slot not yet implemented";
+  qDebug() << "slot not yet implemented";
+}
+
+
+void
+InputOptions::setBinMode ( int index )
+{
+  switch ( index ) {
+    case 0:
+      config->setConfig ( Configuration::binning,
+          Configuration::BinMode::noBinning );
+      break;
+    case 1:
+      config->setConfig ( Configuration::binning,
+          Configuration::BinMode::bin2 );
+      break;
+    case 2:
+      config->setConfig ( Configuration::binning,
+          Configuration::BinMode::bin3 );
+      break;
+    case 3:
+      config->setConfig ( Configuration::binning,
+          Configuration::BinMode::bin4 );
+      break;
+    case 4:
+      config->setConfig ( Configuration::binning,
+          Configuration::BinMode::bin5 );
+      break;
+    default:
+      break;
+  }
 }
