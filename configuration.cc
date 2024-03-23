@@ -49,6 +49,12 @@ const QString Configuration::rawHotPixelFilter = "rawHotPixelFilter";
 
 const QString Configuration::debayerRawFiles = "debayerRawFiles";
 
+const QString Configuration::debayerAlgorithm = "debayerAlgorithm";
+const QString Configuration::debayerBilinear = "bilinear";
+const QString Configuration::debayerVNG = "VNG";
+const QString Configuration::debayerPPG = "PPG";
+const QString Configuration::debayerAHD = "AHD";
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;

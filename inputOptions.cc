@@ -74,8 +74,9 @@ InputOptions::setUpConnections ( void )
       &InputOptions::setHotPixelFilter );
   connect ( ui->debayerRaw, &QCheckBox::clicked, this,
       &InputOptions::setDebayerRaw );
-  connect ( ui->debayerRawMethod, &QComboBox::currentTextChanged, this,
-      &InputOptions::unimplemented2 );
+  connect ( ui->debayerRawMethod,
+      QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
+      &InputOptions::setDebayerMethod );
   connect ( ui->colourSpace, &QComboBox::currentTextChanged, this,
       &InputOptions::unimplemented2 );
   connect ( ui->highlightRecoveryMethod, &QComboBox::currentTextChanged, this,
@@ -218,4 +219,33 @@ InputOptions::setDebayerRaw ( int enabled )
 	ui->algorithmLabel->setEnabled ( state );
 	ui->colourSpace->setEnabled ( state );
 	ui->colourSpaceLabel->setEnabled ( state );
+}
+
+
+void
+InputOptions::setDebayerMethod ( int index )
+{
+  switch ( index ) {
+    case 0:
+      config->setConfig ( Configuration::debayerAlgorithm,
+          Configuration::debayerBilinear );
+      break;
+    case 1:
+      config->setConfig ( Configuration::debayerAlgorithm,
+          Configuration::debayerVNG );
+      break;
+    case 2:
+      config->setConfig ( Configuration::debayerAlgorithm,
+          Configuration::debayerPPG );
+      break;
+    case 3:
+      config->setConfig ( Configuration::debayerAlgorithm,
+          Configuration::debayerAHD );
+      break;
+    default:
+			QString err = std::source_location::current().function_name();
+			err += " unrecognised debayer algorithm";
+			qDebug() << err;
+      break;
+  }
 }

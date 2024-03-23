@@ -71,4 +71,10 @@ class Configuration
 		static const QString rawHotPixelFilter;
 
 		static const QString debayerRawFiles;
+
+		static const QString debayerAlgorithm;
+		static const QString debayerBilinear;
+		static const QString debayerVNG;
+		static const QString debayerPPG;
+		static const QString debayerAHD;
 };
