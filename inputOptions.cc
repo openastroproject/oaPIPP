@@ -71,7 +71,7 @@ InputOptions::setUpConnections ( void )
       &InputOptions::setBinMethod );
 
   connect ( ui->rawHotPixelFilter, &QCheckBox::clicked, this,
-      &InputOptions::unimplemented1 );
+      &InputOptions::setHotPixelFilter );
   connect ( ui->debayerRaw, &QCheckBox::clicked, this,
       &InputOptions::unimplemented1 );
   connect ( ui->debayerRawMethod, &QComboBox::currentTextChanged, this,
@@ -197,4 +197,12 @@ InputOptions::setBinMethod ( int index )
 			qDebug() << err;
       break;
   }
+}
+
+
+void
+InputOptions::setHotPixelFilter ( int enabled )
+{
+	config->setConfig ( Configuration::rawHotPixelFilter,
+			enabled ? Configuration::enabled : Configuration::disabled );
 }

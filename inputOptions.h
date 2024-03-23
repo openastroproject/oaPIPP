@@ -55,4 +55,5 @@ class InputOptions : public QWidget
     void                unimplemented2 ( const QString& text );
     void                setBinMode ( int );
     void                setBinMethod ( int );
+    void                setHotPixelFilter ( int );
 };
