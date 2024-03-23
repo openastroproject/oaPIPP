@@ -45,6 +45,9 @@ const QString Configuration::binMethod = "binMethod";
 const QString Configuration::binAverage = "average";
 const QString Configuration::binSum = "sum";
 
+const QString Configuration::rawHotPixelFilter = "rawHotPixelFilter";
+
+const QString Configuration::debayerRawFiles = "debayerRawFiles";
 
 Configuration::Configuration ( void )
 {

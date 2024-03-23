@@ -40,6 +40,10 @@ InputOptions::InputOptions ( QWidget* parent, Configuration* conf ) :
   config = conf;
 
   ui->setupUi ( this );
+	ui->debayerRaw->setChecked ( true );
+  config->setConfig ( Configuration::debayerRawFiles,
+          Configuration::enabled );
+
 
   setUpConnections();
 

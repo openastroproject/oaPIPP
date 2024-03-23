@@ -48,6 +48,9 @@ class Configuration
     bool              settingsLoaded;
 
   public:
+		static const int	disabled = 0;
+		static const int	enabled = 1;
+
     static const QString  sourceMode;
     static const QString  batchMode;
     static const QString  joinMode;
@@ -64,4 +67,8 @@ class Configuration
 		static const QString binMethod;
 		static const QString binAverage;
 		static const QString binSum;
+
+		static const QString rawHotPixelFilter;
+
+		static const QString debayerRawFiles;
 };
