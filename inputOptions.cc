@@ -73,7 +73,7 @@ InputOptions::setUpConnections ( void )
   connect ( ui->rawHotPixelFilter, &QCheckBox::clicked, this,
       &InputOptions::setHotPixelFilter );
   connect ( ui->debayerRaw, &QCheckBox::clicked, this,
-      &InputOptions::unimplemented1 );
+      &InputOptions::setDebayerRaw );
   connect ( ui->debayerRawMethod, &QComboBox::currentTextChanged, this,
       &InputOptions::unimplemented2 );
   connect ( ui->colourSpace, &QComboBox::currentTextChanged, this,
@@ -205,4 +205,17 @@ InputOptions::setHotPixelFilter ( int enabled )
 {
 	config->setConfig ( Configuration::rawHotPixelFilter,
 			enabled ? Configuration::enabled : Configuration::disabled );
+}
+
+
+void
+InputOptions::setDebayerRaw ( int enabled )
+{
+	config->setConfig ( Configuration::debayerRawFiles,
+			enabled ? Configuration::enabled : Configuration::disabled );
+	bool state = enabled ? true : false;
+	ui->debayerRawMethod->setEnabled ( state );
+	ui->algorithmLabel->setEnabled ( state );
+	ui->colourSpace->setEnabled ( state );
+	ui->colourSpaceLabel->setEnabled ( state );
 }

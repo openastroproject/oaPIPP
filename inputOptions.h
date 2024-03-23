@@ -56,4 +56,5 @@ class InputOptions : public QWidget
     void                setBinMode ( int );
     void                setBinMethod ( int );
     void                setHotPixelFilter ( int );
+    void                setDebayerRaw ( int );
 };
