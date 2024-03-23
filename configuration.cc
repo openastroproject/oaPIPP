@@ -41,6 +41,11 @@ const QString Configuration::joinMode = "join";
 
 const QString Configuration::binning = "binning";
 
+const QString Configuration::binMethod = "binMethod";
+const QString Configuration::binAverage = "average";
+const QString Configuration::binSum = "sum";
+
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;

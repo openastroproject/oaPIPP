@@ -60,4 +60,8 @@ class Configuration
       bin4,
       bin5
     };
+
+		static const QString binMethod;
+		static const QString binAverage;
+		static const QString binSum;
 };

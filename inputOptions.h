@@ -54,4 +54,5 @@ class InputOptions : public QWidget
     void                unimplemented1 ( void );
     void                unimplemented2 ( const QString& text );
     void                setBinMode ( int );
+    void                setBinMethod ( int );
 };

@@ -62,8 +62,9 @@ InputOptions::setUpConnections ( void )
   connect ( ui->binningSelector,
       QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
       &InputOptions::setBinMode );
-  connect ( ui->binningMethod, &QComboBox::currentTextChanged, this,
-      &InputOptions::unimplemented2 );
+  connect ( ui->binningMethod,
+      QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
+      &InputOptions::setBinMethod );
 
   connect ( ui->rawHotPixelFilter, &QCheckBox::clicked, this,
       &InputOptions::unimplemented1 );
@@ -166,6 +167,30 @@ InputOptions::setBinMode ( int index )
           Configuration::BinMode::bin5 );
       break;
     default:
+			QString err = std::source_location::current().function_name();
+			err += " unrecognised binning mode";
+			qDebug() << err;
+      break;
+  }
+}
+
+
+void
+InputOptions::setBinMethod ( int index )
+{
+  switch ( index ) {
+    case 0:
+      config->setConfig ( Configuration::binMethod,
+          Configuration::binAverage );
+      break;
+    case 1:
+      config->setConfig ( Configuration::binMethod,
+          Configuration::binSum );
+      break;
+    default:
+			QString err = std::source_location::current().function_name();
+			err += " unrecognised binning method";
+			qDebug() << err;
       break;
   }
 }
