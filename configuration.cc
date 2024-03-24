@@ -55,6 +55,15 @@ const QString Configuration::debayerVNG = "VNG";
 const QString Configuration::debayerPPG = "PPG";
 const QString Configuration::debayerAHD = "AHD";
 
+const QString Configuration::colourSpace = "colourSpace";
+const QString Configuration::spaceRawCamera = "raw camera";
+const QString Configuration::spacesRGB = "sRGB";
+const QString Configuration::spaceAdobe = "adobe";
+const QString Configuration::spaceWideGamut = "wide gamut";
+const QString Configuration::spaceKodak = "kodak";
+const QString Configuration::spaceXYZ = "XYZ";
+const QString Configuration::spaceACES = "ACES";
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;

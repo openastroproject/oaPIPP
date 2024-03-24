@@ -77,4 +77,13 @@ class Configuration
 		static const QString debayerVNG;
 		static const QString debayerPPG;
 		static const QString debayerAHD;
+
+		static const QString colourSpace;
+		static const QString spaceRawCamera;
+		static const QString spacesRGB;
+		static const QString spaceAdobe;
+		static const QString spaceWideGamut;
+		static const QString spaceKodak;
+		static const QString spaceXYZ;
+		static const QString spaceACES;
 };

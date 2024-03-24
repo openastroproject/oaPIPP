@@ -77,8 +77,9 @@ InputOptions::setUpConnections ( void )
   connect ( ui->debayerRawMethod,
       QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
       &InputOptions::setDebayerMethod );
-  connect ( ui->colourSpace, &QComboBox::currentTextChanged, this,
-      &InputOptions::unimplemented2 );
+  connect ( ui->colourSpace,
+      QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
+      &InputOptions::setColourSpace );
   connect ( ui->highlightRecoveryMethod, &QComboBox::currentTextChanged, this,
       &InputOptions::unimplemented2 );
 
@@ -241,6 +242,47 @@ InputOptions::setDebayerMethod ( int index )
     case 3:
       config->setConfig ( Configuration::debayerAlgorithm,
           Configuration::debayerAHD );
+      break;
+    default:
+			QString err = std::source_location::current().function_name();
+			err += " unrecognised debayer algorithm";
+			qDebug() << err;
+      break;
+  }
+}
+
+
+void
+InputOptions::setColourSpace ( int index )
+{
+  switch ( index ) {
+    case 0:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spaceRawCamera );
+      break;
+    case 1:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spacesRGB );
+      break;
+    case 2:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spaceAdobe );
+      break;
+    case 3:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spaceWideGamut );
+      break;
+    case 4:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spaceKodak );
+      break;
+    case 5:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spaceXYZ );
+      break;
+    case 6:
+      config->setConfig ( Configuration::colourSpace,
+          Configuration::spaceACES );
       break;
     default:
 			QString err = std::source_location::current().function_name();

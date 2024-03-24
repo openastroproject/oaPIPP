@@ -58,4 +58,5 @@ class InputOptions : public QWidget
     void                setHotPixelFilter ( int );
     void                setDebayerRaw ( int );
     void                setDebayerMethod ( int );
+    void                setColourSpace ( int );
 };
