@@ -43,7 +43,9 @@ InputOptions::InputOptions ( QWidget* parent, Configuration* conf ) :
 	ui->debayerRaw->setChecked ( true );
   config->setConfig ( Configuration::debayerRawFiles,
           Configuration::enabled );
-
+	ui->highlightRecoveryMethod->setCurrentIndex ( 1 );
+  config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlightUnclipped );
 
   setUpConnections();
 
@@ -80,8 +82,9 @@ InputOptions::setUpConnections ( void )
   connect ( ui->colourSpace,
       QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
       &InputOptions::setColourSpace );
-  connect ( ui->highlightRecoveryMethod, &QComboBox::currentTextChanged, this,
-      &InputOptions::unimplemented2 );
+  connect ( ui->highlightRecoveryMethod,
+      QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
+      &InputOptions::setHighlightRecoveryType );
 
   connect ( ui->dateFromFilename, &QCheckBox::clicked, this,
       &InputOptions::unimplemented1 );
@@ -287,6 +290,59 @@ InputOptions::setColourSpace ( int index )
     default:
 			QString err = std::source_location::current().function_name();
 			err += " unrecognised debayer algorithm";
+			qDebug() << err;
+      break;
+  }
+}
+
+
+void
+InputOptions::setHighlightRecoveryType ( int index )
+{
+  switch ( index ) {
+    case 0:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlightSolidWhite );
+      break;
+    case 1:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlightUnclipped );
+      break;
+    case 2:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlightBlend );
+      break;
+    case 3:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H3 );
+      break;
+    case 4:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H4 );
+      break;
+    case 5:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H5 );
+      break;
+    case 6:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H6 );
+      break;
+    case 7:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H7 );
+      break;
+    case 8:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H8 );
+      break;
+    case 9:
+      config->setConfig ( Configuration::highlightRecovery,
+          Configuration::highlight_H9 );
+      break;
+    default:
+			QString err = std::source_location::current().function_name();
+			err += " unrecognised highlight recovery type";
 			qDebug() << err;
       break;
   }

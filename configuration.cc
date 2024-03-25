@@ -64,6 +64,18 @@ const QString Configuration::spaceKodak = "kodak";
 const QString Configuration::spaceXYZ = "XYZ";
 const QString Configuration::spaceACES = "ACES";
 
+const QString Configuration::highlightRecovery = "highlightRecovery";
+const QString Configuration::highlightSolidWhite = "white";
+const QString Configuration::highlightUnclipped = "unclipped";
+const QString Configuration::highlightBlend = "blend";
+const QString Configuration::highlight_H3 = "-H=3";
+const QString Configuration::highlight_H4 = "-H=4";
+const QString Configuration::highlight_H5 = "-H=5";
+const QString Configuration::highlight_H6 = "-H=6";
+const QString Configuration::highlight_H7 = "-H=7";
+const QString Configuration::highlight_H8 = "-H=8";
+const QString Configuration::highlight_H9 = "-H=9";
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;

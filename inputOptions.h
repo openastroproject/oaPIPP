@@ -59,4 +59,5 @@ class InputOptions : public QWidget
     void                setDebayerRaw ( int );
     void                setDebayerMethod ( int );
     void                setColourSpace ( int );
+    void                setHighlightRecoveryType ( int );
 };

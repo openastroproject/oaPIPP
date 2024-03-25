@@ -86,4 +86,16 @@ class Configuration
 		static const QString spaceKodak;
 		static const QString spaceXYZ;
 		static const QString spaceACES;
+
+		static const QString highlightRecovery;
+		static const QString highlightSolidWhite;
+		static const QString highlightUnclipped;
+		static const QString highlightBlend;
+		static const QString highlight_H3;
+		static const QString highlight_H4;
+		static const QString highlight_H5;
+		static const QString highlight_H6;
+		static const QString highlight_H7;
+		static const QString highlight_H8;
+		static const QString highlight_H9;
 };
