@@ -78,6 +78,7 @@ const QString Configuration::highlight_H9 = "-H=9";
 
 const QString Configuration::dateFromFilename = "extractDateFromFilename";
 
+const QString Configuration::strictY800Decoding = "strictY800Decoding";
 
 Configuration::Configuration ( void )
 {

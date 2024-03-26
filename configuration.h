@@ -100,4 +100,6 @@ class Configuration
 		static const QString highlight_H9;
 
 		static const QString dateFromFilename;
+
+		static const QString strictY800Decoding;
 };

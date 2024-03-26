@@ -61,4 +61,5 @@ class InputOptions : public QWidget
     void                setColourSpace ( int );
     void                setHighlightRecoveryType ( int );
     void                setDateFromFilename ( int );
+    void                setStrictY800Decoding ( int );
 };

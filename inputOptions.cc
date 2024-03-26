@@ -102,7 +102,7 @@ InputOptions::setUpConnections ( void )
       &InputOptions::unimplemented2 );
 
   connect ( ui->strictY800, &QCheckBox::clicked, this,
-      &InputOptions::unimplemented1 );
+      &InputOptions::setStrictY800Decoding );
 
   connect ( ui->serOptions, &QComboBox::currentTextChanged, this,
       &InputOptions::unimplemented2 );
@@ -366,4 +366,12 @@ InputOptions::setDateFromFilename ( int enabled )
 	ui->rememberFormat->setEnabled ( state );
 	ui->serFrameRate->setEnabled ( state );
 	ui->frameRateLabel->setEnabled ( state );
+}
+
+
+void
+InputOptions::setStrictY800Decoding ( int enabled )
+{
+	config->setConfig ( Configuration::strictY800Decoding,
+			enabled ? Configuration::enabled : Configuration::disabled );
 }
