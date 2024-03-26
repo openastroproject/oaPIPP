@@ -62,4 +62,5 @@ class InputOptions : public QWidget
     void                setHighlightRecoveryType ( int );
     void                setDateFromFilename ( int );
     void                setStrictY800Decoding ( int );
+    void                setSERPixelDepth ( int );
 };

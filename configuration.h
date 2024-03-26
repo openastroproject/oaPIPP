@@ -102,4 +102,16 @@ class Configuration
 		static const QString dateFromFilename;
 
 		static const QString strictY800Decoding;
+
+		static const QString SERPixelDepth;
+		static const QString asHeader;
+		static const QString bpp16;
+		static const QString bpp15;
+		static const QString bpp14;
+		static const QString bpp13;
+		static const QString bpp12;
+		static const QString bpp11;
+		static const QString bpp10;
+		static const QString bpp9;
+		static const QString bpp8;
 };

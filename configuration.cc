@@ -80,6 +80,19 @@ const QString Configuration::dateFromFilename = "extractDateFromFilename";
 
 const QString Configuration::strictY800Decoding = "strictY800Decoding";
 
+const QString Configuration::SERPixelDepth = "SERPixelDepth";
+const QString Configuration::asHeader = "asHeader";
+const QString Configuration::bpp16 = "16bpp";
+const QString Configuration::bpp15 = "15bpp";
+const QString Configuration::bpp14 = "14bpp";
+const QString Configuration::bpp13 = "13bpp";
+const QString Configuration::bpp12 = "12bpp";
+const QString Configuration::bpp11 = "11bpp";
+const QString Configuration::bpp10 = "10bpp";
+const QString Configuration::bpp9 = "9bpp";
+const QString Configuration::bpp8 = "8bpp";
+
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;

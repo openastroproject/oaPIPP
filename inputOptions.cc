@@ -104,8 +104,9 @@ InputOptions::setUpConnections ( void )
   connect ( ui->strictY800, &QCheckBox::clicked, this,
       &InputOptions::setStrictY800Decoding );
 
-  connect ( ui->serOptions, &QComboBox::currentTextChanged, this,
-      &InputOptions::unimplemented2 );
+  connect ( ui->serOptions,
+      QOverload<int>::of ( &QComboBox::currentIndexChanged ), this,
+      &InputOptions::setSERPixelDepth );
 
   connect ( ui->whichFrames, &QComboBox::currentTextChanged, this,
       &InputOptions::unimplemented2 );
@@ -374,4 +375,57 @@ InputOptions::setStrictY800Decoding ( int enabled )
 {
 	config->setConfig ( Configuration::strictY800Decoding,
 			enabled ? Configuration::enabled : Configuration::disabled );
+}
+
+
+void
+InputOptions::setSERPixelDepth ( int index )
+{
+  switch ( index ) {
+    case 0:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::asHeader );
+      break;
+    case 1:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp16 );
+      break;
+    case 2:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp15 );
+      break;
+    case 3:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp14 );
+      break;
+    case 4:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp13 );
+      break;
+    case 5:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp12 );
+      break;
+    case 6:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp11 );
+      break;
+    case 7:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp10 );
+      break;
+    case 8:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp9 );
+      break;
+    case 9:
+      config->setConfig ( Configuration::SERPixelDepth,
+          Configuration::bpp8 );
+      break;
+    default:
+			QString err = std::source_location::current().function_name();
+			err += " unrecognised pixel depth";
+			qDebug() << err;
+      break;
+  }
 }
