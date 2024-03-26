@@ -98,4 +98,6 @@ class Configuration
 		static const QString highlight_H7;
 		static const QString highlight_H8;
 		static const QString highlight_H9;
+
+		static const QString dateFromFilename;
 };

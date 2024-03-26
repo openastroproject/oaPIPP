@@ -60,4 +60,5 @@ class InputOptions : public QWidget
     void                setDebayerMethod ( int );
     void                setColourSpace ( int );
     void                setHighlightRecoveryType ( int );
+    void                setDateFromFilename ( int );
 };

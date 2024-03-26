@@ -40,12 +40,16 @@ InputOptions::InputOptions ( QWidget* parent, Configuration* conf ) :
   config = conf;
 
   ui->setupUi ( this );
+
 	ui->debayerRaw->setChecked ( true );
-  config->setConfig ( Configuration::debayerRawFiles,
-          Configuration::enabled );
+	setDebayerRaw ( 1 );
+
 	ui->highlightRecoveryMethod->setCurrentIndex ( 1 );
   config->setConfig ( Configuration::highlightRecovery,
           Configuration::highlightUnclipped );
+
+	ui->dateFromFilename->setChecked ( false );
+	setDateFromFilename ( 0 );
 
   setUpConnections();
 
@@ -87,7 +91,7 @@ InputOptions::setUpConnections ( void )
       &InputOptions::setHighlightRecoveryType );
 
   connect ( ui->dateFromFilename, &QCheckBox::clicked, this,
-      &InputOptions::unimplemented1 );
+      &InputOptions::setDateFromFilename );
   connect ( ui->convertToUTC, &QCheckBox::clicked, this,
       &InputOptions::unimplemented1 );
   connect ( ui->filenameFormat, &QComboBox::currentTextChanged, this,
@@ -346,4 +350,20 @@ InputOptions::setHighlightRecoveryType ( int index )
 			qDebug() << err;
       break;
   }
+}
+
+
+void
+InputOptions::setDateFromFilename ( int enabled )
+{
+	config->setConfig ( Configuration::dateFromFilename,
+			enabled ? Configuration::enabled : Configuration::disabled );
+	bool state = enabled ? true : false;
+	ui->convertToUTC->setEnabled ( state );
+	ui->timeFormatLayout->setEnabled ( state );
+	ui->filenameFormat->setEnabled ( state );
+	ui->filenameTemplate->setEnabled ( state );
+	ui->rememberFormat->setEnabled ( state );
+	ui->serFrameRate->setEnabled ( state );
+	ui->frameRateLabel->setEnabled ( state );
 }

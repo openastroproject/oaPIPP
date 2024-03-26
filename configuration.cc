@@ -76,6 +76,9 @@ const QString Configuration::highlight_H7 = "-H=7";
 const QString Configuration::highlight_H8 = "-H=8";
 const QString Configuration::highlight_H9 = "-H=9";
 
+const QString Configuration::dateFromFilename = "extractDateFromFilename";
+
+
 Configuration::Configuration ( void )
 {
 	settingsLoaded = false;
