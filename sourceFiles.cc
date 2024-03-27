@@ -53,6 +53,7 @@ extern "C" {
 
 #include "configuration.h"
 #include "sourceFiles.h"
+#include "mainWindow.h"
 #include "ui_sourceFiles.h"
 
 namespace fs = std::filesystem;
@@ -159,19 +160,19 @@ SourceFiles::setUpConnections ( void )
 			&SourceFiles::setJoinMode );
 
   connect ( ui->closeUpButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setCloseUpOptions );
   connect ( ui->aviButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setPlanetaryAVIOptions );
   connect ( ui->fullDiscButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setFullDiscOptions );
   connect ( ui->gifButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setGifOptions );
   connect ( ui->planetaryButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setPlanetaryOptions );
   connect ( ui->issButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setISSOptions );
   connect ( ui->archiveButton, &QRadioButton::clicked, this,
-			&SourceFiles::unimplemented1 );
+			&SourceFiles::setAVIArchiveOptions );
 
   connect ( ui->addDarksButton, &QPushButton::clicked, this,
 			&SourceFiles::loadDarkFiles );
@@ -624,4 +625,67 @@ void
 SourceFiles::setJoinMode ( void )
 {
 	config->setConfig ( Configuration::sourceMode, Configuration::joinMode );
+}
+
+
+void
+SourceFiles::setCloseUpOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultCloseUp );
+	}
+}
+
+
+void
+SourceFiles::setPlanetaryAVIOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultPlanetaryAVI );
+	}
+}
+
+
+void
+SourceFiles::setFullDiscOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultFullDisc );
+	}
+}
+
+
+void
+SourceFiles::setGifOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultGIF );
+	}
+}
+
+
+void
+SourceFiles::setPlanetaryOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultPlanet );
+	}
+}
+
+
+void
+SourceFiles::setISSOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultISS );
+	}
+}
+
+
+void
+SourceFiles::setAVIArchiveOptions ( int enabled )
+{
+	if ( enabled ) {
+		emit setDefaultOptions ( defaultAVIArchive );
+	}
 }

@@ -81,6 +81,26 @@ class SourceFiles : public QTabWidget
 		void							removeAllDarkFiles ( void );
 		void							removeAllFlatFiles ( void );
 		void							removeAllFlatDarkFiles ( void );
+
 		void							setBatchMode ( void );
 		void							setJoinMode ( void );
+		void							setCloseUpOptions ( int );
+		void							setPlanetaryAVIOptions ( int );
+		void							setFullDiscOptions ( int );
+		void							setGifOptions ( int );
+		void							setPlanetaryOptions ( int );
+		void							setISSOptions ( int );
+		void							setAVIArchiveOptions ( int );
+
+	public:
+		static const int	defaultCloseUp = 1;
+		static const int	defaultPlanetaryAVI = 2;
+		static const int	defaultFullDisc = 3;
+		static const int	defaultGIF = 4;
+		static const int	defaultPlanet = 5;
+		static const int	defaultISS = 6;
+		static const int	defaultAVIArchive = 7;
+
+	signals:
+		void							setDefaultOptions ( int );
 };

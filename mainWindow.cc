@@ -29,6 +29,8 @@
 
 #include <QtWidgets>
 
+#include <source_location>
+
 #include "ui_pipp.h"
 #include "mainWindow.h"
 #include "sourceFiles.h"
@@ -139,6 +141,12 @@ MainWindow::initialise ( void )
 
 	connect ( ui->actionAbout, &QAction::triggered, this,
 			&MainWindow::about );
+
+	// This one is for handling the buttons in the source files tab to set
+	// the default options for a particular image type
+
+	connect ( sourceFiles, &SourceFiles::setDefaultOptions, this,
+			&MainWindow::updateDefaultOptions );
 }
 
 
@@ -185,4 +193,15 @@ void
 MainWindow::unimplemented ( void )
 {
 	qDebug() << "action unimplemented";
+}
+
+
+void
+MainWindow::updateDefaultOptions ( int option )
+{
+  QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
+
 }

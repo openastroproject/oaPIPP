@@ -67,4 +67,7 @@ class MainWindow : public QMainWindow
 	private slots:
 		void								quit ( void );
 		void								about ( void );
+
+	public slots:
+		void								updateDefaultOptions ( int );
 };
