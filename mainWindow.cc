@@ -199,9 +199,9 @@ MainWindow::unimplemented ( void )
 void
 MainWindow::updateDefaultOptions ( int option )
 {
-  QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
-
-  qDebug() << err;
-
+	inputOptions->updateDefaults ( option );
+	processingOptions->updateDefaults ( option );
+	qualityOptions->updateDefaults ( option );
+	animationOptions->updateDefaults ( option );
+	outputOptions->updateDefaults ( option );
 }

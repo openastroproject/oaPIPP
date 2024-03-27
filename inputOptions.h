@@ -63,4 +63,7 @@ class InputOptions : public QWidget
     void                setDateFromFilename ( int );
     void                setStrictY800Decoding ( int );
     void                setSERPixelDepth ( int );
+
+	public:
+		void								updateDefaults ( int );
 };

@@ -175,3 +175,14 @@ ProcessingOptions::unimplemented2 ( const QString& text )
 
 	qDebug() << "slot not yet implemented";
 }
+
+
+void
+ProcessingOptions::updateDefaults ( int option )
+{
+  QString err = std::source_location::current().function_name();
+  err += " not fully implemented";
+
+  qDebug() << err;
+}
+

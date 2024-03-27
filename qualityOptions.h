@@ -50,4 +50,7 @@ class QualityOptions : public QWidget
   private slots:
     void                unimplemented1 ( void );
     void                unimplemented2 ( const QString& text );
+
+	public:
+		void								updateDefaults ( int );
 };
