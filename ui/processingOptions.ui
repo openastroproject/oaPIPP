@@ -448,6 +448,73 @@
           </widget>
          </widget>
         </item>
+        <item>
+         <widget class="QCheckBox" name="centreObject">
+          <property name="text">
+           <string>Centre object in each frame</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="edgeInShadowBox">
+          <item>
+           <widget class="QLabel" name="edgeInShadowLabel">
+            <property name="text">
+             <string>Edge in shadow (Lunar images only)</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="edgeInShadow">
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Top left hand side</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Left hand side</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bottom left hand side</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Top right hand side</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Right hand side</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bottom right hand side</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Top</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bottom</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
        </layout>
       </widget>
      </item>
