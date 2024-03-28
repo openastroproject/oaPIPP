@@ -29,7 +29,9 @@
 #include <QtWidgets>
 #include <source_location>
 
+#include "oapipp_common.h"
 #include "processingOptions.h"
+#include "sourceFiles.h"
 #include "ui_processingOptions.h"
 
 ProcessingOptions::ProcessingOptions ( QWidget* parent ) :
@@ -180,9 +182,23 @@ ProcessingOptions::unimplemented2 ( const QString& text )
 void
 ProcessingOptions::updatePresets ( int option )
 {
-  QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
+	switch ( option ) {
+		case SourceFiles::presetPlanet:
+			ui->objectStabilisation->click();
+			ui->enableObjectDetection->click();
+			ui->enableCropping->click();
+			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
+			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->enableCropping->setStyleSheet ( presetOnStyle );
+			ui->cropHeight->setStyleSheet ( presetOnStyle );
+			ui->cropWidth->setStyleSheet ( presetOnStyle );
+			break;
+		default:
+			QString err = std::source_location::current().function_name();
+			err += " not fully implemented";
 
-  qDebug() << err;
+			qDebug() << err;
+			break;
+	}
 }
 

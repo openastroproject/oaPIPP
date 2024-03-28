@@ -34,3 +34,8 @@ const QString APPLICATION_NAME = "oaPIPP";
 const QString VERSION_STR = "0.0.1";
 
 const QString ORGANISATION_NAME_SETTINGS = "OpenAstro";
+
+const QString presetOnStyle =
+		"color: green; background-color: rgba(255, 255, 255, 0);";
+const QString presetOffStyle =
+		"color: black; background-color: rgba(255, 255, 255, 0);";
