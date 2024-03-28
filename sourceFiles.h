@@ -93,14 +93,14 @@ class SourceFiles : public QTabWidget
 		void							setAVIArchiveOptions ( int );
 
 	public:
-		static const int	defaultCloseUp = 1;
-		static const int	defaultPlanetaryAVI = 2;
-		static const int	defaultFullDisc = 3;
-		static const int	defaultGIF = 4;
-		static const int	defaultPlanet = 5;
-		static const int	defaultISS = 6;
-		static const int	defaultAVIArchive = 7;
+		static const int	presetCloseUp = 1;
+		static const int	presetPlanetaryAVI = 2;
+		static const int	presetFullDisc = 3;
+		static const int	presetGIF = 4;
+		static const int	presetPlanet = 5;
+		static const int	presetISS = 6;
+		static const int	presetAVIArchive = 7;
 
 	signals:
-		void							setDefaultOptions ( int );
+		void							setPresetOptions ( int );
 };

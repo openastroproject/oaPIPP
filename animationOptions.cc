@@ -96,7 +96,7 @@ AnimationOptions::unimplemented2 ( const QString& text )
 
 
 void
-AnimationOptions::updateDefaults ( int option )
+AnimationOptions::updatePresets ( int option )
 {
   QString err = std::source_location::current().function_name();
   err += " not fully implemented";

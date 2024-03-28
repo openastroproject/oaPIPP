@@ -632,7 +632,7 @@ void
 SourceFiles::setCloseUpOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultCloseUp );
+		emit setPresetOptions ( presetCloseUp );
 	}
 }
 
@@ -641,7 +641,7 @@ void
 SourceFiles::setPlanetaryAVIOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultPlanetaryAVI );
+		emit setPresetOptions ( presetPlanetaryAVI );
 	}
 }
 
@@ -650,7 +650,7 @@ void
 SourceFiles::setFullDiscOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultFullDisc );
+		emit setPresetOptions ( presetFullDisc );
 	}
 }
 
@@ -659,7 +659,7 @@ void
 SourceFiles::setGifOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultGIF );
+		emit setPresetOptions ( presetGIF );
 	}
 }
 
@@ -668,7 +668,7 @@ void
 SourceFiles::setPlanetaryOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultPlanet );
+		emit setPresetOptions ( presetPlanet );
 	}
 }
 
@@ -677,7 +677,7 @@ void
 SourceFiles::setISSOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultISS );
+		emit setPresetOptions ( presetISS );
 	}
 }
 
@@ -686,6 +686,6 @@ void
 SourceFiles::setAVIArchiveOptions ( int enabled )
 {
 	if ( enabled ) {
-		emit setDefaultOptions ( defaultAVIArchive );
+		emit setPresetOptions ( presetAVIArchive );
 	}
 }

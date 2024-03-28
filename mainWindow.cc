@@ -143,10 +143,10 @@ MainWindow::initialise ( void )
 			&MainWindow::about );
 
 	// This one is for handling the buttons in the source files tab to set
-	// the default options for a particular image type
+	// the preset options for a particular image type
 
-	connect ( sourceFiles, &SourceFiles::setDefaultOptions, this,
-			&MainWindow::updateDefaultOptions );
+	connect ( sourceFiles, &SourceFiles::setPresetOptions, this,
+			&MainWindow::updatePresetOptions );
 }
 
 
@@ -197,11 +197,11 @@ MainWindow::unimplemented ( void )
 
 
 void
-MainWindow::updateDefaultOptions ( int option )
+MainWindow::updatePresetOptions ( int option )
 {
-	inputOptions->updateDefaults ( option );
-	processingOptions->updateDefaults ( option );
-	qualityOptions->updateDefaults ( option );
-	animationOptions->updateDefaults ( option );
-	outputOptions->updateDefaults ( option );
+	inputOptions->updatePresets ( option );
+	processingOptions->updatePresets ( option );
+	qualityOptions->updatePresets ( option );
+	animationOptions->updatePresets ( option );
+	outputOptions->updatePresets ( option );
 }

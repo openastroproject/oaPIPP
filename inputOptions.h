@@ -65,5 +65,5 @@ class InputOptions : public QWidget
     void                setSERPixelDepth ( int );
 
 	public:
-		void								updateDefaults ( int );
+		void								updatePresets ( int );
 };

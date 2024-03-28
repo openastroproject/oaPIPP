@@ -52,5 +52,5 @@ class ProcessingOptions : public QWidget
 		void											unimplemented2 ( const QString& text );
 
 	public:
-		void											updateDefaults ( int );
+		void											updatePresets ( int );
 };

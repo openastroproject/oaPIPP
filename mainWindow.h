@@ -69,5 +69,5 @@ class MainWindow : public QMainWindow
 		void								about ( void );
 
 	public slots:
-		void								updateDefaultOptions ( int );
+		void								updatePresetOptions ( int );
 };

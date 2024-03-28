@@ -432,7 +432,7 @@ InputOptions::setSERPixelDepth ( int index )
 
 
 void
-InputOptions::updateDefaults ( int option )
+InputOptions::updatePresets ( int option )
 {
 	// At the moment there doesn't appear to be anything to do for this
 	// tab
