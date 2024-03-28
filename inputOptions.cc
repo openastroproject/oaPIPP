@@ -434,8 +434,7 @@ InputOptions::setSERPixelDepth ( int index )
 void
 InputOptions::updateDefaults ( int option )
 {
-  QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
-
-  qDebug() << err;
+	// At the moment there doesn't appear to be anything to do for this
+	// tab
+	Q_UNUSED ( option );
 }
