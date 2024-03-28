@@ -186,9 +186,11 @@ ProcessingOptions::updatePresets ( int option )
 		case SourceFiles::presetPlanet:
 			ui->objectStabilisation->click();
 			ui->enableObjectDetection->click();
+			ui->centreObject->click();
 			ui->enableCropping->click();
 			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
 			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->centreObject->setStyleSheet ( presetOnStyle );
 			ui->enableCropping->setStyleSheet ( presetOnStyle );
 			ui->cropHeight->setStyleSheet ( presetOnStyle );
 			ui->cropWidth->setStyleSheet ( presetOnStyle );
