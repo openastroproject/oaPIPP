@@ -182,6 +182,28 @@ ProcessingOptions::unimplemented2 ( const QString& text )
 void
 ProcessingOptions::updatePresets ( int option )
 {
+	// Disable everything that might have been enabled in a previous call
+	ui->enableObjectDetection->setChecked ( false );
+	ui->centreObject->setChecked ( false );
+	ui->enableCropping->setChecked ( false );
+
+	ui->colour2mono->setChecked ( false );
+	ui->surfaceFeatureTracking->setChecked ( false );
+	ui->surfaceStabilisation->setChecked ( false );
+
+	// Turn all the options back to the default colour
+	ui->objectStabilisation->setStyleSheet ( presetOffStyle );
+	ui->enableObjectDetection->setStyleSheet ( presetOffStyle );
+	ui->centreObject->setStyleSheet ( presetOffStyle );
+	ui->enableCropping->setStyleSheet ( presetOffStyle );
+	ui->cropHeight->setStyleSheet ( presetOffStyle );
+	ui->cropWidth->setStyleSheet ( presetOffStyle );
+
+	ui->featureStabilisation->setStyleSheet ( presetOffStyle );
+	ui->colour2mono->setStyleSheet ( presetOffStyle );
+	ui->surfaceFeatureTracking->setStyleSheet ( presetOffStyle );
+	ui->surfaceStabilisation->setStyleSheet ( presetOffStyle );
+
 	switch ( option ) {
 		case SourceFiles::presetPlanet:
 			ui->objectStabilisation->click();
@@ -195,6 +217,16 @@ ProcessingOptions::updatePresets ( int option )
 			ui->cropHeight->setStyleSheet ( presetOnStyle );
 			ui->cropWidth->setStyleSheet ( presetOnStyle );
 			break;
+		case SourceFiles::presetCloseUp:
+			ui->colour2mono->click();
+			ui->featureStabilisation->click();
+			ui->surfaceFeatureTracking->click();
+			ui->surfaceStabilisation->click();
+			ui->colour2mono->setStyleSheet ( presetOnStyle );
+			ui->featureStabilisation->setStyleSheet ( presetOnStyle );
+			ui->surfaceFeatureTracking->setStyleSheet ( presetOnStyle );
+			ui->surfaceStabilisation->setStyleSheet ( presetOnStyle );
+
 		default:
 			QString err = std::source_location::current().function_name();
 			err += " not fully implemented";
