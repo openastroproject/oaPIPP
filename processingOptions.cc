@@ -221,7 +221,7 @@ ProcessingOptions::updatePresets ( int option )
 			ui->centreObject->click();
 			ui->enableCropping->click();
 			ui->cropHeight->setValue ( 448 );
-			ui->cropWidth->Value ( 448 );
+			ui->cropWidth->setValue ( 448 );
 			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
 			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
 			ui->centreObject->setStyleSheet ( presetOnStyle );
@@ -258,6 +258,21 @@ ProcessingOptions::updatePresets ( int option )
 			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
 			ui->detectionThreshold->setStyleSheet ( presetOnStyle );
 			ui->centreObject->setStyleSheet ( presetOnStyle );
+			break;
+
+		case SourceFiles::presetISS:
+			ui->objectStabilisation->click();
+			ui->enableObjectDetection->click();
+			ui->centreObject->click();
+			ui->enableCropping->click();
+			ui->cropHeight->setValue ( 300 );
+			ui->cropWidth->setValue ( 300 );
+			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
+			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->centreObject->setStyleSheet ( presetOnStyle );
+			ui->enableCropping->setStyleSheet ( presetOnStyle );
+			ui->cropHeight->setStyleSheet ( presetOnStyle );
+			ui->cropWidth->setStyleSheet ( presetOnStyle );
 			break;
 
 		default:
