@@ -191,6 +191,10 @@ ProcessingOptions::updatePresets ( int option )
 	ui->surfaceFeatureTracking->setChecked ( false );
 	ui->surfaceStabilisation->setChecked ( false );
 
+	ui->whitePointBox->setChecked ( false );
+	ui->blackPointBox->setChecked ( false );
+	ui->equaliseIndividually->setChecked ( false );
+
 	// Turn all the options back to the default colour
 	ui->objectStabilisation->setStyleSheet ( presetOffStyle );
 	ui->enableObjectDetection->setStyleSheet ( presetOffStyle );
@@ -204,12 +208,20 @@ ProcessingOptions::updatePresets ( int option )
 	ui->surfaceFeatureTracking->setStyleSheet ( presetOffStyle );
 	ui->surfaceStabilisation->setStyleSheet ( presetOffStyle );
 
+	ui->whitePointBox->setStyleSheet ( presetOffStyle );
+	ui->whitePointVal->setStyleSheet ( presetOffStyle );
+	ui->blackPointBox->setStyleSheet ( presetOffStyle );
+	ui->equaliseIndividually->setStyleSheet ( presetOffStyle );
+	ui->detectionThreshold->setStyleSheet ( presetOffStyle );
+
 	switch ( option ) {
 		case SourceFiles::presetPlanet:
 			ui->objectStabilisation->click();
 			ui->enableObjectDetection->click();
 			ui->centreObject->click();
 			ui->enableCropping->click();
+			ui->cropHeight->setValue ( 448 );
+			ui->cropWidth->Value ( 448 );
 			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
 			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
 			ui->centreObject->setStyleSheet ( presetOnStyle );
@@ -217,6 +229,7 @@ ProcessingOptions::updatePresets ( int option )
 			ui->cropHeight->setStyleSheet ( presetOnStyle );
 			ui->cropWidth->setStyleSheet ( presetOnStyle );
 			break;
+
 		case SourceFiles::presetCloseUp:
 			ui->colour2mono->click();
 			ui->featureStabilisation->click();
@@ -226,6 +239,26 @@ ProcessingOptions::updatePresets ( int option )
 			ui->featureStabilisation->setStyleSheet ( presetOnStyle );
 			ui->surfaceFeatureTracking->setStyleSheet ( presetOnStyle );
 			ui->surfaceStabilisation->setStyleSheet ( presetOnStyle );
+			break;
+
+		case SourceFiles::presetPlanetaryAVI:
+			ui->whitePointBox->click();
+			ui->whitePointVal->setValue ( 95 );
+			ui->blackPointBox->click();
+			ui->equaliseIndividually->click();
+			ui->objectStabilisation->click();
+			ui->enableObjectDetection->click();
+			ui->detectionThreshold->setValue ( 20 );
+			ui->centreObject->click();
+			ui->whitePointBox->setStyleSheet ( presetOnStyle );
+			ui->whitePointVal->setStyleSheet ( presetOnStyle );
+			ui->blackPointBox->setStyleSheet ( presetOnStyle );
+			ui->equaliseIndividually->setStyleSheet ( presetOnStyle );
+			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
+			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->detectionThreshold->setStyleSheet ( presetOnStyle );
+			ui->centreObject->setStyleSheet ( presetOnStyle );
+			break;
 
 		default:
 			QString err = std::source_location::current().function_name();
