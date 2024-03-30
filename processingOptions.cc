@@ -275,6 +275,23 @@ ProcessingOptions::updatePresets ( int option )
 			ui->cropWidth->setStyleSheet ( presetOnStyle );
 			break;
 
+		case SourceFiles::presetFullDisc:
+			ui->colour2mono->click();
+			ui->objectStabilisation->click();
+			ui->enableObjectDetection->click();
+			ui->centreObject->click();
+			ui->enableCropping->click();
+			ui->cropHeight->setValue ( 1200 );
+			ui->cropWidth->setValue ( 1200 );
+			ui->colour2mono->setStyleSheet ( presetOnStyle );
+			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
+			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->centreObject->setStyleSheet ( presetOnStyle );
+			ui->enableCropping->setStyleSheet ( presetOnStyle );
+			ui->cropHeight->setStyleSheet ( presetOnStyle );
+			ui->cropWidth->setStyleSheet ( presetOnStyle );
+			break;
+
 		default:
 			QString err = std::source_location::current().function_name();
 			err += " not fully implemented";
