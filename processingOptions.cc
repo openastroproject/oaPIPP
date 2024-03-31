@@ -221,6 +221,9 @@ ProcessingOptions::updatePresets ( int option )
 	ui->autoObjectDetection->setStyleSheet ( presetOffStyle );
 	ui->detectionThreshold->setStyleSheet ( presetOffStyle );
 
+	ui->noStabilisation->setChecked ( false );
+	ui->noStabilisation->setStyleSheet ( presetOffStyle );
+
 	switch ( option ) {
 		case SourceFiles::presetPlanet:
 			ui->objectStabilisation->click();
@@ -318,6 +321,11 @@ ProcessingOptions::updatePresets ( int option )
 			ui->autoObjectDetection->setStyleSheet ( presetOnStyle );
 			ui->detectionThreshold->setStyleSheet ( presetOnStyle );
 			ui->centreObject->setStyleSheet ( presetOnStyle );
+			break;
+
+		case SourceFiles::presetAVIArchive:
+			ui->noStabilisation->click();
+			ui->noStabilisation->setStyleSheet ( presetOnStyle );
 			break;
 
 		default:
