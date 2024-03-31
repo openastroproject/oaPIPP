@@ -195,6 +195,9 @@ ProcessingOptions::updatePresets ( int option )
 	ui->blackPointBox->setChecked ( false );
 	ui->equaliseIndividually->setChecked ( false );
 
+	ui->enableObjectDetection->setChecked ( false );
+	ui->autoObjectDetection->setChecked ( false );
+
 	// Turn all the options back to the default colour
 	ui->objectStabilisation->setStyleSheet ( presetOffStyle );
 	ui->enableObjectDetection->setStyleSheet ( presetOffStyle );
@@ -212,6 +215,10 @@ ProcessingOptions::updatePresets ( int option )
 	ui->whitePointVal->setStyleSheet ( presetOffStyle );
 	ui->blackPointBox->setStyleSheet ( presetOffStyle );
 	ui->equaliseIndividually->setStyleSheet ( presetOffStyle );
+	ui->detectionThreshold->setStyleSheet ( presetOffStyle );
+
+	ui->equaliseIndividually->setStyleSheet ( presetOffStyle );
+	ui->autoObjectDetection->setStyleSheet ( presetOffStyle );
 	ui->detectionThreshold->setStyleSheet ( presetOffStyle );
 
 	switch ( option ) {
@@ -290,6 +297,27 @@ ProcessingOptions::updatePresets ( int option )
 			ui->enableCropping->setStyleSheet ( presetOnStyle );
 			ui->cropHeight->setStyleSheet ( presetOnStyle );
 			ui->cropWidth->setStyleSheet ( presetOnStyle );
+			break;
+
+		case SourceFiles::presetGIF:
+			ui->whitePointBox->click();
+			ui->whitePointVal->setValue ( 95 );
+			ui->blackPointBox->click();
+			ui->equaliseIndividually->setChecked ( false );
+			ui->objectStabilisation->click();
+			ui->enableObjectDetection->click();
+			ui->autoObjectDetection->setChecked ( false );
+			ui->detectionThreshold->setValue ( 20 );
+			ui->centreObject->click();
+			ui->whitePointBox->setStyleSheet ( presetOnStyle );
+			ui->whitePointVal->setStyleSheet ( presetOnStyle );
+			ui->blackPointBox->setStyleSheet ( presetOnStyle );
+			ui->equaliseIndividually->setStyleSheet ( presetOnStyle );
+			ui->objectStabilisation->setStyleSheet ( presetOnStyle );
+			ui->enableObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->autoObjectDetection->setStyleSheet ( presetOnStyle );
+			ui->detectionThreshold->setStyleSheet ( presetOnStyle );
+			ui->centreObject->setStyleSheet ( presetOnStyle );
 			break;
 
 		default:
