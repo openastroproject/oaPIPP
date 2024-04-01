@@ -29,7 +29,10 @@
 #include <QtWidgets>
 #include <source_location>
 
+#include "oapipp_common.h"
+
 #include "qualityOptions.h"
+#include "sourceFiles.h"
 #include "ui_qualityOptions.h"
 
 QualityOptions::QualityOptions ( QWidget* parent ) :
@@ -107,8 +110,47 @@ QualityOptions::unimplemented2 ( const QString& text )
 void
 QualityOptions::updatePresets ( int option )
 {
-  QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
+	// Disable everything that might have been enabled in a previous call
+	ui->qualityEstimation->setChecked ( false );
+	ui->reorderByQuality->setChecked ( false );
+	ui->enableQualityLimit->setChecked ( false );
+	ui->brightnessQuality->setChecked ( false );
 
-  qDebug() << err;
+	// Turn all the options back to the default colour
+	ui->qualityEstimation->setStyleSheet ( presetOffStyle );
+	ui->reorderByQuality->setStyleSheet ( presetOffStyle );
+	ui->enableQualityLimit->setStyleSheet ( presetOffStyle );
+	ui->brightnessQuality->setStyleSheet ( presetOffStyle );
+
+	switch ( option ) {
+		case SourceFiles::presetPlanet:
+		case SourceFiles::presetCloseUp:
+		case SourceFiles::presetPlanetaryAVI:
+		case SourceFiles::presetISS:
+		case SourceFiles::presetGIF:
+		case SourceFiles::presetAVIArchive:
+			// These don't do anything
+			break;
+
+		case SourceFiles::presetFullDisc:
+			ui->qualityEstimation->click();
+			ui->reorderByQuality->click();
+			ui->enableQualityLimit->setChecked ( false );
+			ui->brightnessQuality->click();
+
+			ui->qualityEstimation->setStyleSheet ( presetOnStyle );
+			ui->reorderByQuality->setStyleSheet ( presetOnStyle );
+			ui->enableQualityLimit->setStyleSheet ( presetOnStyle );
+			ui->brightnessQuality->setStyleSheet ( presetOnStyle );
+
+			break;
+
+		default:
+			QString err = std::source_location::current().function_name();
+			err += " not fully implemented";
+
+			qDebug() << err;
+			break;
+	}
 }
+
