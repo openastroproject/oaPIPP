@@ -29,7 +29,10 @@
 #include <QtWidgets>
 #include <source_location>
 
+#include "oapipp_common.h"
+
 #include "animationOptions.h"
+#include "sourceFiles.h"
 #include "ui_animationOptions.h"
 
 AnimationOptions::AnimationOptions ( QWidget* parent ) :
@@ -98,8 +101,49 @@ AnimationOptions::unimplemented2 ( const QString& text )
 void
 AnimationOptions::updatePresets ( int option )
 {
-  QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
+	// Disable everything that might have been enabled in a previous call
+	ui->pauseFinalForward->setChecked ( false );
+  ui->repeatFrames->setChecked ( false );
 
-  qDebug() << err;
+	// Turn all the options back to the default colour
+	ui->pauseFinalForward->setStyleSheet ( presetOffStyle );
+	ui->forwardPauseFrames->setStyleSheet ( presetOffStyle );
+	ui->repeatFrames->setStyleSheet ( presetOffStyle );
+	ui->repeatCount->setStyleSheet ( presetOffStyle );
+
+	switch ( option ) {
+		case SourceFiles::presetPlanet:
+		case SourceFiles::presetCloseUp:
+		case SourceFiles::presetISS:
+		case SourceFiles::presetFullDisc:
+		case SourceFiles::presetAVIArchive:
+			// These do nothing
+			break;
+
+		case SourceFiles::presetPlanetaryAVI:
+			ui->pauseFinalForward->click();
+			ui->forwardPauseFrames->setValue ( 20 );
+      ui->repeatFrames->click();
+			ui->repeatCount->setValue ( 5 );
+	    ui->pauseFinalForward->setStyleSheet ( presetOnStyle );
+	    ui->forwardPauseFrames->setStyleSheet ( presetOnStyle );
+	    ui->repeatFrames->setStyleSheet ( presetOnStyle );
+	    ui->repeatCount->setStyleSheet ( presetOnStyle );
+			break;
+
+		case SourceFiles::presetGIF:
+			ui->pauseFinalForward->click();
+			ui->forwardPauseFrames->setValue ( 6 );
+	    ui->pauseFinalForward->setStyleSheet ( presetOnStyle );
+	    ui->forwardPauseFrames->setStyleSheet ( presetOnStyle );
+			break;
+
+		default:
+			QString err = std::source_location::current().function_name();
+			err += " not fully implemented";
+
+			qDebug() << err;
+			break;
+	}
 }
+
