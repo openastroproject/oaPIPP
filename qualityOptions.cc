@@ -147,7 +147,7 @@ QualityOptions::updatePresets ( int option )
 
 		default:
 			QString err = std::source_location::current().function_name();
-			err += " not fully implemented";
+			err += " unexpected preset type";
 
 			qDebug() << err;
 			break;
