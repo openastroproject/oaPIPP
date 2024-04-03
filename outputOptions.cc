@@ -26,9 +26,13 @@
  *****************************************************************************/
 
 #include <QtCore>
+#include <QtWidgets>
 #include <source_location>
 
+#include "oapipp_common.h"
+
 #include "outputOptions.h"
+#include "sourceFiles.h"
 #include "ui_outputOptions.h"
 
 OutputOptions::OutputOptions ( QWidget* parent ) :
@@ -133,8 +137,54 @@ OutputOptions::unimplemented2 ( const QString& text )
 void
 OutputOptions::updatePresets ( int option )
 {
-  QString err = std::source_location::current().function_name();
-  err += " not fully implemented";
+	// Disable everything that might have been enabled in a previous call
+	ui->outputAVI->setChecked ( false );
+	ui->matchInputFrameRate->setChecked ( false );
 
-  qDebug() << err;
+	// Turn all the options back to the default colour
+	ui->outputAVI->setStyleSheet ( presetOffStyle );
+	ui->outputCodec->setStyleSheet ( presetOffStyle );
+	ui->matchInputFrameRate->setStyleSheet ( presetOffStyle );
+	ui->defaultFrameRate->setStyleSheet ( presetOffStyle );
+
+	switch ( option ) {
+		case SourceFiles::presetPlanet:
+		case SourceFiles::presetCloseUp:
+			// no changes required
+			break;
+
+		case SourceFiles::presetPlanetaryAVI:
+			ui->outputAVI->click();
+			ui->outputCodec->setCurrentIndex ( 2 );
+			ui->matchInputFrameRate->setChecked ( false );
+      ui->defaultFrameRate->setValue ( 10 );
+			ui->outputAVI->setStyleSheet ( presetOnStyle );
+			ui->outputCodec->setStyleSheet ( presetOnStyle );
+			ui->matchInputFrameRate->setStyleSheet ( presetOnStyle );
+			ui->defaultFrameRate->setStyleSheet ( presetOnStyle );
+
+		case SourceFiles::presetISS:
+			// todo
+			break;
+
+		case SourceFiles::presetFullDisc:
+			// todo
+			break;
+
+		case SourceFiles::presetGIF:
+			// todo
+			break;
+
+		case SourceFiles::presetAVIArchive:
+			// todo
+			break;
+
+		default:
+			QString err = std::source_location::current().function_name();
+			err += " unexpected preset type";
+
+			qDebug() << err;
+			break;
+	}
 }
+
