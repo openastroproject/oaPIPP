@@ -140,12 +140,15 @@ OutputOptions::updatePresets ( int option )
 	// Disable everything that might have been enabled in a previous call
 	ui->outputAVI->setChecked ( false );
 	ui->matchInputFrameRate->setChecked ( false );
+  ui->createOutputSubdir->setChecked ( false );
 
 	// Turn all the options back to the default colour
 	ui->outputAVI->setStyleSheet ( presetOffStyle );
 	ui->outputCodec->setStyleSheet ( presetOffStyle );
 	ui->matchInputFrameRate->setStyleSheet ( presetOffStyle );
 	ui->defaultFrameRate->setStyleSheet ( presetOffStyle );
+  ui->createOutputSubdir->setStyleSheet ( presetOffStyle );
+  ui->outputFileSuffix->setStyleSheet ( presetOffStyle );
 
 	switch ( option ) {
 		case SourceFiles::presetPlanet:
@@ -176,7 +179,14 @@ OutputOptions::updatePresets ( int option )
 			break;
 
 		case SourceFiles::presetAVIArchive:
-			// todo
+			ui->outputAVI->click();
+			ui->outputCodec->setCurrentIndex ( 2 );
+      ui->createOutputSubdir->setChecked ( false );
+      ui->outputFileSuffix->setText ( "_ulrg" );
+			ui->outputAVI->setStyleSheet ( presetOnStyle );
+			ui->outputCodec->setStyleSheet ( presetOnStyle );
+      ui->createOutputSubdir->setStyleSheet ( presetOnStyle );
+      ui->outputFileSuffix->setStyleSheet ( presetOnStyle );
 			break;
 
 		default:
