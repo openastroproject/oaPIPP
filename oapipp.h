@@ -3,7 +3,7 @@
  * oapipp.h -- header for oapipp.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *

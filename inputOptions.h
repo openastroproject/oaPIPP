@@ -64,6 +64,6 @@ class InputOptions : public QWidget
     void                setStrictY800Decoding ( int );
     void                setSERPixelDepth ( int );
 
-	public:
-		void								updatePresets ( int );
+  public:
+    void                updatePresets ( int );
 };

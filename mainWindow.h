@@ -3,7 +3,7 @@
  * mainWindow.h -- main application window header
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -39,35 +39,35 @@
 #include "configuration.h"
 
 namespace Ui {
-	class MainWindow;
+  class MainWindow;
 }
 
 class MainWindow : public QMainWindow
 {
-	Q_OBJECT
+  Q_OBJECT
 
-	public:
-		MainWindow ( void );
-		~MainWindow();
+  public:
+    MainWindow ( void );
+    ~MainWindow();
 
-		void		initialise ( void );
-		void		unimplemented ( void );
+    void    initialise ( void );
+    void    unimplemented ( void );
 
-	private:
-		Ui::MainWindow*			ui;
-		SourceFiles*				sourceFiles;
-		InputOptions*				inputOptions;
-		ProcessingOptions*	processingOptions;
-		QualityOptions*			qualityOptions;
-		AnimationOptions*		animationOptions;
-		OutputOptions*			outputOptions;
-		DoProcessing*				doProcessing;
-		Configuration*			config;
+  private:
+    Ui::MainWindow*     ui;
+    SourceFiles*        sourceFiles;
+    InputOptions*       inputOptions;
+    ProcessingOptions*  processingOptions;
+    QualityOptions*     qualityOptions;
+    AnimationOptions*   animationOptions;
+    OutputOptions*      outputOptions;
+    DoProcessing*       doProcessing;
+    Configuration*      config;
 
-	private slots:
-		void								quit ( void );
-		void								about ( void );
+  private slots:
+    void                quit ( void );
+    void                about ( void );
 
-	public slots:
-		void								updatePresetOptions ( int );
+  public slots:
+    void                updatePresetOptions ( int );
 };

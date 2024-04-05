@@ -48,8 +48,8 @@ class Configuration
     bool              settingsLoaded;
 
   public:
-		static const int	disabled = 0;
-		static const int	enabled = 1;
+    static const int  disabled = 0;
+    static const int  enabled = 1;
 
     static const QString  sourceMode;
     static const QString  batchMode;
@@ -64,54 +64,54 @@ class Configuration
       bin5
     };
 
-		static const QString binMethod;
-		static const QString binAverage;
-		static const QString binSum;
+    static const QString binMethod;
+    static const QString binAverage;
+    static const QString binSum;
 
-		static const QString rawHotPixelFilter;
+    static const QString rawHotPixelFilter;
 
-		static const QString debayerRawFiles;
+    static const QString debayerRawFiles;
 
-		static const QString debayerAlgorithm;
-		static const QString debayerBilinear;
-		static const QString debayerVNG;
-		static const QString debayerPPG;
-		static const QString debayerAHD;
+    static const QString debayerAlgorithm;
+    static const QString debayerBilinear;
+    static const QString debayerVNG;
+    static const QString debayerPPG;
+    static const QString debayerAHD;
 
-		static const QString colourSpace;
-		static const QString spaceRawCamera;
-		static const QString spacesRGB;
-		static const QString spaceAdobe;
-		static const QString spaceWideGamut;
-		static const QString spaceKodak;
-		static const QString spaceXYZ;
-		static const QString spaceACES;
+    static const QString colourSpace;
+    static const QString spaceRawCamera;
+    static const QString spacesRGB;
+    static const QString spaceAdobe;
+    static const QString spaceWideGamut;
+    static const QString spaceKodak;
+    static const QString spaceXYZ;
+    static const QString spaceACES;
 
-		static const QString highlightRecovery;
-		static const QString highlightSolidWhite;
-		static const QString highlightUnclipped;
-		static const QString highlightBlend;
-		static const QString highlight_H3;
-		static const QString highlight_H4;
-		static const QString highlight_H5;
-		static const QString highlight_H6;
-		static const QString highlight_H7;
-		static const QString highlight_H8;
-		static const QString highlight_H9;
+    static const QString highlightRecovery;
+    static const QString highlightSolidWhite;
+    static const QString highlightUnclipped;
+    static const QString highlightBlend;
+    static const QString highlight_H3;
+    static const QString highlight_H4;
+    static const QString highlight_H5;
+    static const QString highlight_H6;
+    static const QString highlight_H7;
+    static const QString highlight_H8;
+    static const QString highlight_H9;
 
-		static const QString dateFromFilename;
+    static const QString dateFromFilename;
 
-		static const QString strictY800Decoding;
+    static const QString strictY800Decoding;
 
-		static const QString SERPixelDepth;
-		static const QString asHeader;
-		static const QString bpp16;
-		static const QString bpp15;
-		static const QString bpp14;
-		static const QString bpp13;
-		static const QString bpp12;
-		static const QString bpp11;
-		static const QString bpp10;
-		static const QString bpp9;
-		static const QString bpp8;
+    static const QString SERPixelDepth;
+    static const QString asHeader;
+    static const QString bpp16;
+    static const QString bpp15;
+    static const QString bpp14;
+    static const QString bpp13;
+    static const QString bpp12;
+    static const QString bpp11;
+    static const QString bpp10;
+    static const QString bpp9;
+    static const QString bpp8;
 };

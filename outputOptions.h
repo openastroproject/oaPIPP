@@ -3,7 +3,7 @@
  * outputOptions.h -- header for outputOptions.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -35,22 +35,22 @@ namespace Ui {
 
 class OutputOptions : public QWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
     explicit OutputOptions ( QWidget* parent = nullptr );
     virtual ~OutputOptions();
 
-	private:
-		void									setUpConnections ( void );
+  private:
+    void                  setUpConnections ( void );
 
-	private:
-		Ui::OutputOptions*		ui;
+  private:
+    Ui::OutputOptions*    ui;
 
-	private slots:
+  private slots:
     void                unimplemented1 ( void );
     void                unimplemented2 ( const QString& text );
 
-	public:
-		void								updatePresets ( int );
+  public:
+    void                updatePresets ( int );
 };

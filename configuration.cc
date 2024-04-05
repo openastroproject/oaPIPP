@@ -3,7 +3,7 @@
  * sourceFiles.cc -- manage the source files tab
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -95,22 +95,22 @@ const QString Configuration::bpp8 = "8bpp";
 
 Configuration::Configuration ( void )
 {
-	settingsLoaded = false;
+  settingsLoaded = false;
 }
 
 
 Configuration::~Configuration()
 {
-	if ( settingsLoaded ) {
-		delete settings;
-	}
+  if ( settingsLoaded ) {
+    delete settings;
+  }
 }
 
 
 void
 Configuration::initConfig ( void )
 {
-	QString err = std::source_location::current().function_name();
+  QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
   qDebug() << err;
@@ -120,15 +120,15 @@ Configuration::initConfig ( void )
 void
 Configuration::loadConfig ( void )
 {
-	settings = new QSettings ( ORGANISATION_NAME_SETTINGS, APPLICATION_NAME );
-	settingsLoaded = true;
+  settings = new QSettings ( ORGANISATION_NAME_SETTINGS, APPLICATION_NAME );
+  settingsLoaded = true;
 }
 
 
 void
 Configuration::saveConfig ( void )
 {
-	QString err = std::source_location::current().function_name();
+  QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
   qDebug() << err;
@@ -138,7 +138,7 @@ Configuration::saveConfig ( void )
 void
 Configuration::setConfig ( const QString&, const QVariant& )
 {
-	QString err = std::source_location::current().function_name();
+  QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
   qDebug() << err;
@@ -148,12 +148,12 @@ Configuration::setConfig ( const QString&, const QVariant& )
 QVariant
 Configuration::getConfig ( const QString& )
 {
-	QVariant	val;
+  QVariant  val;
 
-	QString err = std::source_location::current().function_name();
+  QString err = std::source_location::current().function_name();
   err += " not fully implemented";
 
   qDebug() << err;
 
-	return val;
+  return val;
 }

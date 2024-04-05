@@ -3,7 +3,7 @@
  * sourceFiles.h -- header for sourceFiles.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -33,74 +33,74 @@
 
 
 namespace Ui {
-	class SourceFiles;
+  class SourceFiles;
 }
 
 class SourceFiles : public QTabWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
     explicit SourceFiles ( QWidget* parent, Configuration* conf );
     virtual ~SourceFiles();
 
-	private:
-		void							setUpConnections ( void );
-		void							setUpTables ( void );
-		bool							loadFiles ( const QString&, QTableWidget*, int& ); 
-		void							removeFiles ( QTableWidget*, int& ); 
-		void							removeAllFiles ( QTableWidget*, int& ); 
-		void							updateImagesLabel ( void );
-		void							updateDarksLabel ( void );
-		void							updateFlatsLabel ( void );
-		void							updateFlatDarksLabel ( void );
-		QString						humanReadable ( std::uintmax_t );
+  private:
+    void              setUpConnections ( void );
+    void              setUpTables ( void );
+    bool              loadFiles ( const QString&, QTableWidget*, int& ); 
+    void              removeFiles ( QTableWidget*, int& ); 
+    void              removeAllFiles ( QTableWidget*, int& ); 
+    void              updateImagesLabel ( void );
+    void              updateDarksLabel ( void );
+    void              updateFlatsLabel ( void );
+    void              updateFlatDarksLabel ( void );
+    QString           humanReadable ( std::uintmax_t );
 
-		Ui::SourceFiles*	ui;
-	  int								numLights;
-		int								numDarks;
-		int								numFlats;
-		int								numFlatDarks;
-		Configuration*		config;
+    Ui::SourceFiles*  ui;
+    int               numLights;
+    int               numDarks;
+    int               numFlats;
+    int               numFlatDarks;
+    Configuration*    config;
 
-	public slots:
-		void							loadImageFiles ( void );
-		void							removeImageFiles ( void );
-		void							unloadAllFiles ( void );
+  public slots:
+    void              loadImageFiles ( void );
+    void              removeImageFiles ( void );
+    void              unloadAllFiles ( void );
 
-	private slots:
-		void							unimplemented1 ( void );
-		void							unimplemented2 ( const QString& text );
-		void							loadDarkFiles ( void );
-		void							loadFlatFiles ( void );
-		void							loadFlatDarkFiles ( void );
-		void							removeDarkFiles ( void );
-		void							removeFlatFiles ( void );
-		void							removeFlatDarkFiles ( void );
-		void							removeAllImageFiles ( void );
-		void							removeAllDarkFiles ( void );
-		void							removeAllFlatFiles ( void );
-		void							removeAllFlatDarkFiles ( void );
+  private slots:
+    void              unimplemented1 ( void );
+    void              unimplemented2 ( const QString& text );
+    void              loadDarkFiles ( void );
+    void              loadFlatFiles ( void );
+    void              loadFlatDarkFiles ( void );
+    void              removeDarkFiles ( void );
+    void              removeFlatFiles ( void );
+    void              removeFlatDarkFiles ( void );
+    void              removeAllImageFiles ( void );
+    void              removeAllDarkFiles ( void );
+    void              removeAllFlatFiles ( void );
+    void              removeAllFlatDarkFiles ( void );
 
-		void							setBatchMode ( void );
-		void							setJoinMode ( void );
-		void							setCloseUpOptions ( int );
-		void							setPlanetaryAVIOptions ( int );
-		void							setFullDiscOptions ( int );
-		void							setGifOptions ( int );
-		void							setPlanetaryOptions ( int );
-		void							setISSOptions ( int );
-		void							setAVIArchiveOptions ( int );
+    void              setBatchMode ( void );
+    void              setJoinMode ( void );
+    void              setCloseUpOptions ( int );
+    void              setPlanetaryAVIOptions ( int );
+    void              setFullDiscOptions ( int );
+    void              setGifOptions ( int );
+    void              setPlanetaryOptions ( int );
+    void              setISSOptions ( int );
+    void              setAVIArchiveOptions ( int );
 
-	public:
-		static const int	presetPlanet = 1;
-		static const int	presetCloseUp = 2;
-		static const int	presetPlanetaryAVI = 3;
-		static const int	presetISS = 4;
-		static const int	presetFullDisc = 5;
-		static const int	presetGIF = 6;
-		static const int	presetAVIArchive = 7;
+  public:
+    static const int  presetPlanet = 1;
+    static const int  presetCloseUp = 2;
+    static const int  presetPlanetaryAVI = 3;
+    static const int  presetISS = 4;
+    static const int  presetFullDisc = 5;
+    static const int  presetGIF = 6;
+    static const int  presetAVIArchive = 7;
 
-	signals:
-		void							setPresetOptions ( int );
+  signals:
+    void              setPresetOptions ( int );
 };

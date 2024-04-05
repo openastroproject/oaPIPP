@@ -3,7 +3,7 @@
  * qualityOptions.h -- header for qualityOptions.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -30,27 +30,27 @@
 #include <QWidget>
 
 namespace Ui {
-	class QualityOptions;
+  class QualityOptions;
 }
 
 class QualityOptions : public QWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
     explicit QualityOptions ( QWidget* parent = nullptr );
     virtual ~QualityOptions();
 
-	private:
-		void									setUpConnections ( void );
+  private:
+    void                  setUpConnections ( void );
 
-	private:
-		Ui::QualityOptions*		ui;
+  private:
+    Ui::QualityOptions*   ui;
 
   private slots:
     void                unimplemented1 ( void );
     void                unimplemented2 ( const QString& text );
 
-	public:
-		void								updatePresets ( int );
+  public:
+    void                updatePresets ( int );
 };

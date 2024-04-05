@@ -41,15 +41,15 @@ InputOptions::InputOptions ( QWidget* parent, Configuration* conf ) :
 
   ui->setupUi ( this );
 
-	ui->debayerRaw->setChecked ( true );
-	setDebayerRaw ( 1 );
+  ui->debayerRaw->setChecked ( true );
+  setDebayerRaw ( 1 );
 
-	ui->highlightRecoveryMethod->setCurrentIndex ( 1 );
+  ui->highlightRecoveryMethod->setCurrentIndex ( 1 );
   config->setConfig ( Configuration::highlightRecovery,
           Configuration::highlightUnclipped );
 
-	ui->dateFromFilename->setChecked ( false );
-	setDateFromFilename ( 0 );
+  ui->dateFromFilename->setChecked ( false );
+  setDateFromFilename ( 0 );
 
   setUpConnections();
 
@@ -181,9 +181,9 @@ InputOptions::setBinMode ( int index )
           Configuration::BinMode::bin5 );
       break;
     default:
-			QString err = std::source_location::current().function_name();
-			err += " unrecognised binning mode";
-			qDebug() << err;
+      QString err = std::source_location::current().function_name();
+      err += " unrecognised binning mode";
+      qDebug() << err;
       break;
   }
 }
@@ -202,9 +202,9 @@ InputOptions::setBinMethod ( int index )
           Configuration::binSum );
       break;
     default:
-			QString err = std::source_location::current().function_name();
-			err += " unrecognised binning method";
-			qDebug() << err;
+      QString err = std::source_location::current().function_name();
+      err += " unrecognised binning method";
+      qDebug() << err;
       break;
   }
 }
@@ -213,21 +213,21 @@ InputOptions::setBinMethod ( int index )
 void
 InputOptions::setHotPixelFilter ( int enabled )
 {
-	config->setConfig ( Configuration::rawHotPixelFilter,
-			enabled ? Configuration::enabled : Configuration::disabled );
+  config->setConfig ( Configuration::rawHotPixelFilter,
+      enabled ? Configuration::enabled : Configuration::disabled );
 }
 
 
 void
 InputOptions::setDebayerRaw ( int enabled )
 {
-	config->setConfig ( Configuration::debayerRawFiles,
-			enabled ? Configuration::enabled : Configuration::disabled );
-	bool state = enabled ? true : false;
-	ui->debayerRawMethod->setEnabled ( state );
-	ui->algorithmLabel->setEnabled ( state );
-	ui->colourSpace->setEnabled ( state );
-	ui->colourSpaceLabel->setEnabled ( state );
+  config->setConfig ( Configuration::debayerRawFiles,
+      enabled ? Configuration::enabled : Configuration::disabled );
+  bool state = enabled ? true : false;
+  ui->debayerRawMethod->setEnabled ( state );
+  ui->algorithmLabel->setEnabled ( state );
+  ui->colourSpace->setEnabled ( state );
+  ui->colourSpaceLabel->setEnabled ( state );
 }
 
 
@@ -252,9 +252,9 @@ InputOptions::setDebayerMethod ( int index )
           Configuration::debayerAHD );
       break;
     default:
-			QString err = std::source_location::current().function_name();
-			err += " unrecognised debayer algorithm";
-			qDebug() << err;
+      QString err = std::source_location::current().function_name();
+      err += " unrecognised debayer algorithm";
+      qDebug() << err;
       break;
   }
 }
@@ -293,9 +293,9 @@ InputOptions::setColourSpace ( int index )
           Configuration::spaceACES );
       break;
     default:
-			QString err = std::source_location::current().function_name();
-			err += " unrecognised debayer algorithm";
-			qDebug() << err;
+      QString err = std::source_location::current().function_name();
+      err += " unrecognised debayer algorithm";
+      qDebug() << err;
       break;
   }
 }
@@ -346,9 +346,9 @@ InputOptions::setHighlightRecoveryType ( int index )
           Configuration::highlight_H9 );
       break;
     default:
-			QString err = std::source_location::current().function_name();
-			err += " unrecognised highlight recovery type";
-			qDebug() << err;
+      QString err = std::source_location::current().function_name();
+      err += " unrecognised highlight recovery type";
+      qDebug() << err;
       break;
   }
 }
@@ -357,24 +357,24 @@ InputOptions::setHighlightRecoveryType ( int index )
 void
 InputOptions::setDateFromFilename ( int enabled )
 {
-	config->setConfig ( Configuration::dateFromFilename,
-			enabled ? Configuration::enabled : Configuration::disabled );
-	bool state = enabled ? true : false;
-	ui->convertToUTC->setEnabled ( state );
-	ui->timeFormatLayout->setEnabled ( state );
-	ui->filenameFormat->setEnabled ( state );
-	ui->filenameTemplate->setEnabled ( state );
-	ui->rememberFormat->setEnabled ( state );
-	ui->serFrameRate->setEnabled ( state );
-	ui->frameRateLabel->setEnabled ( state );
+  config->setConfig ( Configuration::dateFromFilename,
+      enabled ? Configuration::enabled : Configuration::disabled );
+  bool state = enabled ? true : false;
+  ui->convertToUTC->setEnabled ( state );
+  ui->timeFormatLayout->setEnabled ( state );
+  ui->filenameFormat->setEnabled ( state );
+  ui->filenameTemplate->setEnabled ( state );
+  ui->rememberFormat->setEnabled ( state );
+  ui->serFrameRate->setEnabled ( state );
+  ui->frameRateLabel->setEnabled ( state );
 }
 
 
 void
 InputOptions::setStrictY800Decoding ( int enabled )
 {
-	config->setConfig ( Configuration::strictY800Decoding,
-			enabled ? Configuration::enabled : Configuration::disabled );
+  config->setConfig ( Configuration::strictY800Decoding,
+      enabled ? Configuration::enabled : Configuration::disabled );
 }
 
 
@@ -423,9 +423,9 @@ InputOptions::setSERPixelDepth ( int index )
           Configuration::bpp8 );
       break;
     default:
-			QString err = std::source_location::current().function_name();
-			err += " unrecognised pixel depth";
-			qDebug() << err;
+      QString err = std::source_location::current().function_name();
+      err += " unrecognised pixel depth";
+      qDebug() << err;
       break;
   }
 }
@@ -434,7 +434,7 @@ InputOptions::setSERPixelDepth ( int index )
 void
 InputOptions::updatePresets ( int option )
 {
-	// At the moment there doesn't appear to be anything to do for this
-	// tab
-	Q_UNUSED ( option );
+  // At the moment there doesn't appear to be anything to do for this
+  // tab
+  Q_UNUSED ( option );
 }

@@ -3,7 +3,7 @@
  * animationOptions.h -- header for animationOptions.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -30,27 +30,27 @@
 #include <QWidget>
 
 namespace Ui {
-	class AnimationOptions;
+  class AnimationOptions;
 }
 
 class AnimationOptions : public QWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
     explicit AnimationOptions ( QWidget* parent = nullptr );
     virtual ~AnimationOptions();
 
-	private:
-		void										setUpConnections ( void );
+  private:
+    void                    setUpConnections ( void );
 
-	private:
-		Ui::AnimationOptions*		ui;
+  private:
+    Ui::AnimationOptions*   ui;
 
-	private slots:
-		void										unimplemented1 ( void );
-		void										unimplemented2 ( const QString& text );
+  private slots:
+    void                    unimplemented1 ( void );
+    void                    unimplemented2 ( const QString& text );
 
-	public:
-		void										updatePresets ( int );
+  public:
+    void                    updatePresets ( int );
 };

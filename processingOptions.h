@@ -3,7 +3,7 @@
  * processingOptions.h -- header for processingOptions.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -30,27 +30,27 @@
 #include <QWidget>
 
 namespace Ui {
-	class ProcessingOptions;
+  class ProcessingOptions;
 }
 
 class ProcessingOptions : public QWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
     explicit ProcessingOptions ( QWidget* parent = nullptr );
     virtual ~ProcessingOptions();
 
-	private:
-		void											setUpConnections ( void );
-			
-	private:
-		Ui::ProcessingOptions*		ui;
+  private:
+    void                      setUpConnections ( void );
+      
+  private:
+    Ui::ProcessingOptions*    ui;
 
-	private slots:
-		void											unimplemented1 ( void );
-		void											unimplemented2 ( const QString& text );
+  private slots:
+    void                      unimplemented1 ( void );
+    void                      unimplemented2 ( const QString& text );
 
-	public:
-		void											updatePresets ( int );
+  public:
+    void                      updatePresets ( int );
 };

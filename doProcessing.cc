@@ -3,7 +3,7 @@
  * doProcessing.cc -- manage the processing options tab
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -32,12 +32,12 @@
 #include "ui_doProcessing.h"
 
 DoProcessing::DoProcessing ( QWidget* parent  ) :
-	QWidget ( parent ),
-	ui ( new Ui::DoProcessing )
+  QWidget ( parent ),
+  ui ( new Ui::DoProcessing )
 {
-	ui->setupUi ( this );
+  ui->setupUi ( this );
 
-	setUpConnections();
+  setUpConnections();
 
   QString err = std::source_location::current().function_name();
   err += " not fully implemented";
@@ -48,7 +48,7 @@ DoProcessing::DoProcessing ( QWidget* parent  ) :
 
 DoProcessing::~DoProcessing ( void )
 {
-	delete ui;
+  delete ui;
 }
 
 
@@ -56,25 +56,25 @@ void
 DoProcessing::setUpConnections ( void )
 {
   connect ( ui->startProcessing, &QPushButton::clicked, this,
-			&DoProcessing::unimplemented1 );
+      &DoProcessing::unimplemented1 );
   connect ( ui->cancelProcessing, &QPushButton::clicked, this,
-			&DoProcessing::unimplemented1 );
+      &DoProcessing::unimplemented1 );
   connect ( ui->openOutputDir, &QPushButton::clicked, this,
-			&DoProcessing::unimplemented1 );
+      &DoProcessing::unimplemented1 );
 }
 
 
 void
 DoProcessing::unimplemented1 ( void )
 {
-	qDebug() << "slot not yet implemented";
+  qDebug() << "slot not yet implemented";
 }
 
 
 void
 DoProcessing::unimplemented2 ( const QString& text )
 {
-	Q_UNUSED ( text )
+  Q_UNUSED ( text )
 
-	qDebug() << "slot not yet implemented";
+  qDebug() << "slot not yet implemented";
 }

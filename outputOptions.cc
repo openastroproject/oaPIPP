@@ -3,7 +3,7 @@
  * outputOptions.cc -- manage the output options tab
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -36,12 +36,12 @@
 #include "ui_outputOptions.h"
 
 OutputOptions::OutputOptions ( QWidget* parent ) :
-	QWidget ( parent ),
-	ui ( new Ui::OutputOptions )
+  QWidget ( parent ),
+  ui ( new Ui::OutputOptions )
 {
-	ui->setupUi ( this );
+  ui->setupUi ( this );
 
-	setUpConnections();
+  setUpConnections();
 
   QString err = std::source_location::current().function_name();
   err += " not fully implemented";
@@ -52,7 +52,7 @@ OutputOptions::OutputOptions ( QWidget* parent ) :
 
 OutputOptions::~OutputOptions ( void )
 {
-	delete ui;
+  delete ui;
 }
 
 
@@ -60,141 +60,141 @@ void
 OutputOptions::setUpConnections ( void )
 {
   connect ( ui->outputAVI, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputSER, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputBMP, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputTIFF, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputFITS, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputPNG, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputAnimGIF, &QRadioButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
 
   connect ( ui->useDefaultOutputDir, &QPushButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->selectOutputDir, &QPushButton::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
 
   connect ( ui->createOutputSubdir, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputSubdirName, &QLineEdit::editingFinished, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->appendDateTime, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputFilePrefix, &QLineEdit::editingFinished, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->outputFileSuffix, &QLineEdit::editingFinished, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
 
   connect ( ui->splitRGB, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
 
   connect ( ui->framesToDrop, &QSpinBox::textChanged, this,
-			&OutputOptions::unimplemented2 );
+      &OutputOptions::unimplemented2 );
 
   connect ( ui->outputCodec, &QComboBox::currentTextChanged, this,
-			&OutputOptions::unimplemented2 );
+      &OutputOptions::unimplemented2 );
   connect ( ui->outputQuality, &QSpinBox::textChanged, this,
-			&OutputOptions::unimplemented2 );
+      &OutputOptions::unimplemented2 );
   connect ( ui->oldFormatAVI, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->maxAVISize, &QComboBox::currentTextChanged, this,
-			&OutputOptions::unimplemented2 );
+      &OutputOptions::unimplemented2 );
   connect ( ui->safeSize, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->matchInputFrameRate, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->defaultFrameRate, &QSpinBox::textChanged, this,
-			&OutputOptions::unimplemented2 );
+      &OutputOptions::unimplemented2 );
 
   connect ( ui->winjuposNames, &QCheckBox::clicked, this,
-			&OutputOptions::unimplemented1 );
+      &OutputOptions::unimplemented1 );
   connect ( ui->filenameTime, &QComboBox::currentTextChanged, this,
-			&OutputOptions::unimplemented2 );
+      &OutputOptions::unimplemented2 );
 }
 
 
 void
 OutputOptions::unimplemented1 ( void )
 {
-	qDebug() << "slot not yet implemented";
+  qDebug() << "slot not yet implemented";
 }
 
 
 void
 OutputOptions::unimplemented2 ( const QString& text )
 {
-	Q_UNUSED ( text )
+  Q_UNUSED ( text )
 
-	qDebug() << "slot not yet implemented";
+  qDebug() << "slot not yet implemented";
 }
 
 
 void
 OutputOptions::updatePresets ( int option )
 {
-	// Disable everything that might have been enabled in a previous call
-	ui->outputAVI->setChecked ( false );
-	ui->matchInputFrameRate->setChecked ( false );
+  // Disable everything that might have been enabled in a previous call
+  ui->outputAVI->setChecked ( false );
+  ui->matchInputFrameRate->setChecked ( false );
   ui->createOutputSubdir->setChecked ( false );
 
-	// Turn all the options back to the default colour
-	ui->outputAVI->setStyleSheet ( presetOffStyle );
-	ui->outputCodec->setStyleSheet ( presetOffStyle );
-	ui->matchInputFrameRate->setStyleSheet ( presetOffStyle );
-	ui->defaultFrameRate->setStyleSheet ( presetOffStyle );
+  // Turn all the options back to the default colour
+  ui->outputAVI->setStyleSheet ( presetOffStyle );
+  ui->outputCodec->setStyleSheet ( presetOffStyle );
+  ui->matchInputFrameRate->setStyleSheet ( presetOffStyle );
+  ui->defaultFrameRate->setStyleSheet ( presetOffStyle );
   ui->createOutputSubdir->setStyleSheet ( presetOffStyle );
   ui->outputFileSuffix->setStyleSheet ( presetOffStyle );
 
-	switch ( option ) {
-		case SourceFiles::presetPlanet:
-		case SourceFiles::presetCloseUp:
-			// no changes required
-			break;
+  switch ( option ) {
+    case SourceFiles::presetPlanet:
+    case SourceFiles::presetCloseUp:
+      // no changes required
+      break;
 
-		case SourceFiles::presetPlanetaryAVI:
-			ui->outputAVI->click();
-			ui->outputCodec->setCurrentIndex ( 2 );
-			ui->matchInputFrameRate->setChecked ( false );
+    case SourceFiles::presetPlanetaryAVI:
+      ui->outputAVI->click();
+      ui->outputCodec->setCurrentIndex ( 2 );
+      ui->matchInputFrameRate->setChecked ( false );
       ui->defaultFrameRate->setValue ( 10 );
-			ui->outputAVI->setStyleSheet ( presetOnStyle );
-			ui->outputCodec->setStyleSheet ( presetOnStyle );
-			ui->matchInputFrameRate->setStyleSheet ( presetOnStyle );
-			ui->defaultFrameRate->setStyleSheet ( presetOnStyle );
+      ui->outputAVI->setStyleSheet ( presetOnStyle );
+      ui->outputCodec->setStyleSheet ( presetOnStyle );
+      ui->matchInputFrameRate->setStyleSheet ( presetOnStyle );
+      ui->defaultFrameRate->setStyleSheet ( presetOnStyle );
 
-		case SourceFiles::presetISS:
-			// todo
-			break;
+    case SourceFiles::presetISS:
+      // todo
+      break;
 
-		case SourceFiles::presetFullDisc:
-			// todo
-			break;
+    case SourceFiles::presetFullDisc:
+      // todo
+      break;
 
-		case SourceFiles::presetGIF:
-			// todo
-			break;
+    case SourceFiles::presetGIF:
+      // todo
+      break;
 
-		case SourceFiles::presetAVIArchive:
-			ui->outputAVI->click();
-			ui->outputCodec->setCurrentIndex ( 2 );
+    case SourceFiles::presetAVIArchive:
+      ui->outputAVI->click();
+      ui->outputCodec->setCurrentIndex ( 2 );
       ui->createOutputSubdir->setChecked ( false );
       ui->outputFileSuffix->setText ( "_ulrg" );
-			ui->outputAVI->setStyleSheet ( presetOnStyle );
-			ui->outputCodec->setStyleSheet ( presetOnStyle );
+      ui->outputAVI->setStyleSheet ( presetOnStyle );
+      ui->outputCodec->setStyleSheet ( presetOnStyle );
       ui->createOutputSubdir->setStyleSheet ( presetOnStyle );
       ui->outputFileSuffix->setStyleSheet ( presetOnStyle );
-			break;
+      break;
 
-		default:
-			QString err = std::source_location::current().function_name();
-			err += " unexpected preset type";
+    default:
+      QString err = std::source_location::current().function_name();
+      err += " unexpected preset type";
 
-			qDebug() << err;
-			break;
-	}
+      qDebug() << err;
+      break;
+  }
 }
 

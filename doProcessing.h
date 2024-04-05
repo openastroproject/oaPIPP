@@ -3,7 +3,7 @@
  * doProcessing.h -- header for doProcessing.cc
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -35,19 +35,19 @@ namespace Ui {
 
 class DoProcessing : public QWidget
 {
-	Q_OBJECT
+  Q_OBJECT
 
   public:
     explicit DoProcessing ( QWidget* parent = nullptr );
     virtual ~DoProcessing();
 
-	private:
-		void								setUpConnections ( void );
+  private:
+    void                setUpConnections ( void );
 
-	private:
-		Ui::DoProcessing*		ui;
+  private:
+    Ui::DoProcessing*   ui;
 
-	private slots:
+  private slots:
     void                unimplemented1 ( void );
     void                unimplemented2 ( const QString& text );
 };

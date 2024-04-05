@@ -3,7 +3,7 @@
  * oapipp_common.h -- Common definitions etc.
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -36,6 +36,6 @@ const QString VERSION_STR = "0.0.1";
 const QString ORGANISATION_NAME_SETTINGS = "OpenAstro";
 
 const QString presetOnStyle =
-		"color: green; background-color: rgba(255, 255, 255, 0);";
+    "color: green; background-color: rgba(255, 255, 255, 0);";
 const QString presetOffStyle =
-		"color: black; background-color: rgba(255, 255, 255, 0);";
+    "color: black; background-color: rgba(255, 255, 255, 0);";

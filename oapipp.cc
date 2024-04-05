@@ -3,7 +3,7 @@
  * oapipp.cc -- application entrypoint
  *
  * Copyright 2024
- *		James Fidell (james@openastroproject.org)
+ *    James Fidell (james@openastroproject.org)
  *
  * License:
  *
@@ -37,27 +37,27 @@
 int
 main ( int argc, char* argv[])
 {
-		QApplication		app ( argc, argv );
+    QApplication    app ( argc, argv );
 
-	  app.setOrganizationName( ORGANISATION_NAME );
-		app.setApplicationName( APPLICATION_NAME );
+    app.setOrganizationName( ORGANISATION_NAME );
+    app.setApplicationName( APPLICATION_NAME );
 
-		QString locale = QLocale::system().name();
+    QString locale = QLocale::system().name();
 
-		QTranslator qtTranslator;
-		if ( qtTranslator.load ( "qt_" + locale, QLibraryInfo::location (
-				QLibraryInfo::TranslationsPath ))) {
-			app.installTranslator ( &qtTranslator );
-		}
+    QTranslator qtTranslator;
+    if ( qtTranslator.load ( "qt_" + locale, QLibraryInfo::location (
+        QLibraryInfo::TranslationsPath ))) {
+      app.installTranslator ( &qtTranslator );
+    }
 
-		QTranslator appTranslator;
-		if ( appTranslator.load ( ":/i18n/oapipp_" + locale )) {
-			app.installTranslator ( &appTranslator );
-		}
+    QTranslator appTranslator;
+    if ( appTranslator.load ( ":/i18n/oapipp_" + locale )) {
+      app.installTranslator ( &appTranslator );
+    }
 
-		MainWindow mainWindow;
-		mainWindow.initialise();
-		mainWindow.show();
+    MainWindow mainWindow;
+    mainWindow.initialise();
+    mainWindow.show();
 
-		return app.exec();
+    return app.exec();
 }
