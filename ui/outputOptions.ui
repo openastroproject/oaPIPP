@@ -422,7 +422,7 @@
        <property name="title">
         <string>BMP File Naming</string>
        </property>
-       <widget class="QCheckBox" name="keepFilenames">
+       <widget class="QCheckBox" name="bmpKeepFilenames">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -435,7 +435,7 @@
          <string>Keep original image filenames</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="disableRenumbering">
+       <widget class="QCheckBox" name="bmpDisableRenumbering">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -448,7 +448,7 @@
          <string>Disable image frame renumbering</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="addLeadingZeros">
+       <widget class="QCheckBox" name="bmpAddLeadingZeros">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -461,7 +461,184 @@
          <string>Add leading zeros to image filename numbers</string>
         </property>
        </widget>
-       <widget class="QCheckBox" name="qualityFilename">
+       <widget class="QCheckBox" name="bmpQualityFilename">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Include quality value in filename</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="tiffOptionsBox">
+       <property name="title">
+        <string>TIFF File Naming</string>
+       </property>
+       <widget class="QCheckBox" name="tiffKeepFilenames">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Keep original image filenames</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="tiffDisableRenumbering">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Disable image frame renumbering</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="tiffAddLeadingZeros">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>311</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add leading zeros to image filename numbers</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="tiffQualityFilename">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Include quality value in filename</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="fitsOptionsBox">
+       <property name="title">
+        <string>FITS File Naming</string>
+       </property>
+       <widget class="QCheckBox" name="fitsKeepFilenames">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Keep original image filenames</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="fitsDisableRenumbering">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Disable image frame renumbering</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="fitsAddLeadingZeros">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>311</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add leading zeros to image filename numbers</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="fitsQualityFilename">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Include quality value in filename</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="pngOptionsBox">
+       <property name="title">
+        <string>PNG File Naming</string>
+       </property>
+       <widget class="QCheckBox" name="pngKeepFilenames">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>221</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Keep original image filenames</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="pngDisableRenumbering">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>241</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Disable image frame renumbering</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="pngAddLeadingZeros">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>311</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add leading zeros to image filename numbers</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="pngQualityFilename">
         <property name="geometry">
          <rect>
           <x>10</x>
