@@ -272,7 +272,23 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_24">
            <item>
-            <widget class="QComboBox" name="outputCodec"/>
+            <widget class="QComboBox" name="outputCodec">
+             <item>
+              <property name="text">
+               <string>DIB (raw uncompressed)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>ULRG (Ut video lossless compression)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>FMP4 (MPEG-4 lossy compression)</string>
+              </property>
+             </item>
+            </widget>
            </item>
            <item>
             <widget class="QLabel" name="codecLabel_2">
@@ -472,6 +488,39 @@
         </property>
         <property name="text">
          <string>Include quality value in filename</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="animGIFOptionsBox">
+       <property name="title">
+        <string>Aniimated GIF Options</string>
+       </property>
+       <widget class="QCheckBox" name="loopFrames">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>281</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Loop frames repeatedly</string>
+        </property>
+       </widget>
+       <widget class="QCheckBox" name="useInputFrameRate">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>40</y>
+          <width>291</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Use same frame rate as input if possible</string>
         </property>
        </widget>
       </widget>
