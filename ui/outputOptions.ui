@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>714</width>
-    <height>580</height>
+    <height>628</height>
    </rect>
   </property>
   <layout class="QHBoxLayout" name="yyy1">
@@ -24,17 +24,10 @@
           <x>20</x>
           <y>40</y>
           <width>383</width>
-          <height>88</height>
+          <height>95</height>
          </rect>
         </property>
         <layout class="QGridLayout" name="gridLayout_12">
-         <item row="0" column="0">
-          <widget class="QRadioButton" name="outputAVI">
-           <property name="text">
-            <string>AVI</string>
-           </property>
-          </widget>
-         </item>
          <item row="0" column="1">
           <widget class="QRadioButton" name="outputSER">
            <property name="text">
@@ -42,24 +35,17 @@
            </property>
           </widget>
          </item>
-         <item row="0" column="2">
-          <widget class="QRadioButton" name="outputBMP">
-           <property name="text">
-            <string>BMP</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QRadioButton" name="outputTIFF">
-           <property name="text">
-            <string>TIFF</string>
-           </property>
-          </widget>
-         </item>
          <item row="1" column="1">
           <widget class="QRadioButton" name="outputFITS">
            <property name="text">
             <string>FITS</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="2">
+          <widget class="QRadioButton" name="outputBMP">
+           <property name="text">
+            <string>BMP</string>
            </property>
           </widget>
          </item>
@@ -73,11 +59,38 @@
          <item row="2" column="0" colspan="3">
           <widget class="QRadioButton" name="outputAnimGIF">
            <property name="text">
-            <string>Animated GIF (8-bit mono/colour only)</string>
+            <string>Animated GIF</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QRadioButton" name="outputAVI">
+           <property name="text">
+            <string>AVI</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QRadioButton" name="outputTIFF">
+           <property name="text">
+            <string>TIFF</string>
            </property>
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QLabel" name="colourDepthLabel">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>140</y>
+          <width>321</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>n/a</string>
+        </property>
        </widget>
       </widget>
      </item>
@@ -221,10 +234,6 @@
        </widget>
       </widget>
      </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QVBoxLayout" name="outputOptionsRHS">
      <item>
       <widget class="QGroupBox" name="outputFrameDroppingBox">
        <property name="title">
@@ -254,6 +263,10 @@
        </widget>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QVBoxLayout" name="outputOptionsRHS">
      <item>
       <widget class="QGroupBox" name="aviFileOptionsBox">
        <property name="title">
@@ -365,7 +378,7 @@
             <widget class="QSpinBox" name="defaultFrameRate"/>
            </item>
            <item>
-            <widget class="QLabel" name="defaultFrameRateLabel_2">
+            <widget class="QLabel" name="defaultFrameRateLabel">
              <property name="text">
               <string>Frame rate to use otherwise</string>
              </property>
@@ -495,7 +508,7 @@
      <item>
       <widget class="QGroupBox" name="animGIFOptionsBox">
        <property name="title">
-        <string>Aniimated GIF Options</string>
+        <string>Animated GIF Options</string>
        </property>
        <widget class="QCheckBox" name="loopFrames">
         <property name="geometry">
@@ -522,6 +535,187 @@
         <property name="text">
          <string>Use same frame rate as input if possible</string>
         </property>
+       </widget>
+       <widget class="QLabel" name="seeOtherOptions">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>310</y>
+          <width>341</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>(See animation options tab for more animation controls)</string>
+        </property>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>60</y>
+          <width>341</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="defaultFramerateBox">
+         <item>
+          <widget class="QLabel" name="animGIFDefaultFrameRateLabel">
+           <property name="text">
+            <string>Frame rate to use otherwise</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="animGIFDefaultFrameRate"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="horizontalLayoutWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>90</y>
+          <width>341</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="colourQuantLabel">
+           <property name="text">
+            <string>Colour Quantisation Algorithm</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="comboBox">
+           <item>
+            <property name="text">
+             <string>Neural net</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Median cut</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QGroupBox" name="advancedAnimOptionsBox">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>120</y>
+          <width>341</width>
+          <height>191</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Advanced Options</string>
+        </property>
+        <widget class="QWidget" name="horizontalLayoutWidget_3">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>20</y>
+           <width>341</width>
+           <height>31</height>
+          </rect>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QLabel" name="presetsLabel">
+            <property name="text">
+             <string>Advanced Options Presets</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="presets">
+            <item>
+             <property name="text">
+              <string>1. Maximum quality</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>2. Good quality</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>3. Medium quality</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>4. Small file size</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>5. Smaller file size</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>60</y>
+           <width>270</width>
+           <height>120</height>
+          </rect>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="borderTolerance">
+            <property name="text">
+             <string>Unchanged border tolerance</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QSpinBox" name="borderToleranceVal"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="transparentPixelTolerance">
+            <property name="text">
+             <string>Transparent pixel tolerance</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QSpinBox" name="transparentPixelToleranceVal"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="reducedColourTable">
+            <property name="text">
+             <string>Reduced colour table bit depth</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QSpinBox" name="reducedColourTableVal"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QCheckBox" name="lossyCompression">
+            <property name="text">
+             <string>Lossy compression level</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QSpinBox" name="lossyCompressionVal"/>
+          </item>
+         </layout>
+        </widget>
        </widget>
       </widget>
      </item>
