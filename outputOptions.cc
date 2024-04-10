@@ -139,6 +139,7 @@ OutputOptions::updatePresets ( int option )
 {
   // Disable everything that might have been enabled in a previous call
   ui->outputAVI->setChecked ( false );
+  ui->outputTIFF->setChecked ( false );
   ui->matchInputFrameRate->setChecked ( false );
   ui->createOutputSubdir->setChecked ( false );
 
@@ -149,6 +150,7 @@ OutputOptions::updatePresets ( int option )
   ui->defaultFrameRate->setStyleSheet ( presetOffStyle );
   ui->createOutputSubdir->setStyleSheet ( presetOffStyle );
   ui->outputFileSuffix->setStyleSheet ( presetOffStyle );
+  ui->tiffDisableRenumbering->setStyleSheet ( presetOffStyle );
 
   switch ( option ) {
     case SourceFiles::presetPlanet:
@@ -167,7 +169,9 @@ OutputOptions::updatePresets ( int option )
       ui->defaultFrameRate->setStyleSheet ( presetOnStyle );
 
     case SourceFiles::presetISS:
-      // todo
+      ui->outputTIFF->click();
+      ui->tiffDisableRenumbering->click();
+      ui->tiffDisableRenumbering->setStyleSheet ( presetOnStyle );
       break;
 
     case SourceFiles::presetFullDisc:
