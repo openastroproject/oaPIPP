@@ -142,6 +142,7 @@ OutputOptions::updatePresets ( int option )
   ui->outputTIFF->setChecked ( false );
   ui->matchInputFrameRate->setChecked ( false );
   ui->createOutputSubdir->setChecked ( false );
+  ui->tiffQualityFilename->setChecked ( false );
 
   // Turn all the options back to the default colour
   ui->outputAVI->setStyleSheet ( presetOffStyle );
@@ -151,6 +152,7 @@ OutputOptions::updatePresets ( int option )
   ui->createOutputSubdir->setStyleSheet ( presetOffStyle );
   ui->outputFileSuffix->setStyleSheet ( presetOffStyle );
   ui->tiffDisableRenumbering->setStyleSheet ( presetOffStyle );
+  ui->tiffQualityFilename->setStyleSheet ( presetOffStyle );
 
   switch ( option ) {
     case SourceFiles::presetPlanet:
@@ -175,7 +177,9 @@ OutputOptions::updatePresets ( int option )
       break;
 
     case SourceFiles::presetFullDisc:
-      // todo
+      ui->outputTIFF->click();
+      ui->tiffQualityFilename->click();
+      ui->tiffQualityFilename->setStyleSheet ( presetOnStyle );
       break;
 
     case SourceFiles::presetGIF:
